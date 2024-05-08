@@ -2,69 +2,82 @@
 <html lang="vi">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tóm tắt sách</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
   <header>
     <div class="header-content">
       <div class="logo">
-        <a href="index.html"><img src="img/logo.png" alt="Logo"></a>
+        <a href="index.html"><img src="img/logo.png" alt="Logo" /></a>
       </div>
       <div class="title">
-        <p style="font-size: 18px;">BỘ THÔNG TIN VÀ TRUYỀN THÔNG</p>
-        <h2 style="font-size: 22px;">NHÀ XUẤT BẢN THÔNG TIN VÀ TRUYỀN THÔNG</h2>
+        <p style="font-size: 18px">BỘ THÔNG TIN VÀ TRUYỀN THÔNG</p>
+        <h2 style="font-size: 22px">
+          NHÀ XUẤT BẢN THÔNG TIN VÀ TRUYỀN THÔNG
+        </h2>
       </div>
     </div>
     <nav>
       <ul>
-        <li class="menu"><a href="index.html">Trang chủ</a></li>
-        <li class="menu"><a href="nxb.html">Nhà xuất bản</a></li>
-        <li class="menu"><a href="author.html">Tác giả</a></li>
-        <li class="menu cur-menu"><a href="#">Tóm tắt sách</a></li>
+        <li><button onclick="location.href = 'index.html';" class="menu">Trang chủ</button></li>
+        <li><button onclick="location.href = 'nxb.html';" class="menu">Nhà xuất bản</button></li>
+        <li><button onclick="location.href = 'author.html';" class="menu">Tác giả</button></li>
+        <li><button onclick="location.href = '#';" class="menu cur-menu">Tóm tắt sách</button></li>
         <li>
-          <div class="search-bar">
-            <input type="text" placeholder="Tìm kiếm...">
-          </div>
+          <div class="search-bar"> <input type="text" placeholder="Tìm kiếm..."> </div>
         </li>
       </ul>
     </nav>
   </header>
-  <main style="background-color: #ffd8ad;">
+  <main style="background-color: #ffd8ad">
     <section class="introduction">
-      <div style="display: flex; justify-content: center; align-items: center; text-align: center; flex: 1;">
-        <img src="img/books/book.jpg" alt="Nhà Xuất Bản" class="book-cover">
+      <div style="
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						text-align: center;
+						flex: 1;
+					">
+        <img src="img/books/book.jpg" alt="Nhà Xuất Bản" class="book-cover" />
       </div>
       <div class="content">
         <h3 class="content-title">Giới thiệu tác phẩm</h3>
 
-        <p> Cháy, nổ có thể xảy ra ở bất cứ nơi đâu, bất cứ lúc nào. Trong cuộc sống, nhiều lúc chỉ cần một phút lơ là,
-          bất cẩn là cháy, nổ có thể xảy ra, gây thiệt hại nặng nề về người và tài sản, ảnh hưởng lớn đến đời sống xã
-          hội. Nguyên nhân có nhiều, song vấn đề mấu chốt vẫn là ý thức, kiến thức về phòng cháy, chữa cháy của các cá
-          nhân, đơn vị còn thiếu và yếu. Bên cạnh đó là việc chúng ta chưa thực hiện tốt các công tác tuyên truyền, phổ
-          biến kiến thức và thiếu các trang thiết bị đủ tiêu chuẩn để phòng cháy, chữa cháy.
+        <p>
+          Cháy, nổ có thể xảy ra ở bất cứ nơi đâu, bất cứ lúc nào. Trong cuộc
+          sống, nhiều lúc chỉ cần một phút lơ là, bất cẩn là cháy, nổ có thể
+          xảy ra, gây thiệt hại nặng nề về người và tài sản, ảnh hưởng lớn đến
+          đời sống xã hội. Nguyên nhân có nhiều, song vấn đề mấu chốt vẫn là ý
+          thức, kiến thức về phòng cháy, chữa cháy của các cá nhân, đơn vị còn
+          thiếu và yếu. Bên cạnh đó là việc chúng ta chưa thực hiện tốt các
+          công tác tuyên truyền, phổ biến kiến thức và thiếu các trang thiết
+          bị đủ tiêu chuẩn để phòng cháy, chữa cháy.
         </p>
 
-        <p>Nhằm trang bị những kiến thức, kỹ năng về phòng cháy, chữa cháy, thoát nạn, thoát hiểm và sơ cấp cứu cho đông
-          đảo đối tượng độc giả, Nhà xuất bản Thông tin và Truyền thông đã phối hợp với các tác giả công tác tại Trường
-          Đại học Phòng cháy chữa cháy biên soạn và xuất bản cuốn sách “Hướng dẫn các tình huống thoát nạn, thoát hiểm,
-          sơ cấp cứu trong phòng, chống cháy nổ”.
+        <p>
+          Nhằm trang bị những kiến thức, kỹ năng về phòng cháy, chữa cháy,
+          thoát nạn, thoát hiểm và sơ cấp cứu cho đông đảo đối tượng độc giả,
+          Nhà xuất bản Thông tin và Truyền thông đã phối hợp với các tác giả
+          công tác tại Trường Đại học Phòng cháy chữa cháy biên soạn và xuất
+          bản cuốn sách “Hướng dẫn các tình huống thoát nạn, thoát hiểm, sơ
+          cấp cứu trong phòng, chống cháy nổ”.
         </p>
 
-        <p>Cuốn sách tập trung đi sâu vào những kiến thức thiết thực về công tác phòng cháy, chữa cháy, tác hại do cháy
-          gây ra, các kỹ năng xử lý khi gặp tình huống đám cháy; hướng dẫn thoát nạn, cứu nạn, sơ cấp cứu ban đầu người
-          bị nạn và tham gia chữa cháy. Những nội dung này đã được nghiên cứu để phù hợp với đặc điểm tình hình, điều
-          kiện của nước ta hiện nay và các nước trên thế giới.
+        <p>
+          Cuốn sách tập trung đi sâu vào những kiến thức thiết thực về công
+          tác phòng cháy, chữa cháy, tác hại do cháy gây ra, các kỹ năng xử lý
+          khi gặp tình huống đám cháy; hướng dẫn thoát nạn, cứu nạn, sơ cấp
+          cứu ban đầu người bị nạn và tham gia chữa cháy. Những nội dung này
+          đã được nghiên cứu để phù hợp với đặc điểm tình hình, điều kiện của
+          nước ta hiện nay và các nước trên thế giới.
         </p>
-
-
-
       </div>
     </section>
   </main>
@@ -75,7 +88,7 @@
   <footer>
     <div class="footer-top">
       <div class="footer-logo">
-        <img src="img/logo.png" alt="Logo">
+        <img src="img/logo.png" alt="Logo" />
       </div>
       <div class="footer-info">
         <h3>BỘ THÔNG TIN VÀ TRUYỀN THÔNG</h3>
@@ -84,7 +97,10 @@
         <p>Địa chỉ: Tầng 6, Tòa nhà 115 Trần Duy Hưng, Cầu Giấy, Hà Nội</p>
         <p>Điện thoại: 024 35772145 / 35772139 - Email: nxbtttt@mic.gov.vn</p>
         <p>Cơ quan chủ quản: Nhà xuất bản Thông tin và Truyền Thông</p>
-        <p>Người chịu trách nhiệm chính: Ông Trần Thị Đạt - Giám đốc - Tổng biên tập</p>
+        <p>
+          Người chịu trách nhiệm chính: Ông Trần Thị Đạt - Giám đốc - Tổng
+          biên tập
+        </p>
       </div>
       <div class="footer-contact">
         <div>
@@ -97,7 +113,7 @@
         </div>
       </div>
       <div class="container">
-        <img class="registered" src="img/registered.png" alt="Đã Đăng Ký">
+        <img class="registered" src="img/registered.png" alt="Đã Đăng Ký" />
       </div>
     </div>
   </footer>

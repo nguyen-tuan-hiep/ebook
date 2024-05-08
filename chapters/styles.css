@@ -174,7 +174,6 @@ section {
 	padding-right: 20px;
 }
 
-
 .controls > * {
 	border-right: 1.5px solid var(--text-color);
 	padding-right: 10px;
@@ -184,11 +183,10 @@ section {
 	border-right: none;
 }
 
-
 /* Menu pop up */
 
 .popup-menu a[href*="#section"] {
-  margin-left: 50px;
+	margin-left: 50px;
 }
 
 .popup-menu {
