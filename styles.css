@@ -305,12 +305,6 @@ div .read-button a {
 	width: 70%;
 }
 
-.hr {
-	border-top: 2px solid black;
-	margin: 0 auto;
-	width: 60%;
-}
-
 div.menu :hover {
 	background-color: #f69401;
 }
