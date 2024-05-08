@@ -269,11 +269,11 @@ th {
 	padding: 10px 20px;
 	text-align: center;
 	margin-top: 30px;
-	margin-left: 180px;
-	margin-right: 180px;
+	margin-left: 220px;
+	margin-right: 220px;
 	font-size: 16px;
 	cursor: pointer;
-	border-radius: 5px;
+	border-radius: 20px;
 }
 
 div .read-button a {
