@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 2</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body data-theme="light">
+  <header>
+    <div class="logo-img">
+      <a href="../index.html"><img src="../img/logo.png" id="logo"></a>
+    </div>
+
+
+    <div class="controls">
+      <div class="menu-button">☰ Menu</div>
+      <nav id="popup-menu" class="popup-menu" onmouseleave="hideMenu()">
+        <a href="#section1" onclick="navigateToSection('section1')">Introduction</a>
+        <a href="#section2" onclick="navigateToSection('section2')">History</a>
+        <a href="#section3" onclick="navigateToSection('section3')">Popularization</a>
+      </nav>
+      <div class="fullscreen-button" onclick="toggleFullscreen()">
+        <img src="../img/fullscreen.svg" alt="fullscreen" width="30px" class="icon">
+      </div>
+      <button class="darkmode-button" onclick="toggleDarkMode()">Dark Mode</button>
+      <input id="fontSizeSlider" type="range" min="20" max="40" value="30" class="slider"
+        oninput="changeFontSize(this.value)">
+      <label for="fontSizeSlider">Font Size</label>
+      <img src="../img/globe.svg" alt="Globe" class="globe-icon icon" width="30px">
+      <div class="language-selector" onclick="toggleLanguage()">
+        Viet
+      </div>
+
+    </div>
+  </header>
+
+  <button class="arrow arrow-left" onclick="navigateToChapter1()">&#x2190;</button>
+  <button class="arrow arrow-right" onclick="navigateToChapter3()">&#x2192;</button>
+
+
+  <main>
+    <article id="chapter1">
+      <h2 id="chapter-name">II. Chapter 2</h2>
+      <section id="section1">
+        <h3><p lang="en">1. Introduction</p></h3>
+        <h3><p lang="vi">1. Giới thiệu</p></h3>
+        <p lang="vi">
+          Xin chào, đây là trang web đầu tiên của bạn. Đây là một trang web đơn giản với một số nội dung cơ bản. Bạn có
+          thể thêm nội dung vào trang web này bằng cách chỉnh sửa tệp HTML và CSS. Bạn cũng có thể thêm các tệp script
+          JavaScript để thêm các chức năng động vào trang web. Trang web này có một số phần cơ bản như tiêu đề, đoạn
+          văn,
+          danh sách, hình ảnh và các phần khác. Bạn có thể thêm các phần khác như bảng, biểu đồ, video, bản đồ, v.v.
+          vào trang web này. Bạn cũng có thể tạo các trang web khác và liên kết chúng với nhau. Bạn có thể tạo một trang
+          web tĩnh hoặc một trang web động với các chức năng như tìm kiếm, đăng nhập, đăng ký, v.v.
+        </p>
+
+        <p lang="en">
+          Hello, this is your first website. This is a simple website with some basic content. You can add content to
+          this
+          website by editing the HTML and CSS files. You can also add JavaScript script files to add dynamic features to
+          the website. This website has some basic parts like header, paragraph, list, image, and other parts. You can
+          add
+          other parts like table, chart, video, map, etc. to this website. You can also create other websites and link
+          them together. You can create a static website or a dynamic website with features like search, login,
+          register,
+          etc.
+        </p>
+      </section>
+      <section id="section2">
+        <h3>2. History</h3>
+        <p lang="vi">
+          Xin chào, đây là trang web đầu tiên của bạn. Đây là một trang web đơn giản với một số nội dung cơ bản. Bạn có
+          thể thêm nội dung vào trang web này bằng cách chỉnh sửa tệp HTML và CSS. Bạn cũng có thể thêm các tệp script
+          JavaScript để thêm các chức năng động vào trang web. Trang web này có một số phần cơ bản như tiêu đề, đoạn
+          văn,
+          danh sách, hình ảnh và các phần khác. Bạn có thể thêm các phần khác như bảng, biểu đồ, video, bản đồ, v.v.
+          vào trang web này. Bạn cũng có thể tạo các trang web khác và liên kết chúng với nhau. Bạn có thể tạo một trang
+          web tĩnh hoặc một trang web động với các chức năng như tìm kiếm, đăng nhập, đăng ký, v.v.
+        </p>
+
+        <p lang="en">
+          Hello, this is your first website. This is a simple website with some basic content. You can add content to
+          this
+          website by editing the HTML and CSS files. You can also add JavaScript script files to add dynamic features to
+          the website. This website has some basic parts like header, paragraph, list, image, and other parts. You can
+          add
+          other parts like table, chart, video, map, etc. to this website. You can also create other websites and link
+          them together. You can create a static website or a dynamic website with features like search, login,
+          register,
+          etc.
+        </p>
+      </section>
+      <section id="section3">
+        <h3>3. Popularization</h3>
+        <p lang="vi">
+          Xin chào, đây là trang web đầu tiên của bạn. Đây là một trang web đơn giản với một số nội dung cơ bản. Bạn có
+          thể thêm nội dung vào trang web này bằng cách chỉnh sửa tệp HTML và CSS. Bạn cũng có thể thêm các tệp script
+          JavaScript để thêm các chức năng động vào trang web. Trang web này có một số phần cơ bản như tiêu đề, đoạn
+          văn,
+          danh sách, hình ảnh và các phần khác. Bạn có thể thêm các phần khác như bảng, biểu đồ, video, bản đồ, v.v.
+          vào trang web này. Bạn cũng có thể tạo các trang web khác và liên kết chúng với nhau. Bạn có thể tạo một trang
+          web tĩnh hoặc một trang web động với các chức năng như tìm kiếm, đăng nhập, đăng ký, v.v.
+        </p>
+
+        <p lang="en">
+          Hello, this is your first website. This is a simple website with some basic content. You can add content to
+          this
+          website by editing the HTML and CSS files. You can also add JavaScript script files to add dynamic features to
+          the website. This website has some basic parts like header, paragraph, list, image, and other parts. You can
+          add
+          other parts like table, chart, video, map, etc. to this website. You can also create other websites and link
+          them together. You can create a static website or a dynamic website with features like search, login,
+          register,
+          etc.
+        </p>
+      </section>
+    </article>
+  </main>
+  <script src="./scripts.js"></script>
+
+
+
+</body>
+
+</html>
