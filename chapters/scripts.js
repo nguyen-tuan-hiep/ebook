@@ -56,7 +56,7 @@ function scrollToTop() {
 }
 
 function initializePage() {
-	const defaultLanguage = "en";
+	const defaultLanguage = "vi";
 	const paragraphs = document.querySelectorAll("p");
 
 	paragraphs.forEach((paragraph) => {
@@ -67,21 +67,22 @@ function initializePage() {
 }
 
 function toggleLanguage() {
-	const paragraphs = document.querySelectorAll("p");
-	const languageSelector = document.querySelector(".language-selector");
-	const selectedLanguage = languageSelector.textContent.trim();
+  const paragraphs = document.querySelectorAll("p");
+  const languageSelector = document.querySelector(".language-selector");
+  const selectedLanguage = languageSelector.textContent.trim();
 
-	paragraphs.forEach((paragraph) => {
-		if (selectedLanguage === "Eng" && paragraph.lang === "en") {
-			paragraph.classList.remove("hidden");
-		} else if (selectedLanguage === "Viet" && paragraph.lang === "vi") {
-			paragraph.classList.remove("hidden");
-		} else {
-			paragraph.classList.add("hidden");
-		}
-	});
+  paragraphs.forEach((paragraph) => {
+    if (selectedLanguage === "Eng" && paragraph.lang === "en") {
+      paragraph.classList.remove("hidden");
+    } else if (selectedLanguage === "Viet" && paragraph.lang === "vi") {
+      paragraph.classList.remove("hidden");
+    } else {
+      paragraph.classList.add("hidden");
+    }
+  });
 
-	languageSelector.textContent = selectedLanguage === "Viet" ? "Eng" : "Viet";
+  languageSelector.textContent = selectedLanguage === "Viet" ? "Eng" : "Viet";
 }
+
 
 initializePage();

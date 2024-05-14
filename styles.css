@@ -93,7 +93,7 @@ main {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	margin-bottom: 50px;
+	/* margin-bottom: 50px; */
 }
 
 .introduction .image {
@@ -107,7 +107,7 @@ main {
 }
 
 .book-cover {
-	margin-top: 30px;
+	width: 400px;
 }
 
 .introduction .content {
