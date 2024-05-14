@@ -306,8 +306,7 @@ section {
 }
 p {
 	font-family: "Times New Roman", serif;
-	font-size: 14pt;
 	text-indent: 1cm;
 	text-align: justify;
-	line-height: 0.75cm;
+	line-height: 1.25cm;
 }
