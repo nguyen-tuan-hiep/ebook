@@ -1,232 +1,174 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chapter 1</title>
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
 
-  <body data-theme="light">
-    <header class="noPrint">
-      <div class="logo-img">
-        <a href="../index.html"><img src="../img/logo.png" id="logo" /></a>
-        <div class="logo-text">
-          <span style="font-size: 14px">BỘ THÔNG TIN VÀ TRUYỀN THÔNG</span>
-          <span style="font-size: 18px; font-weight: bold"
-            >NHÀ XUẤT BẢN THÔNG TIN VÀ TRUYỀN THÔNG</span
-          >
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 1</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body data-theme="light">
+  <header class="noPrint">
+    <div class="logo-img">
+      <a href="../index.html"><img src="../img/logo.png" id="logo" /></a>
+      <div class="logo-text">
+        <span style="font-size: 14px">BỘ THÔNG TIN VÀ TRUYỀN THÔNG</span>
+        <span style="font-size: 18px; font-weight: bold">NHÀ XUẤT BẢN THÔNG TIN VÀ TRUYỀN THÔNG</span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div style="height: 40px">
+        <img src="../img/darkmode.svg" alt="Dark" class="icon darkmode-icon" width="40px" onclick="toggleDarkMode()" />
+        <img src="../img/lightmode.svg" alt="Dark" class="icon lightmode-icon" width="40px" onclick="toggleDarkMode()"
+          style="display: none" />
       </div>
 
-      <div class="controls">
-        <div style="height: 40px">
-          <img
-            src="../img/darkmode.svg"
-            alt="Dark"
-            class="icon darkmode-icon"
-            width="40px"
-            onclick="toggleDarkMode()"
-          />
-          <img
-            src="../img/lightmode.svg"
-            alt="Dark"
-            class="icon lightmode-icon"
-            width="40px"
-            onclick="toggleDarkMode()"
-            style="display: none"
-          />
-        </div>
-
-        <div style="height: 40px" class="slider-container">
-          <input
-            id="fontSizeSlider"
-            type="range"
-            min="16"
-            max="30"
-            value="22"
-            class="slider"
-            oninput="changeFontSize(this.value)"
-          />
-          <img
-            src="../img/font-size.svg"
-            alt="font-size"
-            class="font-size-icon icon"
-            width="40px"
-          />
-        </div>
-
-        <div style="height: 40px">
-          <img
-            src="../img/fullscreen.svg"
-            alt="Fullscreen"
-            width="40px"
-            class="icon"
-            onclick="toggleFullscreen()"
-          />
-        </div>
-
-        <div class="text-with-icon">
-          <div>
-            <div class="language-selector" onclick="toggleLanguage()">Eng</div>
-          </div>
-          <img
-            src="../img/language.svg"
-            alt="language"
-            class="language-icon icon"
-            width="40px"
-            onclick="toggleLanguage()"
-          />
-        </div>
-
-        <div style="height: 40px">
-          <img
-            src="../img/printer.svg"
-            alt="Print"
-            width="40px"
-            class="icon"
-            onclick="window.print()"
-          />
-        </div>
-
-        <img
-          src="../img/menu.svg"
-          alt="Menu"
-          class="menu-button icon"
-          width="40px"
-        />
-        <nav class="popup-menu">
-          <a href="#">I. Chapter 1</a>
-          <a href="chapter1.html#section1">1. Introduction</a>
-          <a href="chapter1.html#section2">2. History</a>
-          <a href="chapter1.html#section3">3. Popularization</a>
-          <a href="chapter2.html">II. Chapter 2</a>
-          <a href="chapter2.html#section1">1. Introduction</a>
-          <a href="chapter2.html#section2">2. History</a>
-          <a href="chapter3.html">III. Chapter 3</a>
-          <a href="chapter3.html#section1">1. Introduction</a>
-          <a href="chapter3.html#section2">2. History</a>
-          <a href="chapter4.html">IV. Chapter 4</a>
-          <a href="chapter4.html#section1">1. Introduction</a>
-          <a href="chapter4.html#section2">2. History</a>
-        </nav>
+      <div style="height: 40px" class="slider-container">
+        <input id="fontSizeSlider" type="range" min="16" max="30" value="22" class="slider"
+          oninput="changeFontSize(this.value)" />
+        <img src="../img/font-size.svg" alt="font-size" class="font-size-icon icon" width="40px" />
       </div>
-    </header>
 
-    <a href="loinoidau.html">
-      <img
-        src="../img/left-arrow.svg"
-        alt="Left arrow"
-        class="icon arrow-left noPrint"
-      />
-    </a>
-    <a href="chapter2.html">
-      <img
-        src="../img/right-arrow.svg"
-        alt="Right arrow"
-        class="icon arrow-right noPrint"
-      />
-    </a>
-    <img
-      src="../img/up-arrow.svg"
-      alt="Right arrow"
-      class="icon arrow-up noPrint"
-      onclick="scrollToTop()"
-    />
+      <div style="height: 40px">
+        <img src="../img/fullscreen.svg" alt="Fullscreen" width="40px" class="icon" onclick="toggleFullscreen()" />
+      </div>
 
-    <main>
-      <article id="chapter">
-        <h2>
-          <p lang="en" id="chapter-name">
-            Chapter 1<br /><br />SOME BASIC KNOWLEDGE
+      <div class="text-with-icon">
+        <div>
+          <div class="language-selector" onclick="toggleLanguage()">Eng</div>
+        </div>
+        <img src="../img/language.svg" alt="language" class="language-icon icon" width="40px"
+          onclick="toggleLanguage()" />
+      </div>
+
+      <div style="height: 40px">
+        <img src="../img/printer.svg" alt="Print" width="40px" class="icon" onclick="window.print()" />
+      </div>
+
+      <img src="../img/menu.svg" alt="Menu" class="menu-button icon" width="40px" />
+      <nav class="popup-menu">
+        <a href="#">I. Chapter 1</a>
+        <a href="chapter1.html#section1">1. Introduction</a>
+        <a href="chapter1.html#section2">2. History</a>
+        <a href="chapter1.html#section3">3. Popularization</a>
+        <a href="chapter2.html">II. Chapter 2</a>
+        <a href="chapter2.html#section1">1. Introduction</a>
+        <a href="chapter2.html#section2">2. History</a>
+        <a href="chapter3.html">III. Chapter 3</a>
+        <a href="chapter3.html#section1">1. Introduction</a>
+        <a href="chapter3.html#section2">2. History</a>
+        <a href="chapter4.html">IV. Chapter 4</a>
+        <a href="chapter4.html#section1">1. Introduction</a>
+        <a href="chapter4.html#section2">2. History</a>
+      </nav>
+    </div>
+  </header>
+
+  <a href="loinoidau.html">
+    <img src="../img/left-arrow.svg" alt="Left arrow" class="icon arrow-left noPrint" />
+  </a>
+  <a href="chapter2.html">
+    <img src="../img/right-arrow.svg" alt="Right arrow" class="icon arrow-right noPrint" />
+  </a>
+  <img src="../img/up-arrow.svg" alt="Up arrow" class="icon arrow-up noPrint" onclick="scrollToTop()" />
+  <img src="../img/up-arrow.svg" alt="Down arrow" class="icon arrow-down noPrint" onclick="scrollToBottom()" />
+
+  <main>
+    <article id="chapter">
+      <h2>
+        <p lang="en" id="chapter-name">
+          Chapter 1<br /><br />SOME BASIC KNOWLEDGE
+        </p>
+      </h2>
+      <h2>
+        <p lang="vi" id="chapter-name">
+          Chương 1<br /><br />MỘT SỐ KIẾN THỨC CƠ BẢNNNNNNNNNNNNNNNNNNN
+        </p>
+      </h2>
+      <section id="section1">
+        <h3>
+          <p lang="vi" style="text-indent: 0cm">1.1. SỰ CHÁY VÀ ĐÁM CHÁY</p>
+        </h3>
+        <p lang="vi">
+          Để làm ra được một cuốn sách in cần trải qua rất nhiều công đoạn.
+          Để sách in tới được tay người dùng cần trải qua công đoạn phát
+          hành và vận chuyển. Chính vì cần sự vận chuyển nên có nhiều trường
+          hợp sách in không thể tới được tay người mua ở những vùng sâu,
+          vùng xa, vùng nông thôn. Lúc đó, sách điện tử chính là giải pháp
+          hoàn hảo để giải quyết vấn đề này, khi mà người mua chỉ cần sử
+          dụng một chiếc điện thoại, một chiếc máy tính bảng hoặc một chiếc
+          laptop là có thể tự hoàn tất từ bước thanh toán cho tới bước nhận
+          và đọc sách. Đây cũng là lý do mà em xin được lựa chọn hình thức
+          sản phẩm tốt nghiệp, xây dựng công cụ đọc cho một cuốn sách điện
+          tử.
+          ok chưa
+          gì nữa ko
+        </p>
+
+        <br>
+
+        <div style="display: flex; justify-content: center; align-items: center; text-align: center;">
+          <img src="./../img/language.svg" alt="Tác giả" width="300px">
+        </div>
+
+        <h3>
+          <p lang="en" style="text-indent: 0cm">1.1. FIRE</p>
+        </h3>
+      </section>
+      <section id="section2">
+        <h3>
+          <p lang="vi" style="text-indent: 0cm">
+            1.2. NGUYÊN TẮC CỦA CÔNG TÁC PHÒNG CHÁY, CHỮA CHÁY VÀ CỨU NẠN, CỨU
+            HỘ
           </p>
-        </h2>
-        <h2>
-          <p lang="vi" id="chapter-name">
-            Chương 1<br /><br />MỘT SỐ KIẾN THỨC CƠ BẢNNNNNNNNNNNNNNNNNNN
+        </h3>
+        <h3>
+          <p lang="en" style="text-indent: 0cm">
+            1.2. PRINCIPLES OF FIRE PREVENTION, FIRE FIGHTING AND RESCUE
           </p>
-        </h2>
-        <section id="section1">
-          <h3>
-            <p lang="vi" style="text-indent: 0cm">1.1. SỰ CHÁY VÀ ĐÁM CHÁY</p>
-          </h3>
-          <p lang="vi">
-            Để làm ra được một cuốn sách in cần trải qua rất nhiều công đoạn.
-            Để sách in tới được tay người dùng cần trải qua công đoạn phát
-            hành và vận chuyển. Chính vì cần sự vận chuyển nên có nhiều trường
-            hợp sách in không thể tới được tay người mua ở những vùng sâu,
-            vùng xa, vùng nông thôn. Lúc đó, sách điện tử chính là giải pháp
-            hoàn hảo để giải quyết vấn đề này, khi mà người mua chỉ cần sử
-            dụng một chiếc điện thoại, một chiếc máy tính bảng hoặc một chiếc
-            laptop là có thể tự hoàn tất từ bước thanh toán cho tới bước nhận
-            và đọc sách. Đây cũng là lý do mà em xin được lựa chọn hình thức
-            sản phẩm tốt nghiệp, xây dựng công cụ đọc cho một cuốn sách điện
-            tử.
-            ok chưa
-            gì nữa ko
+        </h3>
+      </section>
+      <section id="section3">
+        <h3>
+          <p lang="vi" style="text-indent: 0cm">
+            1.3. CÁC BIỆN PHÁP, PHƯƠNG PHÁP CHỮA CHÁY CƠ BẢN
           </p>
+        </h3>
+        <h3>
+          <p lang="en" style="text-indent: 0cm">
+            1.3. BASIC FIRE FIGHTING MEASURES AND METHODS
+          </p>
+        </h3>
+      </section>
+      <section id="section4">
+        <h3>
+          <p lang="vi" style="text-indent: 0cm">
+            1.4. MỘT SỐ PHƯƠNG TIỆN PHÒNG CHÁY, CHỮA CHÁY
+          </p>
+        </h3>
+        <h3>
+          <p lang="en" style="text-indent: 0cm">
+            1.4. SOME FIRE PREVENTION AND FIGHTING MEANS
+          </p>
+        </h3>
+      </section>
+      <section id="section5">
+        <h3>
+          <p lang="vi" style="text-indent: 0cm">
+            1.5. TRÁCH NHIỆM PHÒNG CHÁY VÀ CHỮA CHÁY
+          </p>
+        </h3>
+        <h3>
+          <p lang="en" style="text-indent: 0cm">
+            1.5. RESPONSIBILITIES FOR FIRE PREVENTION AND FIGHTING
+          </p>
+        </h3>
+      </section>
+    </article>
+  </main>
+  <script src="./scripts.js"></script>
+</body>
 
-          <br>
-
-          <div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-            <img src="./../img/language.svg" alt="Tác giả" width="300px">
-          </div>
-
-          <h3>
-            <p lang="en" style="text-indent: 0cm">1.1. FIRE</p>
-          </h3>
-        </section>
-        <section id="section2">
-          <h3>
-            <p lang="vi" style="text-indent: 0cm">
-              1.2. NGUYÊN TẮC CỦA CÔNG TÁC PHÒNG CHÁY, CHỮA CHÁY VÀ CỨU NẠN, CỨU
-              HỘ
-            </p>
-          </h3>
-          <h3>
-            <p lang="en" style="text-indent: 0cm">
-              1.2. PRINCIPLES OF FIRE PREVENTION, FIRE FIGHTING AND RESCUE
-            </p>
-          </h3>
-        </section>
-        <section id="section3">
-          <h3>
-            <p lang="vi" style="text-indent: 0cm">
-              1.3. CÁC BIỆN PHÁP, PHƯƠNG PHÁP CHỮA CHÁY CƠ BẢN
-            </p>
-          </h3>
-          <h3>
-            <p lang="en" style="text-indent: 0cm">
-              1.3. BASIC FIRE FIGHTING MEASURES AND METHODS
-            </p>
-          </h3>
-        </section>
-        <section id="section4">
-          <h3>
-            <p lang="vi" style="text-indent: 0cm">
-              1.4. MỘT SỐ PHƯƠNG TIỆN PHÒNG CHÁY, CHỮA CHÁY
-            </p>
-          </h3>
-          <h3>
-            <p lang="en" style="text-indent: 0cm">
-              1.4. SOME FIRE PREVENTION AND FIGHTING MEANS
-            </p>
-          </h3>
-        </section>
-        <section id="section5">
-          <h3>
-            <p lang="vi" style="text-indent: 0cm">
-              1.5. TRÁCH NHIỆM PHÒNG CHÁY VÀ CHỮA CHÁY
-            </p>
-          </h3>
-          <h3>
-            <p lang="en" style="text-indent: 0cm">
-              1.5. RESPONSIBILITIES FOR FIRE PREVENTION AND FIGHTING
-            </p>
-          </h3>
-        </section>
-      </article>
-    </main>
-    <script src="./scripts.js"></script>
-  </body>
 </html>

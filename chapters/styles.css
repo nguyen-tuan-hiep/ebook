@@ -141,11 +141,20 @@ section {
 }
 
 .arrow-up {
-	top: 85%;
+	top: 80%;
 	right: 5%;
 	position: fixed;
 	width: 50px;
 	cursor: pointer;
+}
+
+.arrow-down {
+	top: 90%;
+	right: 5%;
+	position: fixed;
+	width: 50px;
+	cursor: pointer;
+	transform: rotate(180deg)
 }
 
 .slider-container {
@@ -185,10 +194,6 @@ section {
 }
 
 /* Menu pop up */
-
-/* .popup-menu a[href*="#section"] {
-	margin-left: 50px;
-} */
 
 .popup-menu {
 	font-size: large;
@@ -309,4 +314,28 @@ p {
 	text-indent: 1cm;
 	text-align: justify;
 	line-height: 1.25cm;
+}
+
+
+.highlighted-text {
+	background-color: yellow;
+}
+
+#highlight-btn {
+	/* background-color: yellow; */
+	color: black;
+	border: none;
+	padding: 8px 16px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#highlight-btn:hover {
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.3);
 }
