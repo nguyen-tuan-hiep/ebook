@@ -1,114 +1,200 @@
 <!DOCTYPE html>
 <html lang="vi">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Trach nhiem</title>
+		<link
+			rel="stylesheet"
+			href="./styles.css"
+		/>
+	</head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trach nhiem</title>
-  <link rel="stylesheet" href="./styles.css">
-</head>
+	<body data-theme="light">
+		<header class="noPrint">
+			<div class="logo-img">
+				<a href="../index.html"
+					><img
+						src="../img/logo.png"
+						id="logo"
+				/></a>
+				<div class="logo-text">
+					<span style="font-size: 14px">BỘ THÔNG TIN VÀ TRUYỀN THÔNG</span>
+					<span style="font-size: 18px; font-weight: bold"
+						>NHÀ XUẤT BẢN THÔNG TIN VÀ TRUYỀN THÔNG</span
+					>
+				</div>
+			</div>
 
-<body data-theme="light">
-  <header class="noPrint">
-    <div class="logo-img">
-      <a href="../index.html"><img src="../img/logo.png" id="logo"></a>
-      <div class="logo-text">
-        <span style="font-size: 14px;">BỘ THÔNG TIN VÀ TRUYỀN THÔNG</span>
-        <span style="font-size: 18px; font-weight: bold;">NHÀ XUẤT BẢN THÔNG TIN VÀ TRUYỀN THÔNG</span>
-      </div>
-    </div>
+			<div class="controls">
+				<div style="height: 40px">
+					<img
+						src="../img/darkmode.svg"
+						alt="Dark"
+						class="icon darkmode-icon"
+						width="40px"
+						onclick="toggleDarkMode()"
+					/>
+					<img
+						src="../img/lightmode.svg"
+						alt="Dark"
+						class="icon lightmode-icon"
+						width="40px"
+						onclick="toggleDarkMode()"
+						style="display: none"
+					/>
+				</div>
 
-    <div class="controls">
+				<div
+					style="height: 40px"
+					class="slider-container"
+				>
+					<input
+						id="fontSizeSlider"
+						type="range"
+						min="16"
+						max="30"
+						value="22"
+						class="slider"
+						oninput="changeFontSize(this.value)"
+					/>
+					<img
+						src="../img/font-size.svg"
+						alt="font-size"
+						class="font-size-icon icon"
+						width="40px"
+					/>
+				</div>
 
-      <div style="height: 40px;">
-        <img src="../img/darkmode.svg" alt="Dark" class="icon darkmode-icon" width="40px" onclick="toggleDarkMode()">
-        <img src="../img/lightmode.svg" alt="Dark" class="icon lightmode-icon" width="40px" onclick="toggleDarkMode()"
-          style="display: none;">
-      </div>
+				<div style="height: 40px">
+					<img
+						src="../img/fullscreen.svg"
+						alt="Fullscreen"
+						width="40px"
+						class="icon"
+						onclick="toggleFullscreen()"
+					/>
+				</div>
 
-      <div style="height: 40px;" class="slider-container">
+				<div style="height: 40px">
+					<img
+						src="../img/printer.svg"
+						alt="Print"
+						width="40px"
+						class="icon"
+						onclick="window.print()"
+					/>
+				</div>
 
-        <input id="fontSizeSlider" type="range" min="16" max="30" value="22" class="slider"
-          oninput="changeFontSize(this.value)">
-        <img src="../img/font-size.svg" alt="font-size" class="font-size-icon icon" width="40px">
-      </div>
+				<img
+					src="../img/menu.svg"
+					alt="Menu"
+					class="menu-button icon"
+					width="40px"
+				/>
+				<nav class="popup-menu">
+					<a href="#">I. Chapter 1</a>
+					<a href="chapter1.html#section1">1. Introduction</a>
+					<a href="chapter1.html#section2">2. History</a>
+					<a href="chapter1.html#section3">3. Popularization</a>
+					<a href="chapter2.html">II. Chapter 2</a>
+					<a href="chapter2.html#section1">1. Introduction</a>
+					<a href="chapter2.html#section2">2. History</a>
+					<a href="chapter3.html">III. Chapter 3</a>
+					<a href="chapter3.html#section1">1. Introduction</a>
+					<a href="chapter3.html#section2">2. History</a>
+					<a href="chapter4.html">IV. Chapter 4</a>
+					<a href="chapter4.html#section1">1. Introduction</a>
+					<a href="chapter4.html#section2">2. History</a>
+				</nav>
+			</div>
+		</header>
 
-      <div style="height: 40px;">
-        <img src="../img/fullscreen.svg" alt="Fullscreen" width="40px" class="icon" onclick="toggleFullscreen()">
-      </div>
+		<a href="tailieuthamkhao.html">
+			<img
+				src="../img/left-arrow.svg"
+				alt="Left arrow"
+				class="icon arrow-left noPrint"
+			/>
+		</a>
+		<a href="tableofcontents.html">
+			<img
+				src="../img/right-arrow.svg"
+				alt="Right arrow"
+				class="icon arrow-right noPrint"
+			/>
+		</a>
+		<img
+			src="../img/up-arrow.svg"
+			alt="Up arrow"
+			class="icon arrow-up noPrint"
+			onclick="scrollToTop()"
+		/>
+		<img
+			src="../img/up-arrow.svg"
+			alt="Down arrow"
+			class="icon arrow-down noPrint"
+			onclick="scrollToBottom()"
+		/>
 
-      <div class="text-with-icon">
-        <div>
-          <div class="language-selector" onclick="toggleLanguage()">
-            Eng
-          </div>
-        </div>
-        <img src="../img/language.svg" alt="language" class="language-icon icon" width="40px"
-          onclick="toggleLanguage()">
-      </div>
-
-      <div style="height: 40px;">
-        <img src="../img/printer.svg" alt="Print" width="40px" class="icon" onclick="window.print()">
-      </div>
-
-      <img src="../img/menu.svg" alt="Menu" class="menu-button icon" width="40px">
-      <nav class="popup-menu">
-        <a href="#">I. Chapter 1</a>
-        <a href="chapter1.html#section1">1. Introduction</a>
-        <a href="chapter1.html#section2">2. History</a>
-        <a href="chapter1.html#section3">3. Popularization</a>
-        <a href="chapter2.html">II. Chapter 2</a>
-        <a href="chapter2.html#section1">1. Introduction</a>
-        <a href="chapter2.html#section2">2. History</a>
-        <a href="chapter3.html">III. Chapter 3</a>
-        <a href="chapter3.html#section1">1. Introduction</a>
-        <a href="chapter3.html#section2">2. History</a>
-        <a href="chapter4.html">IV. Chapter 4</a>
-        <a href="chapter4.html#section1">1. Introduction</a>
-        <a href="chapter4.html#section2">2. History</a>
-      </nav>
-
-    </div>
-  </header>
-
-  <a href="tailieuthamkhao.html">
-    <img src="../img/left-arrow.svg" alt="Left arrow" class="icon arrow-left noPrint">
-  </a>
-  <a href="tableofcontents.html">
-    <img src="../img/right-arrow.svg" alt="Right arrow" class="icon arrow-right noPrint">
-  </a>
-  <img src="../img/up-arrow.svg" alt="Up arrow" class="icon arrow-up noPrint" onclick="scrollToTop()" />
-  <img src="../img/up-arrow.svg" alt="Down arrow" class="icon arrow-down noPrint" onclick="scrollToBottom()" />
-
-
-
-  <main>
-    <article id="chapter">
-      <p lang="vi" style="text-indent:0cm; text-align: center"><b>Chịu trách nhiệm xuất bản, nội dung</b></p>
-<p lang="vi" style="text-indent:0cm; text-align: center"><i>Giám đốc - Tổng biên tập:</i></p>
-<p lang="vi" style="text-indent:0cm; text-align: center"><b>TRẦN CHÍ ĐẠT</b></p>
-<b><p lang="vi" style="text-indent:0cm; text-align: center">Chịu trách nhiệm bản thảo</p></b>
-<i><p lang="vi" style="text-indent:0cm; text-align: center">Phó Giám đốc - Phó Tổng biên tập:</p></i>
-<p lang="vi" style="text-indent:0cm; text-align: center"><b>NGÔ THỊ MỸ HẠNH</b></p>
-<p lang="vi" style="text-indent:0cm; text-align: center">Biên tập nội dung:</p>
-<p lang="vi" style="text-indent:0cm; text-align: center"><b>NGUYỄN THỊ LÊ – TRẦN THỊ HUYỀN</b></p>
-<p lang="vi" style="text-indent:0cm; text-align: center">Trình bày:</p>
-<p lang="vi" style="text-indent:0cm; text-align: center"><b>NGUYỄN VĂN HÙNG</b></p>
-<p lang="vi" style="text-indent:0cm; text-align: center">Biên tập sách điện tử:</p>
-<p lang="vi" style="text-indent:0cm; text-align: center"><b>NGUYỄN TIẾN PHÁT - BÙI HỮU LỘ</b></p>
-<p lang="vi" style="text-indent:0cm; text-align: center">Thiết kế bìa:</p>
-<p lang="vi" style="text-indent:0cm; text-align: center"><b>TRẦN HỒNG MINH</b></p>
-<hr/>
-<p lang="vi" style="text-indent:0cm; text-align: center">Số đăng ký kế hoạch xuất bản: 2333-2023/CXBIPH/16-75/TTTT</p>
-<p lang="vi" style="text-indent:0cm; text-align: center">Số quyết định xuất bản: 193/QĐ-NXB TTTT ngày 20/7/2023</p> 
-<p style="text-indent:0cm; text-align: center">Nộp lưu chiểu Quý III năm 2023</p>
-<p lang="vi" style="text-indent:0cm; text-align: center">Mã ISBN: 978-604-80-8231-4</p>
-    </article>
-  </main>
-  <script src="./scripts.js"></script>
-
-
-
-</body>
-
+		<main>
+			<article id="chapter">
+				<p style="text-indent: 0cm; text-align: center">
+					<b>Chịu trách nhiệm xuất bản, nội dung</b>
+				</p>
+				<p style="text-indent: 0cm; text-align: center">
+					<i>Giám đốc - Tổng biên tập:</i>
+				</p>
+				<p style="text-indent: 0cm; text-align: center"><b>TRẦN CHÍ ĐẠT</b></p>
+				<b>
+					<p style="text-indent: 0cm; text-align: center">
+						Chịu trách nhiệm bản thảo
+					</p>
+				</b>
+				<i>
+					<p style="text-indent: 0cm; text-align: center">
+						Phó Giám đốc - Phó Tổng biên tập:
+					</p>
+				</i>
+				<p style="text-indent: 0cm; text-align: center">
+					<b>NGÔ THỊ MỸ HẠNH</b>
+				</p>
+				<p style="text-indent: 0cm; text-align: center">Biên tập nội dung:</p>
+				<p style="text-indent: 0cm; text-align: center">
+					<b>NGUYỄN THỊ LÊ – TRẦN THỊ HUYỀN</b>
+				</p>
+				<p style="text-indent: 0cm; text-align: center">Trình bày:</p>
+				<p style="text-indent: 0cm; text-align: center">
+					<b>NGUYỄN VĂN HÙNG</b>
+				</p>
+				<p style="text-indent: 0cm; text-align: center">
+					Biên tập sách điện tử:
+				</p>
+				<p style="text-indent: 0cm; text-align: center">
+					<b>NGUYỄN TIẾN PHÁT - BÙI HỮU LỘ</b>
+				</p>
+				<p style="text-indent: 0cm; text-align: center">Thiết kế bìa:</p>
+				<p style="text-indent: 0cm; text-align: center">
+					<b>TRẦN HỒNG MINH</b>
+				</p>
+				<hr />
+				<p style="text-indent: 0cm; text-align: center">
+					Số đăng ký kế hoạch xuất bản: 2333-2023/CXBIPH/16-75/TTTT
+				</p>
+				<p style="text-indent: 0cm; text-align: center">
+					Số quyết định xuất bản: 193/QĐ-NXB TTTT ngày 20/7/2023
+				</p>
+				<p style="text-indent: 0cm; text-align: center">
+					Nộp lưu chiểu Quý III năm 2023
+				</p>
+				<p style="text-indent: 0cm; text-align: center">
+					Mã ISBN: 978-604-80-8231-4
+				</p>
+			</article>
+		</main>
+		<script src="./scripts.js"></script>
+	</body>
 </html>

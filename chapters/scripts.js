@@ -62,84 +62,51 @@ function scrollToBottom() {
 	});
 }
 
-function initializePage() {
-	const defaultLanguage = "vi";
-	const paragraphs = document.querySelectorAll("p");
+document.onmouseup = document.onkeyup = function (event) {
+	let selectedText = window.getSelection();
+	let selectedRange = selectedText.toString().trim();
+	let highlightBtn = document.getElementById("highlight-btn");
 
-	paragraphs.forEach((paragraph) => {
-		if (paragraph.lang !== defaultLanguage) {
-			paragraph.classList.add("hidden");
+	if (selectedRange.length > 0) {
+		if (!highlightBtn) {
+			// Create the highlight button if it does not exist
+			highlightBtn = document.createElement("button");
+			highlightBtn.textContent = "Highlight";
+			highlightBtn.id = "highlight-btn";
+			document.body.appendChild(highlightBtn);
 		}
-	});
-}
 
-function toggleLanguage() {
-	const paragraphs = document.querySelectorAll("p");
-	const languageSelector = document.querySelector(".language-selector");
-	const selectedLanguage = languageSelector.textContent.trim();
+		// Position the button
+		let rect = selectedText.getRangeAt(0).getBoundingClientRect();
+		let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+		let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-	paragraphs.forEach((paragraph) => {
-		if (selectedLanguage === "Eng" && paragraph.lang === "en") {
-			paragraph.classList.remove("hidden");
-		} else if (selectedLanguage === "Viet" && paragraph.lang === "vi") {
-			paragraph.classList.remove("hidden");
-		} else {
-			paragraph.classList.add("hidden");
-		}
-	});
+		highlightBtn.style.position = "absolute";
+		highlightBtn.style.left = `${rect.right + scrollLeft + 10}px`; // 10px to the right from the end of the selection
+		highlightBtn.style.top = `${rect.top + scrollTop}px`; // align it with the top of the selection
+		highlightBtn.style.zIndex = 1000;
 
-	languageSelector.textContent = selectedLanguage === "Viet" ? "Eng" : "Viet";
-}
-
-initializePage();
-
-document.onmouseup = document.onkeyup = function(event) {
-    let selectedText = window.getSelection();
-    let selectedRange = selectedText.toString().trim();
-    let highlightBtn = document.getElementById('highlight-btn');
-
-    if (selectedRange.length > 0) {
-        if (!highlightBtn) {
-            // Create the highlight button if it does not exist
-            highlightBtn = document.createElement('button');
-            highlightBtn.textContent = 'Highlight';
-            highlightBtn.id = 'highlight-btn';
-            document.body.appendChild(highlightBtn);
-        }
-
-        // Position the button
-        let rect = selectedText.getRangeAt(0).getBoundingClientRect();
-        let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        highlightBtn.style.position = 'absolute';
-        highlightBtn.style.left = `${rect.right + scrollLeft + 10}px`; // 10px to the right from the end of the selection
-        highlightBtn.style.top = `${rect.top + scrollTop}px`; // align it with the top of the selection
-        highlightBtn.style.zIndex = 1000;
-
-        highlightBtn.onclick = function() {
-            applyHighlight();
-            document.body.removeChild(highlightBtn);
-            window.getSelection().removeAllRanges(); // Unselect text after highlighting
-        };
-
-    } else if (highlightBtn) {
-        // Remove the button if there is no selection
-        document.body.removeChild(highlightBtn);
-    }
+		highlightBtn.onclick = function () {
+			applyHighlight();
+			document.body.removeChild(highlightBtn);
+			window.getSelection().removeAllRanges(); // Unselect text after highlighting
+		};
+	} else if (highlightBtn) {
+		// Remove the button if there is no selection
+		document.body.removeChild(highlightBtn);
+	}
 };
 
 function applyHighlight() {
-    const selection = window.getSelection();
-    if (!selection.rangeCount) return false;
-    let span = document.createElement('span');
-    span.style.backgroundColor = 'yellow';
-    span.classList.add('highlighted-text');
+	const selection = window.getSelection();
+	if (!selection.rangeCount) return false;
+	let span = document.createElement("span");
+	span.style.backgroundColor = "yellow";
+	span.classList.add("highlighted-text");
 
-    let range = selection.getRangeAt(0).cloneRange();
-    range.surroundContents(span);
-    selection.removeAllRanges();
-    selection.addRange(range);
-    window.getSelection().removeAllRanges(); // Unselect text
+	let range = selection.getRangeAt(0).cloneRange();
+	range.surroundContents(span);
+	selection.removeAllRanges();
+	selection.addRange(range);
+	window.getSelection().removeAllRanges(); // Unselect text
 }
-

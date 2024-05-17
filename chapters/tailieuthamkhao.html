@@ -1,109 +1,198 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Tai lieu tham khao</title>
+		<link
+			rel="stylesheet"
+			href="./styles.css"
+		/>
+	</head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tai lieu tham khao</title>
-  <link rel="stylesheet" href="./styles.css">
-</head>
+	<body data-theme="light">
+		<header class="noPrint">
+			<div class="logo-img">
+				<a href="../index.html"
+					><img
+						src="../img/logo.png"
+						id="logo"
+				/></a>
+				<div class="logo-text">
+					<span style="font-size: 14px">BỘ THÔNG TIN VÀ TRUYỀN THÔNG</span>
+					<span style="font-size: 18px; font-weight: bold"
+						>NHÀ XUẤT BẢN THÔNG TIN VÀ TRUYỀN THÔNG</span
+					>
+				</div>
+			</div>
 
-<body data-theme="light">
-  <header class="noPrint">
-    <div class="logo-img">
-      <a href="../index.html"><img src="../img/logo.png" id="logo"></a>
-      <div class="logo-text">
-        <span style="font-size: 14px;">BỘ THÔNG TIN VÀ TRUYỀN THÔNG</span>
-        <span style="font-size: 18px; font-weight: bold;">NHÀ XUẤT BẢN THÔNG TIN VÀ TRUYỀN THÔNG</span>
-      </div>
-    </div>
+			<div class="controls">
+				<div style="height: 40px">
+					<img
+						src="../img/darkmode.svg"
+						alt="Dark"
+						class="icon darkmode-icon"
+						width="40px"
+						onclick="toggleDarkMode()"
+					/>
+					<img
+						src="../img/lightmode.svg"
+						alt="Dark"
+						class="icon lightmode-icon"
+						width="40px"
+						onclick="toggleDarkMode()"
+						style="display: none"
+					/>
+				</div>
 
-    <div class="controls">
+				<div
+					style="height: 40px"
+					class="slider-container"
+				>
+					<input
+						id="fontSizeSlider"
+						type="range"
+						min="16"
+						max="30"
+						value="22"
+						class="slider"
+						oninput="changeFontSize(this.value)"
+					/>
+					<img
+						src="../img/font-size.svg"
+						alt="font-size"
+						class="font-size-icon icon"
+						width="40px"
+					/>
+				</div>
 
-      <div style="height: 40px;">
-        <img src="../img/darkmode.svg" alt="Dark" class="icon darkmode-icon" width="40px" onclick="toggleDarkMode()">
-        <img src="../img/lightmode.svg" alt="Dark" class="icon lightmode-icon" width="40px" onclick="toggleDarkMode()"
-          style="display: none;">
-      </div>
+				<div style="height: 40px">
+					<img
+						src="../img/fullscreen.svg"
+						alt="Fullscreen"
+						width="40px"
+						class="icon"
+						onclick="toggleFullscreen()"
+					/>
+				</div>
 
-      <div style="height: 40px;" class="slider-container">
+				<div style="height: 40px">
+					<img
+						src="../img/printer.svg"
+						alt="Print"
+						width="40px"
+						class="icon"
+						onclick="window.print()"
+					/>
+				</div>
 
-        <input id="fontSizeSlider" type="range" min="16" max="30" value="22" class="slider"
-          oninput="changeFontSize(this.value)">
-        <img src="../img/font-size.svg" alt="font-size" class="font-size-icon icon" width="40px">
-      </div>
+				<img
+					src="../img/menu.svg"
+					alt="Menu"
+					class="menu-button icon"
+					width="40px"
+				/>
+				<nav class="popup-menu">
+					<a href="#">I. Chapter 1</a>
+					<a href="chapter1.html#section1">1. Introduction</a>
+					<a href="chapter1.html#section2">2. History</a>
+					<a href="chapter1.html#section3">3. Popularization</a>
+					<a href="chapter2.html">II. Chapter 2</a>
+					<a href="chapter2.html#section1">1. Introduction</a>
+					<a href="chapter2.html#section2">2. History</a>
+					<a href="chapter3.html">III. Chapter 3</a>
+					<a href="chapter3.html#section1">1. Introduction</a>
+					<a href="chapter3.html#section2">2. History</a>
+					<a href="chapter4.html">IV. Chapter 4</a>
+					<a href="chapter4.html#section1">1. Introduction</a>
+					<a href="chapter4.html#section2">2. History</a>
+				</nav>
+			</div>
+		</header>
 
-      <div style="height: 40px;">
-        <img src="../img/fullscreen.svg" alt="Fullscreen" width="40px" class="icon" onclick="toggleFullscreen()">
-      </div>
+		<a href="phuluc.html">
+			<img
+				src="../img/left-arrow.svg"
+				alt="Left arrow"
+				class="icon arrow-left noPrint"
+			/>
+		</a>
+		<a href="trangtrachnhiem.html">
+			<img
+				src="../img/right-arrow.svg"
+				alt="Right arrow"
+				class="icon arrow-right noPrint"
+			/>
+		</a>
+		<img
+			src="../img/up-arrow.svg"
+			alt="Up arrow"
+			class="icon arrow-up noPrint"
+			onclick="scrollToTop()"
+		/>
+		<img
+			src="../img/up-arrow.svg"
+			alt="Down arrow"
+			class="icon arrow-down noPrint"
+			onclick="scrollToBottom()"
+		/>
 
-      <div class="text-with-icon">
-        <div>
-          <div class="language-selector" onclick="toggleLanguage()">
-            Eng
-          </div>
-        </div>
-        <img src="../img/language.svg" alt="language" class="language-icon icon" width="40px"
-          onclick="toggleLanguage()">
-      </div>
-
-      <div style="height: 40px;">
-        <img src="../img/printer.svg" alt="Print" width="40px" class="icon" onclick="window.print()">
-      </div>
-
-      <img src="../img/menu.svg" alt="Menu" class="menu-button icon" width="40px">
-      <nav class="popup-menu">
-        <a href="#">I. Chapter 1</a>
-        <a href="chapter1.html#section1">1. Introduction</a>
-        <a href="chapter1.html#section2">2. History</a>
-        <a href="chapter1.html#section3">3. Popularization</a>
-        <a href="chapter2.html">II. Chapter 2</a>
-        <a href="chapter2.html#section1">1. Introduction</a>
-        <a href="chapter2.html#section2">2. History</a>
-        <a href="chapter3.html">III. Chapter 3</a>
-        <a href="chapter3.html#section1">1. Introduction</a>
-        <a href="chapter3.html#section2">2. History</a>
-        <a href="chapter4.html">IV. Chapter 4</a>
-        <a href="chapter4.html#section1">1. Introduction</a>
-        <a href="chapter4.html#section2">2. History</a>
-      </nav>
-
-    </div>
-  </header>
-
-  <a href="phuluc.html">
-    <img src="../img/left-arrow.svg" alt="Left arrow" class="icon arrow-left noPrint">
-  </a>
-  <a href="trangtrachnhiem.html">
-    <img src="../img/right-arrow.svg" alt="Right arrow" class="icon arrow-right noPrint">
-  </a>
-  <img src="../img/up-arrow.svg" alt="Up arrow" class="icon arrow-up noPrint" onclick="scrollToTop()" />
-  <img src="../img/up-arrow.svg" alt="Down arrow" class="icon arrow-down noPrint" onclick="scrollToBottom()" />
-
-
-
-  <main>
-    <article id="chapter">
-      <h2>
-        <p lang="vi" id=chapter-name>TÀI LIỆU THAM KHẢO
-        </p>
-      </h2>
-      <p lang="vi">1. Nghị định số 79/2014/NĐ-CP ngày 31/7/2014 của Chính phủ quy định chi tiết thi hành một số điều của Luật Phòng cháy và chữa cháy và Luật sửa đổi, bổ sung một số điều của Luật Phòng cháy và chữa cháy.</p>
-<p lang="vi">2. Thầy thuốc ưu tú, bác sỹ Nguyễn Đức Đãn. <i>Sơ cấp cứu tai nạn trước khi có y tế</i>. NXB Thông tin và Truyền thông.</p>
-<p lang="vi">3. Nguyễn Thành Long, Bùi Hữu Hạnh. <i>Kỹ năng phòng, chống cháy nổ và thoát hiểm</i>. NXB Thông tin và Truyền thông.</p>
-<p lang="vi">4. PGS.TS. Nguyễn Minh Khương. <i>Các biện pháp phòng cháy, chữa cháy và cứu nạn, cứu hộ nhà cao tầng</i>. NXB Thông tin và Truyền thông.</p>
-<p lang="vi">5. Bùi Trọng Đổng, Trương Đình Hồng. <i>Chiến thuật chữa cháy một số cơ sở kinh tế văn hóa - xã hội</i>. NXB Khoa học và Kỹ thuật. Hà Nội, 2010.</p>
-<p lang="vi">6. Tiêu chuẩn Việt Nam TCVN 6160:1996: <i>Phòng cháy, chữa cháy nhà cao tầng - Yêu cầu thiết kế</i>. Hà Nội, 1996. </p>
-<p lang="vi">7. Tiêu chuẩn Xây dựng Việt Nam TCXDVN 194:2006: <i>Nhà ở cao tầng - Công tác khảo sát kỹ thuật</i>. Hà Nội, 2006.</p>
-<p lang="vi">8. Lê Tuấn Anh. Trung tâm Phòng Cảnh sát PCCC và CNCH. <i>Một số kiến thức cơ bản về an toàn PCCC khi sử dụng điện</i>. Cổng thông tin điện tử Công an tỉnh Tiền Giang.</p>
-<p lang="vi">9. Ngô Anh - P1. Thơ: “<i>Kinh nghiệm thoát nạn nhà cao tầng”</i>. Trang tin điện tử Trường Đại học Phòng cháy chữa cháy.</p>
-<p lang="vi">10. Một số tài liệu và hình ảnh tham khảo trên Internet.</p>
-    </article>
-  </main>
-  <script src="./scripts.js"></script>
-
-
-
-</body>
-
+		<main>
+			<article id="chapter">
+				<h2>
+					<p id="chapter-name">TÀI LIỆU THAM KHẢO</p>
+				</h2>
+				<p>
+					1. Nghị định số 79/2014/NĐ-CP ngày 31/7/2014 của Chính phủ quy định
+					chi tiết thi hành một số điều của Luật Phòng cháy và chữa cháy và Luật
+					sửa đổi, bổ sung một số điều của Luật Phòng cháy và chữa cháy.
+				</p>
+				<p>
+					2. Thầy thuốc ưu tú, bác sỹ Nguyễn Đức Đãn.
+					<i>Sơ cấp cứu tai nạn trước khi có y tế</i>. NXB Thông tin và Truyền
+					thông.
+				</p>
+				<p>
+					3. Nguyễn Thành Long, Bùi Hữu Hạnh.
+					<i>Kỹ năng phòng, chống cháy nổ và thoát hiểm</i>. NXB Thông tin và
+					Truyền thông.
+				</p>
+				<p>
+					4. PGS.TS. Nguyễn Minh Khương.
+					<i
+						>Các biện pháp phòng cháy, chữa cháy và cứu nạn, cứu hộ nhà cao
+						tầng</i
+					>. NXB Thông tin và Truyền thông.
+				</p>
+				<p>
+					5. Bùi Trọng Đổng, Trương Đình Hồng.
+					<i>Chiến thuật chữa cháy một số cơ sở kinh tế văn hóa - xã hội</i>.
+					NXB Khoa học và Kỹ thuật. Hà Nội, 2010.
+				</p>
+				<p>
+					6. Tiêu chuẩn Việt Nam TCVN 6160:1996:
+					<i>Phòng cháy, chữa cháy nhà cao tầng - Yêu cầu thiết kế</i>. Hà Nội,
+					1996.
+				</p>
+				<p>
+					7. Tiêu chuẩn Xây dựng Việt Nam TCXDVN 194:2006:
+					<i>Nhà ở cao tầng - Công tác khảo sát kỹ thuật</i>. Hà Nội, 2006.
+				</p>
+				<p>
+					8. Lê Tuấn Anh. Trung tâm Phòng Cảnh sát PCCC và CNCH.
+					<i>Một số kiến thức cơ bản về an toàn PCCC khi sử dụng điện</i>. Cổng
+					thông tin điện tử Công an tỉnh Tiền Giang.
+				</p>
+				<p>
+					9. Ngô Anh - P1. Thơ: “<i>Kinh nghiệm thoát nạn nhà cao tầng”</i>.
+					Trang tin điện tử Trường Đại học Phòng cháy chữa cháy.
+				</p>
+				<p>10. Một số tài liệu và hình ảnh tham khảo trên Internet.</p>
+			</article>
+		</main>
+		<script src="./scripts.js"></script>
+	</body>
 </html>

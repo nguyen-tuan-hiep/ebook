@@ -1,542 +1,2061 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Chapter 3</title>
+		<link
+			rel="stylesheet"
+			href="./styles.css"
+		/>
+	</head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chapter 3</title>
-  <link rel="stylesheet" href="./styles.css">
-</head>
+	<body data-theme="light">
+		<header class="noPrint">
+			<div class="logo-img">
+				<a href="../index.html"
+					><img
+						src="../img/logo.png"
+						id="logo"
+				/></a>
+				<div class="logo-text">
+					<span style="font-size: 14px">BỘ THÔNG TIN VÀ TRUYỀN THÔNG</span>
+					<span style="font-size: 18px; font-weight: bold"
+						>NHÀ XUẤT BẢN THÔNG TIN VÀ TRUYỀN THÔNG</span
+					>
+				</div>
+			</div>
 
-<body data-theme="light">
-  <header class="noPrint">
-    <div class="logo-img">
-      <a href="../index.html"><img src="../img/logo.png" id="logo"></a>
-      <div class="logo-text">
-        <span style="font-size: 14px;">BỘ THÔNG TIN VÀ TRUYỀN THÔNG</span>
-        <span style="font-size: 18px; font-weight: bold;">NHÀ XUẤT BẢN THÔNG TIN VÀ TRUYỀN THÔNG</span>
-      </div>
-    </div>
+			<div class="controls">
+				<div style="height: 40px">
+					<img
+						src="../img/darkmode.svg"
+						alt="Dark"
+						class="icon darkmode-icon"
+						width="40px"
+						onclick="toggleDarkMode()"
+					/>
+					<img
+						src="../img/lightmode.svg"
+						alt="Dark"
+						class="icon lightmode-icon"
+						width="40px"
+						onclick="toggleDarkMode()"
+						style="display: none"
+					/>
+				</div>
 
-    <div class="controls">
+				<div
+					style="height: 40px"
+					class="slider-container"
+				>
+					<input
+						id="fontSizeSlider"
+						type="range"
+						min="16"
+						max="30"
+						value="22"
+						class="slider"
+						oninput="changeFontSize(this.value)"
+					/>
+					<img
+						src="../img/font-size.svg"
+						alt="font-size"
+						class="font-size-icon icon"
+						width="40px"
+					/>
+				</div>
 
-      <div style="height: 40px;">
-        <img src="../img/darkmode.svg" alt="Dark" class="icon darkmode-icon" width="40px" onclick="toggleDarkMode()">
-        <img src="../img/lightmode.svg" alt="Dark" class="icon lightmode-icon" width="40px" onclick="toggleDarkMode()"
-          style="display: none;">
-      </div>
+				<div style="height: 40px">
+					<img
+						src="../img/fullscreen.svg"
+						alt="Fullscreen"
+						width="40px"
+						class="icon"
+						onclick="toggleFullscreen()"
+					/>
+				</div>
 
-      <div style="height: 40px;" class="slider-container">
+				<div style="height: 40px">
+					<img
+						src="../img/printer.svg"
+						alt="Print"
+						width="40px"
+						class="icon"
+						onclick="window.print()"
+					/>
+				</div>
 
-        <input id="fontSizeSlider" type="range" min="16" max="30" value="22" class="slider"
-          oninput="changeFontSize(this.value)">
-        <img src="../img/font-size.svg" alt="font-size" class="font-size-icon icon" width="40px">
-      </div>
+				<img
+					src="../img/menu.svg"
+					alt="Menu"
+					class="menu-button icon"
+					width="40px"
+				/>
+				<nav class="popup-menu">
+					<a href="#">I. Chapter 1</a>
+					<a href="chapter1.html#section1">1. Introduction</a>
+					<a href="chapter1.html#section2">2. History</a>
+					<a href="chapter1.html#section3">3. Popularization</a>
+					<a href="chapter2.html">II. Chapter 2</a>
+					<a href="chapter2.html#section1">1. Introduction</a>
+					<a href="chapter2.html#section2">2. History</a>
+					<a href="chapter3.html">III. Chapter 3</a>
+					<a href="chapter3.html#section1">1. Introduction</a>
+					<a href="chapter3.html#section2">2. History</a>
+					<a href="chapter4.html">IV. Chapter 4</a>
+					<a href="chapter4.html#section1">1. Introduction</a>
+					<a href="chapter4.html#section2">2. History</a>
+				</nav>
+			</div>
+		</header>
 
-      <div style="height: 40px;">
-        <img src="../img/fullscreen.svg" alt="Fullscreen" width="40px" class="icon" onclick="toggleFullscreen()">
-      </div>
+		<a href="chapter2.html">
+			<img
+				src="../img/left-arrow.svg"
+				alt="Left arrow"
+				class="icon arrow-left noPrint"
+			/>
+		</a>
+		<a href="chapter4.html">
+			<img
+				src="../img/right-arrow.svg"
+				alt="Right arrow"
+				class="icon arrow-right noPrint"
+			/>
+		</a>
+		<img
+			src="../img/up-arrow.svg"
+			alt="Up arrow"
+			class="icon arrow-up noPrint"
+			onclick="scrollToTop()"
+		/>
+		<img
+			src="../img/up-arrow.svg"
+			alt="Down arrow"
+			class="icon arrow-down noPrint"
+			onclick="scrollToBottom()"
+		/>
 
-      <div class="text-with-icon">
-        <div>
-          <div class="language-selector" onclick="toggleLanguage()">
-            Eng
-          </div>
-        </div>
-        <img src="../img/language.svg" alt="language" class="language-icon icon" width="40px"
-          onclick="toggleLanguage()">
-      </div>
-
-      <div style="height: 40px;">
-        <img src="../img/printer.svg" alt="Print" width="40px" class="icon" onclick="window.print()">
-      </div>
-
-      <img src="../img/menu.svg" alt="Menu" class="menu-button icon" width="40px">
-      <nav class="popup-menu">
-        <a href="#">I. Chapter 1</a>
-        <a href="chapter1.html#section1">1. Introduction</a>
-        <a href="chapter1.html#section2">2. History</a>
-        <a href="chapter1.html#section3">3. Popularization</a>
-        <a href="chapter2.html">II. Chapter 2</a>
-        <a href="chapter2.html#section1">1. Introduction</a>
-        <a href="chapter2.html#section2">2. History</a>
-        <a href="chapter3.html">III. Chapter 3</a>
-        <a href="chapter3.html#section1">1. Introduction</a>
-        <a href="chapter3.html#section2">2. History</a>
-        <a href="chapter4.html">IV. Chapter 4</a>
-        <a href="chapter4.html#section1">1. Introduction</a>
-        <a href="chapter4.html#section2">2. History</a>
-      </nav>
-
-    </div>
-  </header>
-
-  <a href="chapter2.html">
-    <img src="../img/left-arrow.svg" alt="Left arrow" class="icon arrow-left noPrint">
-  </a>
-  <a href="chapter4.html">
-    <img src="../img/right-arrow.svg" alt="Right arrow" class="icon arrow-right noPrint">
-  </a>
-  <img src="../img/up-arrow.svg" alt="Up arrow" class="icon arrow-up noPrint" onclick="scrollToTop()" />
-  <img src="../img/up-arrow.svg" alt="Down arrow" class="icon arrow-down noPrint" onclick="scrollToBottom()" />
-
-
-
-  <main>
-    <article id="chapter">
-      <h2>
-        <p lang="vi" style="line-height: 1cm; text-indent:0cm" id="chapter-name">Chương
-          3<br /><br />KỸ NĂNG PHÒNG CHÁY, CHỮA CHÁY VÀ CÁCH THOÁT NẠN, THOÁT HIỂM KHI GẶP SỰ CỐ CHÁY, NỔ
-        </p>
-      </h2>
-      <section id="section1">
-        <h3>
-          <p lang="vi" style="text-indent: 0cm">3.1. SỬ DỤNG ĐIỆN</p>
-        </h3>
-        <p lang="vi" style="text-indent: 0cm"><b>3.1.1. Đặc điểm, tính nguy hiểm trong sử dụng điện</b></p>
-<p lang="vi">Điện là nguồn năng lượng phổ biến và không thể thiếu trên tất cả các mặt của đời sống con người. Điện dễ dàng được truyền tải đi xa, có thể sản xuất từ nhiều nguồn năng lượng khác nhau, thay đổi ở nhiều mức điện thế khác nhau. Tuy nhiên điện có các mặt trái của nó đó là gây nguy hiểm cho con người như tạo ra điện trường, điện giật và gây ra cháy, nổ.  </p>
-<p lang="vi">Trong các vụ cháy có nguyên nhân xuất phát từ điện thì chủ yếu là điện năng đóng vai trò là nguồn nhiệt gây cháy, bên cạnh đó một số thiết bị điện có vỏ hay chất cách điện là nhựa, cao su; dầu máy biến thế… cũng có thể trở thành chất cháy. </p>
-<p lang="vi" style="text-indent: 0cm"><b>3.1.2. Một số vấn đề lưu ý về PCCN trong sử dụng điện</b></p>
-<p lang="vi" style="text-indent: 0cm"><b><i>3.1.2.1. Thiết kế, lắp đặt</i></b></p>
-<p lang="vi">- Hệ thống điện phải được thiết kế, lắp đặt phù hợp với tính chất sử dụng và công năng của công trình. Công suất biến áp phải đáp ứng được phụ tải ở mức lớn nhất theo tính toán. Lắp đặt aptomat tổng và riêng cho từng khu vực; dùng khởi động từ cho các phụ tải lớn.</p>
-<p lang="vi">- Đường dây phải đi trong ống gen chống cháy đặt ngầm hoặc buộc gọn gàng nếu ở ngoài tường.</p>
-<p lang="vi">- Không dùng bảng điện bằng vật liệu dễ cháy, không lắp trực tiếp thiết bị lên vật liệu dễ cháy. Đối với khu vực chứa gas, hóa chất, hơi khí chất cháy thì phải dùng thiết bị điện chống nổ. Nếu dùng 2 nguồn điện hay máy phát dự phòng thì phải có bộ chuyển mạch tự động. Khu vực đặt máy phát hay biến áp phải thoáng khí, có tường ngăn cháy, bể chứa dầu sự cố và có trang thiết bị chữa cháy phù hợp.</p>
-<p lang="vi">- Lắp đặt hệ thống thu lôi chống sét cho hệ thống điện. </p>
-<p lang="vi">- Thiết bị điện lắp đặt phải phù hợp với mạng điện cả về tần số, điện áp và công suất… các thiết bị trong hệ thống phải đồng bộ.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/img31.JPG" alt="img31" width="510px" height="220px">
-</div> 
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Hình 3.1. Lắp đặt thiết bị điện phù hợp</i></p>
-<p lang="vi">-  Cầu dao, bảng điện phải được bắt chặt và có hộp bảo vệ, cầu chì có đủ nắp đậy; ở những nơi có chất cháy, các thiết bị điện này phải được đặt phía ngoài, ở những nơi có nguy hiểm cháy, nổ phải lắp đặt hệ thống điện an toàn phòng cháy, nổ.</p>
-<p lang="vi">- Các mối nối phải chặt và bọc kín bằng chất cách điện.</p>
-<p lang="vi">- Không nối hai dây dẫn có chất liệu và điện trở khác nhau để dẫn điện.</p>
-<p lang="vi">- Tiếp đất cho các thiết bị máy móc, các bể chứa, các đường ống dẫn nguyên liệu, các phương tiện chuyên chở. Thiết bị nối đất phải có điện trở từ 5-10W.</p>
-<p lang="vi">- Tăng độ ẩm của không khí ở khu vực có nguy hiểm về tĩnh điện.</p>
-<p lang="vi">- Ion hóa không khí để nâng cao tính dẫn điện của không khí.</p>
-<p lang="vi" style="text-indent: 0cm"><i><b>3.1.2.2. Sử dụng</b></i></p>
-<p lang="vi">- Sử dụng điện hợp lý, tiết kiệm. </p>
-<p lang="vi">- Tắt các thiết bị điện khi ra khỏi phòng kể cả khi có việc phải đi gấp (trừ các thiết bị điện có yêu cầu đặc biệt phải duy trì nguồn điện liên tục và đã được lắp các thiết bị bảo vệ có độ chính xác cao). Khi sử dụng lò nướng hay lò vi sóng, nhất thiết không được để gần vật dễ cháy, khi sử dụng máy sấy quần áo càng không thể tùy ý đi khỏi chỗ sấy để tránh quần áo bị sấy nóng quá phát cháy.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/img32.PNG" alt="img32" width="360px" height="250px">
-</div> 
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Hình 3.2. Tắt các thiết bị điện khi không dùng đến</i></p>
-<p lang="vi">- Những thiết bị điện không đặt gần những vật dễ cháy như giá treo quần áo, tủ sách, tủ quần áo… nhằm tránh tình trạng bức xạ nhiệt.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/img33.JPG" alt="img33" width="340px" height="250px">
-</div> 
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Hình 3.3. Không để các thiết bị điện gần những vật dễ cháy</i></p>
-<p lang="vi">- Bóng đèn gắn trong nhà nên gắn cách trần hay tường bằng vật liệu cháy, ít nhất 2,5cm. Vì nếu gắn sát bề mặt tường hay trần thì chỉ cần nhiệt độ 300°C trần tường gỗ sẽ có thể phát cháy, trong khi đó nếu gắn cách 2,5m thì nhiệt độ bóng đèn phải đạt 1500°C mới phát cháy.</p>
-<p lang="vi" style="text-indent: 0cm">- Dùng thiết bị điện phù hợp với khả năng chịu tải của đường dây điện. Đặc biệt với các thiết bị điện động lực hay phụ tải có công suất lớn, trước khi dùng phải xem xét kỹ lại hệ thống điện và thông số của phụ tải đó. Không nên dùng nhiều thiết bị điện trên cùng một ổ cắm cùng lúc, đặc biệt gần khu vực có nhiều chất cháy.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/img34.PNG" alt="img34" width="290px" height="280px">
-</div> 
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Hình 3.4. Không nên dùng nhiều thiết bị điện trên cùng một ổ cắm</i></p>
-<p lang="vi">- Không để dây điện bị kẹt ở chân bàn, chân tủ hay khe cửa. Không để đường dây điện kéo dài chạy qua tấm thảm lót sàn hoặc qua vật liệu cháy hay thiết bị sinh nhiệt.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/img35.jpg" alt="img35" width="530px" height="220px">
-</div> 
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Hình 3.5. Không để dây điện bị kẹt</i></p>
-<p lang="vi">- Phích cắm điện phải chặt, không nên để lỏng lẻo nhằm tránh điện trở tiếp xúc phát sinh nhiệt bắt cháy nhựa của ổ, phích cắm hoặc những vật dụng xung quanh. Máy nước nóng có thể phát nổ hay chạm chập nên chú ý kiểm tra bộ phận điều tiết tự động có hư hỏng không. Khi sử dụng đồ điện nhất thiết không được để trẻ em đến gần đùa nghịch, để tránh bị điện giật hoặc gây cháy. Tại khu vực bếp nấu, ổ cắm, thiết bị điện phải cách xa bếp gas ít nhất 1 - 2m.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/img36.JPG" alt="img36" width="200px" height="250px">
-</div> 
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Hình 3.6. Khoảng cách an toàn giữa thiết bị điện và bếp gas</i></p>
-<p lang="vi">- Định kỳ vệ sinh máy tính, tivi (TV) vì sử dụng quá lâu trong môi trường có bụi, bụi sẽ tích tụ dễ khiến lớp biên bên ngoài hư hỏng, gây rò rỉ điện hoặc do côn trùng, chuột cắn hư hỏng lớp vỏ ngoài dây điện, dẫn đến chập mạch gây cháy nổ.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/img37.JPG" alt="img37" width="370px" height="250px">
-</div> 
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Hình 3.7. Nên vệ sinh định kỳ các thiết bị</i></p>
-<p lang="vi">- Dây điện trong nhà nếu đã cũ, phần vỏ bọc bên ngoài đã hư hỏng hoặc phích cắm hỏng cần phải sửa chữa thay thế ngay.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/img38.jpeg" alt="img38" width="590px" height="250px">
-</div> 
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Hình 3.8. Sửa chữa, thay thế kịp thời khi thiết bị điện bị hỏng</i></p>
-<p lang="vi">- Cầu chì bị đứt, thông thường đó là sự cảnh báo quá tải, nhất thiết không được ngộ nhận là do cầu chì quá nhỏ mà đổi sang dùng cầu chì to hoặc dây đồng, dây kẽm thay thế.</p>
-<p lang="vi">- Gần phòng máy và thiết bị điện công suất lớn cần đặt các bình chữa cháy để đề phòng.</p>
-<p lang="vi">- Dùng các thiết bị máy móc như vôn kế tĩnh điện, tĩnh nghiệm điện có tụ điện, tín hiệu tự báo động báo có tĩnh điện để kiểm tra tĩnh điện.</p>
-<div class="video-container">
-  <video controls>
-      <source src="../video/video7.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-  </video>
-</div>
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Video 7. Phòng ngừa cháy, nổ do quá tải điện vào mùa nắng nóng</i></p>
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>(Nguồn: VTV5)</i></p>
-<p lang="vi" style="text-indent: 0cm"><b>3.1.3. Một số tình huống cháy, nổ trong sử dụng điện</b></p>
-<p lang="vi" style="text-indent: 0cm"><i><b>3.1.3.1. Ngắn mạch</b></i></p>
-<p lang="vi">Ngắn mạch là hiện tượng các pha chập nhau hoặc các pha chập nhau và chạm đất. Khi dòng điện ngắn mạch vượt quá nhiều lần so với dòng điện cho phép, nhiệt độ dây dẫn tăng nhanh có thể dẫn đến cháy, nổ. Ngắn mạch thường kèm theo cung lửa điện làm nóng chảy dây dẫn. Nổ điện tạo ra khối lượng hạt kim loại có kích thước từ 50 - 2500 μm. Các giọt kim loại mang nhiệt lượng đủ lớn bắn ra môi trường khi gặp vật liệu cháy sẽ gây cháy.</p>
-<p lang="vi">Ngắn mạch dẫn đến giảm mạnh điện áp trên lưới điện do có thể làm rối loạn một bộ phận hay toàn bộ mạng điện cung cấp cho các hộ tiêu thụ. Động cơ ngừng hoạt động có thể gây hư hỏng nổ hoặc cháy. Khi điện áp giảm, tốc độ quay giảm, phụ tải tăng, động cơ điện bị phát nóng quá mức dẫn đến giảm thời gian hoạt động và trở thành nguyên nhân gây sự cố. </p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/img39.JPG" alt="img39" width="400px" height="250px">
-</div> 
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Hình 3.9. Hiện tượng ngắn mạch</i></p>
-<p lang="vi"><i>Tình huống phát sinh cháy do ngắn mạch</i></p>
-<p lang="vi">- Tình huống 1: Dây dẫn và dây cáp bị hỏng do hậu quả của việc kéo căng quá mức… khi chất cách điện bị hỏng, trong ruột cáp xuất hiện dòng điện rò rỉ, dòng này sẽ chuyển thành dòng ngắn mạch gây cháy, nổ.</p>
-<p lang="vi">- Tình huống 2: Hóa chất hay hơi nước lọt vào bên trong vỏ thiết bị điện gây hư hỏng và gây rò rỉ điện dẫn đến cháy, nổ.</p>
-<p lang="vi">- Tình huống 3: Chất cách điện của thiết bị điện có thể bị hỏng do tác dụng của nhiệt độ cao hay ngọn lửa trong quá trình cháy, do quá điện áp, do sét đánh thẳng và sét cảm ứng, do chuyển điện áp từ thiết bị cao hơn 100 V sang thiết bị nhỏ hơn 1000V.</p>
-<p lang="vi">- Tình huống 4: Các dây tải điện trần trên không bị chập dưới tác dụng của gió hay do vật liệu kim loại văng lên đường dây… hoặc do sai lầm của công nhân trong quá trình thao tác, sửa chữa thiết bị điện gây cháy, nổ.</p>
-<p lang="vi">- Tình huống 5: Việc đấu nối giữa các dây dẫn với thiết bị không đúng kỹ thuật, không chặt dẫn đến sinh nhiệt trong quá trình hoạt động gây cháy, nổ.</p>
-<p lang="vi">- Tình huống 6: Sét đánh thẳng vào đường dây điện dẫn đến cháy, nổ.</p>
-<p lang="vi">- Tình huống 7: Các cuộn dây của động cơ điện không đảm bảo tiêu chuẩn cách điện; sử dụng lâu ngày bị lão hóa, động cơ bị kẹt quay chậm hoặc dừng quay dẫn đến cháy, nổ.</p>
-<p lang="vi" style="text-indent: 0cm"><i><b>3.1.3.2. Quá tải</b></i></p>
-<p lang="vi">Quá tải là sự cố trong mạng điện xảy ra khi cường độ dòng điện làm việc lớn hơn cường độ dòng điện cho phép. Quá tải nguy hiểm không kém gì ngắn mạch vì nó khó phát hiện, thiết bị bảo vệ (ví dụ: aptomat) không phát hiện ra. Quá tải kéo dài dẫn đến hỏng cách điện và cũng có thể dẫn đến ngắn mạch. </p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/img310.PNG" alt="img32" width="400px" height="250px">
-</div> 
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Hình 3.10. Hiện tượng quá tải điện</i></p>
-<p lang="vi"><i>Phương pháp phát hiện quá tải</i></p>
-<p lang="vi">- Dùng Ampe kế để kiểm tra cường độ dòng điện và so sánh với bảng tiêu chuẩn cường độ dòng điện cho phép.</p>
-<p lang="vi">- Có thể phát hiện bằng mắt thường hoặc bằng tay khi thấy tại vị trí ổ cắm điện, đường dây bị biến dạng, biến màu và đặt tay lên cảm thấy nóng hơn bình thường.</p>
-<p lang="vi"><i>Tình huống phát sinh cháy do quá tải</i></p>
-<p lang="vi">- Tình huống 8: Trong thi công, chọn dây dẫn, dây cáp không đảm bảo khiến cường độ dòng điện thực tế lớn hơn trị số cường độ cho phép (Itt > Icp) xảy ra sự cố quá tải gây cháy.</p>
-<p lang="vi">- Tình huống 9: Trong sử dụng lắp thêm phụ tải ngoài tính toán dẫn đến quá tải gây cháy.</p>
-<p lang="vi">- Tình huống 10: Chế độ vận hành không đối xứng dẫn đến sự cố quá tải gây cháy, nổ.</p>
-<p lang="vi">- Tình huống 11: Động cơ điện bị kẹt, quay chậm hoặc dừng quay dẫn đến cháy, nổ.</p>
-<p lang="vi">- Tình huống 12: Lắp đặt nhiều thiết bị điện nhưng không cải tạo, thay thế hệ thống dây dẫn điện đúng tiêu chuẩn dẫn đến cháy, nổ.</p>
-<p lang="vi">- Tình huống 13: Cắm nhiều thiết bị điện cùng một lúc vào một ổ cắm dẫn đến cháy, nổ.</p>
-<p lang="vi">- Tình huống 14: Không lắp các thiết bị tự ngắt (aptomat, cầu chì...) hoặc lắp các thiết bị tự ngắt không đúng tiêu chuẩn dẫn đến cháy, nổ.</p>
-<p lang="vi">- Tình huống 15: Lâu ngày không kiểm tra, bảo dưỡng động cơ điện dẫn đến cháy, nổ.</p>
-<p lang="vi" style="text-indent: 0cm"><b><i>3.1.3.3. Điện trở tiếp xúc</i></b></p>
-<p lang="vi">Điện trở tiếp xúc là điện trở ở những chỗ chuyển tiếp dòng điện hay điểm đấu nối của dây dẫn, thiết bị từ một bề mặt tiếp xúc này sang một diện tích tiếp xúc khác qua diện tích tiếp xúc thực tế của chúng. Nhiệt phát sinh ngay tại điểm tiếp xúc do thành phần điện trở R tại đó lớn hơn nên theo phương trình Q = I<sup>2</sup>.R.t thì giá trị Q sẽ lớn hơn bình thường. </p>
-<p lang="vi"><i>Tình huống phát sinh cháy do điện trở tiếp xúc</i></p>
-<p lang="vi">- Tình huống 16: Sự co thắt mạnh của đường dây dẫn điện làm tiết diện tại đó nhỏ đi gây ra hiện tượng điện trở tiếp xúc dẫn đến cháy, nổ.</p>
-<p lang="vi">- Tình huống 17: Lực ép ở tiếp điểm yếu khiến diện tích tiếp xúc thực tế tại đó nhỏ đi gây ra hiện tượng điện trở tiếp xúc dẫn đến cháy, nổ.</p>
-<p lang="vi">- Tình huống 18: Vật liệu dẫn điện có tính dẫn điện kém: bề mặt bị ôxy hóa, bị bẩn… gây ra hiện tượng điện trở tiếp xúc dẫn đến cháy, nổ.</p>
-<p lang="vi">- Tình huống 19: Bề mặt tiếp xúc làm nhẵn kém nên diện tích tiếp xúc giảm gây ra hiện tượng điện trở tiếp xúc dẫn đến cháy, nổ.</p>
-<p lang="vi" style="text-indent: 0cm"><b><i>3.1.3.4. Hồ quang điện</i></b></p>
-<p lang="vi">Hồ quang điện là hiện tượng phóng điện trong không khí giữa 2 cực điện khi hàn điện, đóng hay ngắt thiết bị điện... Sẽ thực sự nguy hiểm nếu nó nằm trong môi trường có hơi khí chất cháy, nổ. </p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/img311.jpeg" alt="img311" width="330px" height="500px">
-</div> 
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Hình 3.11. Hiện tượng hồ quang điện</i></p>
-<p lang="vi"><i>Tình huống phát sinh cháy do xuất hiện hồ quang điện</i></p>
-<p lang="vi">- Tình huống 20: Do 2 cực tiếp xúc nhau quá gần nên xuất hiện hiện tượng hồ quang điện gây ra cháy, nổ.</p>
-<p lang="vi">- Tình huống 21: Do môi trường giữa 2 điện cực có nhiều ion dẫn điện… (hơi nước, hóa chất) nên xuất hiện hiện tượng hồ quang điện gây ra cháy, nổ.</p>
-<p lang="vi" style="text-indent: 0cm"><i><b>3.1.3.5. Thiết bị điện sinh nhiệt</b></i></p>
-<p lang="vi">Thiết bị điện sinh nhiệt là các thiết bị điện tỏa nhiệt ra xung quanh như bóng đèn, máy sấy tóc, máy sưởi, bàn là, cục nóng của điều hòa… Nếu bên cạnh các thiết bị này có các chất cháy, thì có thể dẫn đến cháy. </p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/img312.jpeg" alt="img312" width="500px" height="250px">
-</div>                    
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Hình 3.12. Một số thiết bị điện sinh nhiệt</i></p>
-<p lang="vi"><i>Tình huống phát sinh cháy do thiết bị điện sinh nhiệt</i></p>
-<p lang="vi">- Tình huống 22: Để chất cháy tiếp xúc trực tiếp hoặc gần thiết bị điện quá mức cho phép dẫn đến sinh nhiệt gây ra cháy, nổ.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/img313.JPG" alt="img33" width="550px" height="250px">
-</div> 
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Hình 3.13. Vị trí ổ cắm, cầu dao nơi dễ phát sinh tia lửa và chập cháy</i></p>
-<p lang="vi">- Tình huống 23: Thiết bị điện quá tải, phát nóng quá mức cho phép gây ra cháy, nổ.</p>
-<p lang="vi">- Tình huống 24: Thiết bị điện (nổ, vỡ) các mảnh có mang nhiệt rơi xuống chất cháy, nổ.</p>
-<p lang="vi">- Tình huống 25: Trong quá trình sử dụng các động cơ điện: mô tơ điện, quạt điện không đảm bảo an toàn, vận hành không đúng quy trình kỹ thuật, không bảo trì, bảo dưỡng thường xuyên dẫn tới bị kẹt, làm động cơ phát nóng quá mức, hỏng lớp cách điện dẫn tới chập mạch, cháy đường dây dẫn điện. </p>
-<p lang="vi" style="text-indent: 0cm"><i><b>3.1.3.6. Tĩnh điện</b></i></p>
-<p lang="vi">Tĩnh điện phát sinh do ma sát giữa các vật cách điện với nhau, giữa vật cách điện với vật dẫn điện do va đập của các chất lỏng cách điện (xăng, dầu) khi bơm rót hoặc va đập của các chất lỏng với kim loại hay khi nghiền nát các hạt nhỏ rắn cách điện. </p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/img314.JPG" alt="img34" width="400px" height="250px">
-</div> 
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Hình 3.14. Hiện tượng tĩnh điện</i></p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/img315.JPG" alt="img35" width="400px" height="250px">
-</div> 
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Hình 3.15. Cháy do tĩnh điện</i></p>
-<p lang="vi">- Tình huống 26: Tĩnh điện gây ra hiện tượng phóng điện do các máy móc thiết bị, các bể chứa, bồn chứa, ống dẫn xăng dầu không được tiếp đất gây cháy nổ, hỏa hoạn trong các ngành công nghiệp xăng, dầu, gas… </p>
-<p lang="vi" style="text-indent: 0cm"><b>3.1.4. Cách xử trí và thoát nạn, thoát hiểm khi có cháy, nổ điện	</b></p>
-<p lang="vi"><b><i>Cách xử trí khi có cháy, nổ điện</i></b></p>
-<p lang="vi">- Khi sử dụng điện phát sinh sự cố hay tình trạng bất thường thì trước tiên phải xem xét và ngắt aptomat, cắt cầu dao, cắt công tắc, rút phích cắm để tránh tình trạng đáng tiếc xảy ra tiếp theo.</p>
-<p lang="vi">- Liên hệ lực lượng Cảnh sát PCCC theo số điện thoại 114.</p>
-<p lang="vi">- Nếu đường dây điện bốc cháy, để tránh cháy lan thì phải ngắt nguồn nhánh hay nguồn chính ngay lập tức. Trước khi cắt điện tuyệt đối không được dùng nước để dập cháy đề phòng dẫn điện. </p>
-<p lang="vi">- Nếu cháy trong nhà, công trình, nhưng chưa có khả năng cháy lan thì có thể không cần cắt điện để tận dụng ánh sáng đèn điện phục vụ công tác thoát nạn. </p>
-<p lang="vi">- Nếu cháy ở thiết bị điện trong phòng nhưng chưa ảnh hưởng đến hệ thống điện thì chỉ cần tắt (rút) thiết bị điện đó ra. Nếu có bình chữa cháy bằng bột thì có thể sử dụng mà không cần cắt điện. </p>
-<p lang="vi"><i><b>Cách thoát nạn, thoát hiểm khi có cháy, nổ điện</b></i></p>
-<p lang="vi">- Bình tĩnh suy xét, hô hoán báo động cho mọi người biết để mau chóng di chuyển ra ngoài qua lối thoát nạn an toàn, không chen lấn xô đẩy nhau tránh tình trạng nhiều người bị thương, mắc kẹt tại các khu vực bên trong nơi xảy cháy.</p>
-<p lang="vi">- Nếu ai đó gặp khó khăn trong quá trình di chuyển hãy nhanh chóng bằng mọi cách đưa họ ra khỏi khu vực nguy hiểm.</p> 
-<p lang="vi">- Kiểm tra nhiệt độ trước khi mở cửa; đưa tay lại gần tay nắm cửa, nếu thấy ấm đừng nên mở vì có thể phía bên kia cửa đang cháy. Bạn nên dùng mu bàn tay để kiểm tra nhằm bảo vệ lòng bàn tay không bị bỏng. Vì lòng bàn tay sẽ hỗ trợ bạn thoát thân hoặc bò ra ngoài bằng thang cứu hỏa.</p>
-<p lang="vi">- Nếu phải mở cửa, kể cả cửa nhà, cửa thoát hiểm, cần nhớ kỹ: Kiểm tra nhiệt độ trước khi mở; khi mở nên tránh mặt và người sang một bên đề phòng lửa tạt. Nên cúi sát người xuống sàn khi mở cửa; nếu nhiệt độ quá cao, tuyệt đối không được mở; nếu khói lùa, dùng vải, giẻ ướt nhét vào khe cửa; hoặc dùng băng dính dán chặt. Sau đó tìm lối thoát sang các phòng khác. </p>
-<p lang="vi">- Trong trường hợp khu vực cửa, lối di chuyển có nhiều khói thì hướng dẫn cho mọi người sử dụng khăn ẩm, khẩu trang ẩm bịt vào mũi để thở và hạ thấp trọng tâm khi di chuyển hoặc bò. </p>
-<p lang="vi">- Trong trường hợp nếu phải băng qua lửa, người dân hãy dùng áo, chăn chất liệu cotton nhúng ướt và trùm lên đầu, lên người.</p>
-<p lang="vi">- Di chuyển ra ngoài bằng cách bò sát mặt đất, bịt khăn thấm nước lên miệng, mũi để tránh bị ngạt khói. Bạn nên bò men theo bờ tường để tìm lối thoát một cách nhanh nhất. Khi ra đến ngoài phòng bạn cần phải bình tĩnh di chuyển theo thang bộ nếu ở nhà cao tầng. </p>
-<p lang="vi">- Với nhà cao tầng, không nên sử dụng thang máy thoát nạn vì cháy có thể gây nổ nguồn điện, bạn sẽ bị kẹt hoặc ngạt khí.</p> 
-<p lang="vi">- Nếu không có lối ra, hãy di chuyển ra ban công, cửa sổ vì ở đó thường hay lắp ống thoát hiểm, ròng rọc cá nhân hay xe thang của lực lượng PCCC chĩa vào để cứu người. Từ đây hãy gọi to; dùng khăn, áo sáng màu hoặc đèn pin, điện thoại có phát sáng... ra hiệu cho lực lượng Cảnh sát PCCC biết.</p>
-<p lang="vi">- Nếu bạn đã thoát ra ngoài được nhưng còn có người ở trong đám cháy thì hãy đợi đội lính cứu hỏa tới và nói với họ về người bị mắc kẹt. Không nên quay lại đám cháy vì bạn sẽ đặt bản thân vào tình huống nguy hiểm và làm những nỗ lực cứu người của lính cứu hỏa bị chậm lại, gây ảnh hưởng đến nhiều người hơn.</p>
-      </section>
-      <section id="section2">
-        <h3>
-          <p lang="vi" style="text-indent: 0cm">3.2. KHÍ ĐỐT HÓA LỎNG</p>
-        </h3>
-        <p lang="vi">Cùng với sự phát triển của các ngành công nghiệp, ngành công nghiệp sản xuất và sử dụng nguồn nguyên liệu từ dầu mỏ và khí cũng được phát triển mạnh mẽ với mục đích chủ yếu là giải quyết vấn đề nhiên liệu động cơ, nhiên liệu công nghiệp, nhiên liệu dân dụng. Trong sự phát triển đó công nghiệp chế biến khí đã phát triển không ngừng, nó đem lại hiệu quả kinh tế cao cho nền kinh tế. Khí dầu mỏ hóa lỏng (Liquefied Petroleum Gas - LPG hoặc khí gas) là mặt hàng chiếm tỷ trọng trên 98% khí đốt, gas là mặt hàng thiết yếu có vai trò quan trọng trong việc đảm bảo an ninh năng lượng. Đây là hàng hóa thuộc diện kinh doanh có điều kiện, ảnh hưởng đến nhiều lĩnh vực của đời sống kinh tế xã hội nên hoạt động kinh doanh và sử dụng gas phải được đảm bảo an toàn.</p>
-<p lang="vi">Ở điều kiện nhiệt độ và áp suất thường, gas tồn tại ở trạng thái khí. Tuy nhiên, do gas có tỷ số dãn nở thể tích lớn nên để thuận tiện và kinh tế trong quá trình bảo quản, vận chuyển và sử dụng, gas thường được hóa lỏng bằng cách nén vào các bình chứa chịu áp lực ở nhiệt độ thường hoặc làm lạnh hóa lỏng để tồn chứa ở áp suất thấp.</p>
-<p lang="vi">Đặc trưng lớn nhất của gas là chúng được tồn chứa ở trạng thái bão hòa tức là tồn tại cả dạng lỏng và hơi, nên với thành phần không đổi, áp suất hơi bão hòa trong bình chứa không phụ thuộc vào lượng gas có trong bình, mà hoàn toàn phụ thuộc vào nhiệt độ bên ngoài.</p>
-<p lang="vi">Gas là mặt hàng rất dễ cháy nổ và quy định của Nhà nước là hàng hóa kinh doanh có điều kiện.</p>
-<p lang="vi" style="text-indent: 0cm"><b>3.2.1. Đặc điểm, tính nguy hiểm cháy, nổ của gas</b></p>
-<p lang="vi">Gas là loại nhiên liệu dễ cháy, khi kết hợp với không khí tạo thành hỗn hợp cháy nổ. Khi đạt tới giới hạn nồng độ cháy, nổ, dưới tác dụng của nguồn nhiệt hoặc ngọn lửa trần sẽ bắt cháy làm phá hủy thiết bị, cơ sở vật chất, công trình. </p>
-<p lang="vi">Giới hạn cháy, nổ của hỗn hợp hơi gas với ôxy trong không khí có thể xảy ra từ nồng độ rất thấp (1,5% đến 10% thể tích). Chính vì vậy gas nguy hiểm về cháy, nổ hơn nhiều so với các loại chất đốt, nhiên liệu khác. </p>
-<p lang="vi">Ở nhiệt độ lớn hơn 0°C trong môi trường không khí bình thường với áp suất bằng áp suất khí quyển, gas bị biến đổi từ thể lỏng thành thể hơi theo tỷ lệ thể tích 1 lit gas thể lỏng hóa thành khoảng 250 lit ở thể hơi. Trong điều kiện nhiệt độ môi trường bình thường gas bốc hơi rất mãnh liệt, vận tốc bay hơi của gas nhanh, dễ dàng khuếch tán, hòa trộn với không khí thành hỗn hợp nguy hiểm cháy nổ. </p>
-<p lang="vi">Trong môi trường đám cháy, khi nhiệt độ tăng lên, áp suất trong bình chứa tăng nhanh, van an toàn xả hơi gas ra ngoài rất mạnh làm sự cháy phát triển nhanh và dữ dội. Nếu van an toàn không mở được, nhiệt độ cao làm áp suất tăng quá mức có thể dẫn tới nổ bình chứa. </p>
-<p lang="vi">Hỗn hợp hơi gas với không khí có vận tốc cháy đẳng tích lớn dễ dẫn tới nổ hỗn hợp hơi, phá vỡ kết cấu chứa và bao che chúng gây cháy lan trên diện rộng.</p>
-<p lang="vi">Ở thể hơi (gas) trong môi trường không khí với áp suất bằng áp suất khí quyển, gas nặng hơn so với không khí: butan 2,07 lần; propan 1,55 lần. Do đó hơi gas thoát ra ngoài sẽ bay là là trên mặt đất, tích tụ ở những nơi kín gió, những nơi trũng, những hang hốc của kho chứa, bếp…  Trong thời điểm này nếu có phát sinh tia lửa (do ma sát, tia lửa điện) hoặc các nguồn nhiệt khác sẽ phát sinh cháy, nổ.</p>
-<p lang="vi">Nhiệt độ ngọn lửa của gas khi cháy rất cao từ 1900°C – 1950°C, có khả năng đốt cháy và nung nóng chảy hầu hết các chất. Dễ làm hư hỏng các mối liên kết trên đường ống, bồn chứa, làm tăng khả năng rò rỉ khí gas do vậy làm tăng thêm mức độ nguy hiểm về cháy, nổ.</p>
-<p lang="vi">Nhiệt độ sôi của gas thấp (từ -45°C đến -2°C ) nên để gas lỏng tiếp xúc trực tiếp với da sẽ bị bỏng lạnh, nhất là với dòng gas rò rỉ trực tiếp vào da nếu không có trang bị bảo hộ lao động. Gas ở trạng thái nguyên chất không có mùi, không màu, không độc hại với người và gia sfúc nên việc phát hiện rò rỉ là rất khó khăn, không kịp thời. Vì vậy gas được pha trộn thêm chất tạo mùi mercaptan với tỷ lệ nhất định để có mùi đặc trưng dễ phát hiện khi có rò rỉ. </p>
-<p lang="vi">Khi xảy ra cháy nổ gas thì thường gây thiệt rất hại lớn, nguy hiểm cho người,  phá hoại công trình, máy móc thiết bị. Thông thường khi có sự cố, gas thoát ra từ những chỗ nứt vỡ, rò rỉ phun ra ngoài thành những luồng hơi và hạt lỏng lan tràn rất nhanh trong không khí, nếu chỗ vỡ lớn có thể tạo thành vũng chất lỏng. Khi gặp nguồn nhiệt sẽ bùng lên thành đám mây lửa rất nguy hiểm bao trùm toàn bộ thể tích, tại nơi rò rỉ có thể hình thành luồng lửa dài. </p>
-<div class="video-container">
-  <video controls>
-      <source src="../video/video8.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-  </video>
-</div>
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Video 8. Kinh hoàng vụ nổ khí gas thổi tung quán lẩu ở Quảng Ninh</i></p>
-<p lang="vi" style="text-indent: 0cm"><b>3.2.2. Một số vấn đề lưu ý về PCCN trong kinh doanh, sử dụng gas</b></p>
-<p lang="vi">Để đảm bảo an toàn PCCC trong quá trình kinh doanh gas, chủ cửa hàng phải thực hiện các yêu cầu sau:</p>
-<p lang="vi" style="text-indent: 0cm"><b><i>3.2.2.1. Trong thiết kế xây dựng</i></b></p>
-<p lang="vi">- Cửa hàng phải được thiết kế đảm bảo các yêu cầu theo tiêu chuẩn TCVN 6223:2011 “Cửa hàng khí dầu mỏ hóa lỏng (LPG) - Yêu cầu chung về an toàn” và được cơ quan chức năng thẩm duyệt, nghiệm thu về PCCC theo quy định.</p>
-<p lang="vi">- Khối lượng gas trong tất cả các chai được phép tồn chứa tại cửa hàng là 500kg đối với diện tích tối thiểu 12m<sup>2</sup> và được phép chứa thêm 60kg cho mỗi mét vuông diện tích tăng thêm của khu vực kho tồn chứa hoặc cửa hàng nói chung, không kể khu phụ nhưng tổng lượng khí gas không được vượt quá 1000kg. Trong trường hợp có kho riêng thì kho chứa phải được thiết kế xây dựng theo tiêu chuẩn TCVN 6304:1997 “Chai chứa khí đốt hóa lỏng - Yêu cầu an toàn trong bảo quản, xếp dỡ và vận chuyển” và phải lưu ý những điểm sau:</p>
-<p lang="vi">+ Kho phải có ít nhất 02 lối ra vào, cửa mở hướng ra ngoài, nền kho vững chắc, bằng phẳng, không trơn trượt, ngang bằng hoặc cao hơn mặt bằng xung quanh, làm bằng vật liệu không cháy. Mọi hầm hố, kênh rãnh phải nằm cách khu vực kho chứa chai, chứa khí đốt hóa lỏng ít nhất 2m, trường hợp ngược lại thì phải được đậy kín. Hàng rào kho chắc chắn cao ít nhất 1,8m và không gây ảnh hưởng tới thông gió tự nhiên. Phải treo biển cấm lửa, cấm hút thuốc, hướng dẫn chữa cháy tại vị trí dễ thấy trước cửa kho.</p>
-<p lang="vi">+ Không sử dụng các nguồn nhiệt trong kho, các loại xe có động cơ không được vào khu vực kho. Các xe của kho có thể đỗ trong khoảng cách an toàn, nhưng phải cách kho ít nhất 3m.</p>
-<p lang="vi">+ Thiết bị chiếu sáng phải có bảo vệ phòng nổ, nguồn điện được khống chế bằng thiết bị đóng ngắt chung (cầu dao, aptomat…), phải có hệ thống chống sét.</p>
-<p lang="vi">- Đối với kho chứa 25000kg khí hóa lỏng trở lên cần có nguồn nước đảm bảo 2300 lit nước/phút và liên tục trong 60 phút.</p>
-<p lang="vi">- Đối với kho ngoài trời:</p>
-<p lang="vi">+ Kho chứa 1000kg trở lên phải có rào cao ít nhất 1,8m ngăn cách để chia thành lô nhỏ.</p>
-<p lang="vi">+ Kho chứa chai rỗng phải cách kho chứa chai đầy ít nhất 3m, các hàng rào bảo vệ, nhà hoặc nguồn gây cháy cố định ít nhất 1m, cách bình ôxy, vật liệu dễ cháy và chất độc ít nhất 2m.</p>
-<p lang="vi">+ Nếu kho có mái che có tổng lượng khí đốt hóa lỏng tồn là 400kg thì mái phải làm bằng vật liệu nhẹ chịu nhiệt và cao hơn đỉnh chồng chai cao nhất là 1 m; cột chống phải chắc chắn và có giới hạn chịu lửa ít nhất 30 phút, kho phải được trang bị hệ thống nước chữa cháy cố định có vận tốc phun là 12,5 lit/m<sup>2</sup>/phút nếu diện tích mái kho lớn hơn 10x10m.</p>
-<p lang="vi">- Đối với kho trong nhà:</p>
-<p lang="vi">+ Tổng lượng khí gas tồn chứa không được quá 25000kg.</p>
-<p lang="vi">+ Kho phải xây dựng bằng vật liệu có giới hạn chịu lửa ít nhất 60 phút, cột chống tường ngăn làm bằng vật liệu có giới hạn chịu lửa ít nhất 30 phút, lỗ thông hơi trên tường và trên mái phải chiếm 2,5% diện tích tường.</p>
-<p lang="vi">+ Đối với kho có lượng khí gas nhiều nhất là 1000kg thì cho phép bố trí trong tầng 1 của ngôi nhà 2 tầng, trong đó cửa, trần, sàn kho có giới hạn chịu lửa ít nhất 30 phút, cửa phải bố trí ở tường ngoài cùng và có chiều cao ít nhất 2,5m; nếu tòa nhà dùng để ở, tường phân cách phải có giới hạn chịu lửa 60 phút; phải trang bị hệ thống báo cháy tự động.</p>
-<p lang="vi">+ Cho phép bảo quản chai khí gas trong buồng nhỏ với điều kiện: 400kg trong nhà 1 tầng, 300kg trong nhà nhiều tầng không có người ở, 70kg trong nhà có người ở.</p>
-<p lang="vi">+ Buồng chứa phải bảo đảm thoáng gió có giới hạn chịu lửa ít nhất 30 phút, phải có thiết bị báo cháy tự động.</p>
-<p lang="vi" style="text-indent: 0cm"><b><i>3.2.2.2. Trong quá trình hoạt động</i></b></p>
-<p lang="vi">- Hệ thống điện trong cửa hàng phải có thiết bị bảo vệ đặt trong hộp kín. Thiết bị chiếu sáng và công tắc phải đảm bảo phòng nổ. Nếu không phải có giải pháp chiếu sáng từ bên ngoài qua hai lớp kính hoặc tận dụng tối đa ánh sáng tự nhiên trong suốt thời gian bán hàng, phải có hệ thống chiếu sáng sự cố dự phòng. Tất cả các thiết bị điện phải đặt cách chai khí gas tối thiểu 1,5m.</p>
-<p lang="vi">- Cửa hàng phải niêm yết biển “cấm lửa”, “cấm hút thuốc”, nội quy, tiêu lệnh PCCC ở nơi dễ thấy, dễ đọc.</p>
-<p lang="vi">- Nhân viên cửa hàng phải nắm được những kiến thức cơ bản về gas, được huấn luyện, kiểm tra, cấp giấy chứng chỉ về PCCC và huấn luyện kỹ thuật an toàn trong kinh doanh gas.</p>
-<p lang="vi">- Tại cửa hàng phải trang bị đầy đủ phương tiện chữa cháy ban đầu theo quy định, đảm bảo kịp thời xử lý khi có sự cố cháy xảy ra.</p>
-<p lang="vi">- Thường xuyên tiến hành tự kiểm tra công tác an toàn PCCC và duy trì các điều kiện đảm bảo an toàn PCCC cho cửa hàng trong suốt quá trình hoạt động.</p>
-<p lang="vi">- Sắp xếp các chai (bình) chứa gas trong cửa hàng kinh doanh gas phải đảm bảo theo quy định. </p>
-<p lang="vi">- Khi tồn chứa chai gas, các van chai luôn vặn chặt.</p>
-<p lang="vi">- Nghiêm cấm tồn chứa, sử dụng, kinh doanh khí ôxy trong các cửa hàng bán khí đốt hóa lỏng và chai khí gas rỗng trên mái nhà.</p>
-<p lang="vi">- Khi xếp chai khí gas phải xếp đứng và van an toàn phải xếp quay về 1 phía, van chai luôn đóng chặt; chiều rộng các chồng chai là 1,5m, chiều cao lớn nhất là 2,5m và phải bảo đảm khoảng cách an toàn theo quy định tại Bảng 1, Điều 5.1.7 TCVN 6304:1997.</p>
-<p lang="vi">- Khi chai khí gas bị rò rỉ phải xác định và đánh dấu chỗ rò rỉ và chuyển chai đó ra chỗ thoáng gió, cách xa nguồn gây cháy và các chai khí gas khác. Sau đó nếu không xử lý được phải thông báo sự cố cho người cung cấp hàng để xử lý.</p>
-<p lang="vi">- Khi ngừng việc đun nấu nhớ đóng điều áp sau đó tắt công tắc bếp và cuối cùng là khóa van bình (nếu là bình loại 12kg).</p>
-<p lang="vi">- Khi bật bếp thì thao tác ngược lại, mở van bình (nếu là bình loại 12kg), mở điều áp sau đó mới bật bếp.</p>
-<p lang="vi">- Nên sử dụng loại bếp gas có bộ phận cảm ứng nhiệt tự động, ngắt gas khi nước tràn hoặc gió lùa làm bếp tắt lửa. Nếu bếp không có bộ phận cảm ứng nhiệt thì khi đun phải thường xuyên chú ý để kịp thời tắt công tắc bếp nếu bếp bị tắt lửa do nước tràn hoặc gió lùa. Chỉ bật lại bếp khi không còn mùi gas trong khu vực bếp.</p>
-<p lang="vi">- Thường xuyên kiểm tra ống dẫn gas, nếu phát hiện thấy có hiện tượng rạn nứt phải thông báo cho đại lý hoặc nhà phân phối để thay dây.</p>
-<p lang="vi">- Khi phát hiện có mùi gas (mùi trứng thối) phải lập tức tắt các nguồn lửa, khóa van bình, đóng điều áp. Tuyệt đối không đóng hoặc ngắt công tắc điện, quạt điện làm phát sinh tia lửa điện gây cháy nổ khí gas.</p>
-<p lang="vi">- Mở thoáng cửa ra vào thông với gian bếp, dùng các dụng cụ thủ công để quạt, đẩy khí gas ra ngoài.</p>
-<p lang="vi">- Quét nước xà phòng để tìm chỗ rò rỉ, tuyệt đối không dùng bật lửa để dò tìm.</p>
-<p lang="vi">- Có thể dùng xà phòng bánh để bịt chỗ rò rồi dùng băng keo hoặc dây cao su để hạn chế rò rỉ đến mức thấp nhất, trường hợp bình gas rò rỉ không khắc phục được, cần đưa đến nơi thoáng gió, xa cống rãnh, xa nguồn lửa và báo ngay cho cửa hàng đại lý cung cấp gas.</p>
-<p lang="vi"><i>Những điều cần lưu ý khi sử dụng bếp gas</i></p>
-<p lang="vi">Sử dụng bếp gas đun nấu thức ăn rất tiện lợi và nhanh nhưng khi dùng cần hết sức cẩn thận vì nếu có sự cố rò rỉ gas dễ dẫn tới nổ hơi gas sẽ gây thiệt hại rất nghiêm trọng.</p>
-<p lang="vi"> Để đảm bảo an toàn, trong quá trình sử dụng bếp gas chúng ta cần lưu ý những vấn đề sau: </p>
-<p lang="vi">- Bình chứa gas phải đặt trong khoang riêng biệt, cách xa bếp đun, ngăn cách với bếp đun bằng vật liệu không cháy.</p>
-<p lang="vi">- Van tổng của bình gas nên chọn loại van xoáy, chất liệu bằng đồng. Sau cụm van tổng cần lắp thêm 01 van an toàn tự động ngắt khi lửa ở bếp bị tắt mà công tắc ở bếp vẫn bật. </p>
-<p lang="vi">- Dây dẫn gas, các khớp nối liên kết giữa bếp, dây dẫn, van xả và bình gas phải được lắp đặt đúng kỹ thuật, chắc chắn, đảm bảo kín (thường xuyên kiểm tra thử độ kín bằng nước xà phòng). </p>
-<p lang="vi">- Kiểm tra tắt các bếp đun sau khi nấu ăn, khóa van tổng ở cổ bình gas sau khi kết thúc việc đun nấu và vệ sinh bếp. </p>
-<p lang="vi">- Khi phát hiện mùi gas hoặc thiết bị báo rò gas phát tín hiệu, phải nhanh chóng loại trừ các nguồn lửa, nguồn nhiệt ở gần khu vực để bình gas, mở cửa để hơi gas thoát ra ngoài, kiểm tra xác định vị trí rò rỉ để khắc phục, xử lý. Lúc này tuyệt đối không bật, tắt các công tắc điện, cắm hoặc rút phích cắm ra khỏi ổ điện. </p>
-<p lang="vi" style="text-indent: 0cm"><b>3.2.3. Lắp đặt bếp gas an toàn	</b></p>
-<p lang="vi">- Bình gas phải đặt trong khoang riêng biệt, cách xa bếp đun, ngăn cách với bếp đun bằng vật liệu không cháy.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/img316.jpg" alt="img316" width="380px" height="250px">
-</div> 
-<p lang="vi" style="text-indent: 0cm; text-align: center;"><i>Hình 3.16. Khoảng cách an toàn giữa bếp gas và bình gas</i></p>
-<p lang="vi">- Van tổng của bình gas nên chọn loại van xoáy, chất liệu bằng đồng. Sau cụm van tổng cần lắp thêm van an toàn tự động ngắt khi lửa ở bếp tắt mà công tắc bếp vẫn bật.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic27.PNG" alt="pic27" width="350px" height="200px">
-</div> 
-<p lang="vi">- Lắp đầu báo rò gas.</p>
-<p lang="vi">- Dây dẫn gas, các khớp nối phải được lắp đúng kỹ thuật, chắc chắn đảm bảo kín. Thường xuyên kiểm tra độ kín bằng xà phòng (khoảng 1-2 năm nên thay dây dẫn một lần).</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/img317.JPG" alt="img37" width="450px" height="250px">
-</div> 
-<p lang="vi" style="text-indent: 0cm; text-align: center;"><i>Hình 3.17. Thường xuyên kiểm tra dây dẫn gas</i></p>
-<p lang="vi">- Kiểm tra tắt các bếp đun sau khi nấu ăn, khóa van tổng ở cổ bình gas, sau khi kết thúc việc đun nấu phải thường xuyên vệ sinh bếp.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic28.JPG" alt="pic28" width="480px" height="250px">
-</div> 
-<p lang="vi" style="text-indent: 0cm"><b>3.2.4. Một số tình huống cháy, nổ do gas</b></p>
-<p lang="vi">Trong quá trình kinh doanh, sử dụng khí đốt hóa lỏng luôn có khả năng hình thành môi trường nguy hiểm cháy, nổ của gas do nhiều nguyên nhân khác nhau:</p>
-<p lang="vi">- Tình huống 1: Cửa hàng kinh doanh gas nằm trong khu dân cư với tình trạng cũ nát, chật hẹp, khả năng thông gió kém, khí gas khi bị rò rỉ không thoát đi được tạo thành môi trường cháy, nổ. </p>
-<p lang="vi">- Tình huống 2: Nơi đặt bình gas không đúng quy định, đặt bình gas ở những nơi không thông gió, có những lỗ trũng, trong góc tường, hốc bếp, gầm cầu thang. Khi có rò rỉ, hơi gas tích tụ lại gặp nguồn lửa gây cháy, nổ.</p>
-<p lang="vi">- Tình huống 3: Hiện tượng san, chiết gas trái phép tại cửa hàng, do áp lực cao, thiết bị không chuyên dùng, bị rò rỉ gas và gây cháy, nổ.</p>
-<p lang="vi">- Tình huống 4: Nạp lại gas vào bình gas du lịch, do nạp nhiều lần, bình không đảm bảo an toàn, bị rò rỉ, gây cháy, nổ.</p>
-<p lang="vi">- Tình huống 5: Bình gas du lịch thường được thiết kế cho loại butan, khi nạp bu-pro, áp suất cao gây ra rò rỉ gas dẫn đến cháy, nổ. </p>
-<p lang="vi">- Tình huống 6: Các thiết bị và phụ kiện không đảm bảo độ kín. Khí gas thoát ra ngoài có thể do các chỗ nối ống cao su với bình khí và bếp không chặt, ống cao su sử dụng lâu ngày bị lão hóa, rạn nứt, vỡ gây cháy, nổ.</p>
-<p lang="vi">- Tình huống 7: Các bình gas đã quá thời hạn sử dụng bị ăn mòn hóa học có thể tạo các vết nứt, các van khóa trên bình không đảm bảo có thể làm rò rỉ khí gas ra ngoài. Các bếp gas hoặc thiết bị sử dụng nếu không có các thiết bị an toàn như rơ le an toàn khi tắt lửa, rơ le an toàn khi quá nhiệt, cầu chì… làm thoát ra khí gas khi người sử dụng có sơ xuất bất cẩn dẫn đến cháy, nổ.</p>
-<p lang="vi">- Tình huống 8: Trong quá trình vận chuyển chai (bình) gas tới cửa hàng hoặc từ cửa hàng đi đặt bình không thẳng đứng, không đúng quy phạm, bị va đập, gây rò rỉ gas, gặp nguồn lửa gây cháy. Bình gas sử dụng trên các phương tiện di động như tàu hỏa, ghe thuyền… không cố định chặt, dây dẫn bị hở, gas thoát ra ngoài gặp nguồn lửa gây cháy.</p>
-<p lang="vi">- Tình huống 9: Sử dụng ngọn lửa trần trong cửa hàng: nấu ăn, thắp hương thờ cúng, đánh diêm, hút thuốc… dẫn đến cháy, nổ.</p>
-<p lang="vi">- Tình huống 10: Tia lửa điện phát sinh từ những ổ cắm, công tắc, cầu dao điện. Các cửa hàng kinh doanh gas lâu đời có hệ thống điện chưa đảm bảo, dây điện chưa đi trong ống kín, bóng điện chưa là bóng phòng nổ nên khi gặp sự cố về điện gây cháy, nổ.</p>
-<p lang="vi">- Tình huống 11: Năng lượng cơ học phát sinh do va đập, ma sát của các vật cứng: do sét đánh khi trời mưa giông có sấm sét dẫn đến cháy, nổ.</p>
-<p lang="vi">- Tình huống 12: Tồn chứa chất lỏng dễ cháy (xăng, dầu) với số lượng lớn bằng các loại dụng cụ thô sơ, không đảm bảo an toàn, các chất này bay hơi thoát ra ngoài không khí tạo thành hỗn hợp gặp nguồn nhiệt hoặc tia lửa phát sinh trong khu vực dẫn tới cháy, nổ. </p>
-<p lang="vi"><i>Một số ví dụ điển hình: </i></p>
-<p lang="vi">- Ngày 11/12/2011 xảy ra cháy tại cửa hàng kinh doanh gas Phú Vinh ở thôn Vân Trì, Minh Khai, Từ Liêm, Hà Nội do chủ cửa hàng vi phạm các quy định về PCCC gây cháy. Vụ cháy gây ra thiệt hại nghiêm trọng về người: 02 người chết cháy là vợ của chủ cửa hàng và người con 8 tháng tuổi.</p>
-<p lang="vi">- Ngày 12/3/2001, tại Hà Nam, một gia đình sử dụng bếp gas tự chế, do thiếu kiến thức về phòng cháy, chữa cháy gas; trong khi đang đun nấu thấy ngọn lửa yếu tưởng thiếu gas, đã dẫn ống khí gas từ bình cũ để lắp vào bình mới trong khi không tắt bếp. Lửa từ bếp bắt cháy vào dòng gas từ bình cũ đã phun ra gây cháy toàn bộ căn nhà, làm 5 người trong gia đình bị thiệt mạng. Đáng lưu ý là gia đình này làm dịch vụ san nạp gas trái phép.</p>
-<p lang="vi" style="text-indent: 0cm"><b>3.2.5. Cách xử trí và thoát nạn, thoát hiểm khi có cháy, nổ gas</b></p>
-<p lang="vi"><b><i>Cách xử trí khi có cháy, nổ gas</i></b></p>
-<p lang="vi">- Khi phát hiện cháy ở cửa hàng kinh doanh gas, người phát hiện phải hô to để báo động cho mọi người biết cùng tham gia chữa cháy.</p>
-<p lang="vi">- Sử dụng phương tiện chữa cháy tại chỗ để dập tắt đám cháy.Chữa cháy ban đầu đối với cửa hàng gas có thể sử dụng phương pháp kìm hãm (ức chế) hóa học phản ứng cháy.</p> 
-<p lang="vi">- Ngay sau khi phun bột, phải sử dụng nước để làm mát (kể cả khi đám cháy đã được dập tắt).</p>
-<p lang="vi">- Gọi điện báo cho Công an Phòng cháy và chữa cháy theo số điện thoại 114. </p>
-<p lang="vi">- Trong quá trình chữa cháy, phải luôn chú ý dùng nước làm mát và tìm cách đóng van khóa, cắt nguồn cung cấp khí gas vào đám cháy.</p> 
-<p lang="vi">- Việc phun nước làm mát các bình gas lân cận phải làm mát liên tục từ khi mới cháy, trong khi phun nước dập tắt đám cháy, sau khi đám cháy đã được dập tắt hoàn toàn cho tới khi các bình đã hoàn toàn nguội hẳn.</p>
-<p lang="vi">- Khi lực lượng Cảnh sát PCCC tham gia chữa cháy, cần kết hợp phun nước làm mát và phun bọt để chữa cháy.</p>
-<p lang="vi">Do việc tổ chức chữa cháy ở cửa hàng tồn chứa gas phức tạp, phải sử dụng nhiều lực lượng và phương tiện để làm mát bình cháy, công trình kế cận và dập tắt đám cháy, cho nên để đảm bảo cho việc chữa cháy đạt kết quả, nhất thiết ở các cơ sở kinh doanh gas phải tiến hành lập và thực tập phương án chữa cháy.</p>
-<p lang="vi"><i>Cách xử trí khi rò rỉ khí gas tại nhà</i></p>
-<p lang="vi">- Khi phát hiện mùi gas hoặc thiết bị báo phát tín hiệu phải nhanh chóng xác định vị trí bị rò rỉ. Dùng nước xà phòng bôi lên những nơi nghi bị rò rỉ để xác định có bị rò rỉ hay không. Tuyệt đối không thể dùng ngọn lửa để tìm chỗ rò rỉ. Đánh dấu vị trí rò rỉ.</p>
-<p lang="vi">- Loại trừ ngay các nguồn lửa, nguồn nhiệt gần khu vực bình gas.</p>
-<p lang="vi">- Phải mở cửa sổ, cửa ra vào để hơi gas thoát ra ngoài; tuyệt đối không được bật hoặc tắt công tắc điện, công tắc quạt, điều hòa, rút hoặc cắm phích điện vì sẽ tạo tia lửa điện ở trong công tắc, ổ cắm gây nổ khí gas.</p>
-<p lang="vi">- Bịt chặt chỗ rò rỉ lại và kịp thời di chuyển bình bị rò rỉ ra ngoài, đặt xa nguồn lửa và nơi đông người.</p>
-<p lang="vi">- Phải thông báo cấm các nguồn lửa, nguồn nhiệt gây cháy.</p>
-<p lang="vi">- Không được tháo bỏ hoặc sửa van chai đã bị hư hỏng mà phải chuyển cho cơ sở nạp xử lý.</p>
-<p lang="vi">- Khoanh vùng xếp đặt các bình bị rò rỉ, treo biển cấm người qua lại và thông báo ngay sự cố cho cơ sở cung cấp gas.</p>
-<div class="video-container">
-  <video controls>
-      <source src="../video/video9.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-  </video>
-</div>
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Video 9. Cần làm gì khi phát hiện mùi gas trong nhà?</i></p>
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>(Nguồn: VTC24)</i></p>
-<br/>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic29.png" alt="pic29" width="720px" height="250px">
-</div> 
-<p lang="vi"><i>Cách thoát nạn, thoát hiểm khi có cháy, nổ gas</i></p>
-<p lang="vi">- Khi xảy ra cháy, nổ, hãy tìm cách ra ngoài thật nhanh, vì đám khói có thể che khuất tầm nhìn gây ra cay mắt. </p>
-<p lang="vi">- Tránh xa khu vực chứa bình gas, đề phòng nổ bình gas và ngộ độc khí gas.</p>
-<p lang="vi">- Khi thoát hiểm không cố thu những đồ có giá trị, không tìm hiểu đám cháy.</p>
-<p lang="vi">- Trước khi mở cửa, hãy đặt mu bàn tay lên cánh cửa, nếu thấy ấm, đừng mở - mặt kia của cánh cửa đang cháy. Dùng mu bàn tay để thử, không dùng lòng bàn tay. Vì lòng bàn tay bị bỏng sẽ cản trở việc thoát thân của bạn khi bạn bò hay xuống thang cứu hỏa.</p>
-<p lang="vi">- Nếu đang chạy thoát cùng người khác, hãy đi cùng nhau nếu có thể. </p>
-<p lang="vi">- Thoát hiểm qua cửa dẫn ra ngoài nên là lựa chọn đầu tiên của bạn, nhưng bạn cũng có thể kiểm tra xem cửa sổ có thể là lối chạy thoát được không. Thậm chí cửa sổ trên tầng cao cũng có ích khi bạn cần giúp đỡ từ lính cứu hỏa hay từ người khác.</p>
-<p lang="vi">- Nếu không thể thoát ra ngoài nhanh được vì lửa hay khói đã chặn mất lối thoát, ra ngoài bằng cửa sổ: ném chăn, gối, đệm xuống đất ở bên ngoài để đỡ bạn. </p>
-<p lang="vi">- Nếu bạn không thể mở cửa sổ, hãy dùng một vật nặng để đập vỡ nó ở góc cuối, khi chạm vào các mép sắc cần dùng vải, khăn mặt hay chăn.</p>
-<p lang="vi">- Hạ thấp cơ thể bạn bằng cách đặt tay lên bậc cửa sổ trước khi thả mình xuống.</p>
-<p lang="vi">- Nếu không thể ra ngoài, hãy tập hợp mọi người vào một phòng: chọn một phòng có cửa sổ nếu có thể, ngăn khói và lửa vào qua cửa bằng cách chặn các khe hở quanh cửa với khăn trải giường, chăn, quần áo hoặc băng dính. </p>
-<p lang="vi">- Nếu trong phòng có cửa sổ nhưng không giúp bạn thoát ra được, hãy mở nó ra và đứng trước cửa sổ để hít thở và gọi giúp đỡ. </p>
-<p lang="vi">- Nếu bạn có thể lấy được một mảnh quần áo hay khăn mặt, hãy đặt nó trên miệng để không hít khói vào. Tốt hơn nếu bạn nhúng ướt miếng vải trước khi che lên miệng.</p>
-<p lang="vi">- Nếu ra ngoài được, bạn nên tìm một nơi an toàn gần đám cháy để đợi. Nếu còn có người trong khu vực cháy, hãy đợi đội lính cứu hỏa tới. Bạn có thể kể với họ về người bị mắc kẹt và họ sẽ tìm người mắc kẹt giúp bạn nhanh hơn.</p>
-<p lang="vi">- Nếu quay lại nhà bị cháy, bạn sẽ làm cho những nỗ lực cứu người mất tích của lính cứu hỏa bị chậm lại, đồng thời tự đặt bản thân vào tình huống rất nguy hiểm.</p>
-      </section>
-      <h3>
-        <section id="section3">
-          <p lang="vi" style="text-indent: 0cm">3.3. TRONG QUÁ TRÌNH HÀN CẮT</p>
-      </h3>
-      <p lang="vi" style="text-indent: 0cm"><b>3.3.1. Đặc điểm cháy, nổ</b></p>
-<p lang="vi">Trong quá trình thi công, những thợ sử dụng ngọn lửa có nhiệt độ cao để làm nóng chảy kim loại và cho chúng dính kết với nhau theo tiêu chuẩn gọi là hàn. </p>
-<p lang="vi">Còn nếu sử dụng khí cháy có nhiệt độ cao hơn để làm nóng chảy các tấm, thanh kim loại thành các tấm, thanh kim loại có kích thước cần dùng hoặc khi phá dỡ các kết cấu kim loại liên kết với nhau được gọi là cắt. </p>
-<p lang="vi">Ngọn lửa các khí cháy có thể sử dụng khí axêtylen, khí đốt hóa lỏng (gas) được nạp sẵn trong các bình chứa khí cùng với các bình chứa khí ôxy. </p>
-<p lang="vi">Khi muốn sử dụng chỉ cần có thêm thiết bị chuyên dùng gọi là mỏ hàn. Ngoài phương pháp hàn cắt kim loại sử dụng khí axêtylen hay khí đốt hóa lỏng, còn dùng phương pháp hàn điện. Khi hàn cắt kim loại, nhiệt độ tâm ngọn lửa đạt tới 3000°C, nhiệt độ mối hàn khoảng 1700°C  – 1800°C. </p>
-<p lang="vi">Trong quá trình hàn cắt kim loại sẽ làm phát sinh các hạt kim loại nóng chảy (nhiệt độ đạt trên 1000°C) bắn tung tóe ra xung quanh rất dễ gây cháy khi tiếp xúc với các vật liệu cháy. Đặc biệt, quy trình cắt kim loại có quá trình dùng luồng ôxy có lưu lượng và áp lực lớn thổi bạt lớp ôxit kim loại và một phần kim loại nóng chảy ra ngoài. Khi các hạt kim loại nóng chảy với nhiệt độ cao tiếp xúc với các vật liệu dễ cháy như vải, giấy, nệm mút… (nhiệt độ bắt cháy khoảng 250°C – 400°C) sẽ rất dễ gây cháy. Nếu sự cháy không được phát hiện kịp thời và có các biện pháp xử lý ban đầu, đám cháy sẽ phát triển mạnh; vận tốc cháy lan tăng dần, dẫn đến cháy lớn gây thiệt hại nghiêm trọng.</p>
-<p lang="vi" style="text-indent: 0cm"><b>3.3.2. Một số vấn đề cần lưu ý về PCCN trong quá trình hàn cắt</b></p>
-<center><div class="audio-container">
-  <audio controls>
-      <source src="../audio/audio7.mp3" type="audio/mp3">
-Your browser does not support the audio element.
-</audio>
-</div>
-</center>
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Audio 7. Nguyên tắc PCCC cơ bản trong quá trình hàn cắt</i></p>
-<p lang="vi">- Người đứng đầu các cơ sở cần nêu cao trách nhiệm về phòng cháy, chữa cháy, quan tâm và đầu tư cho công tác phòng cháy, chữa cháy.</p>
-<p lang="vi">- Ban hành nội quy, quy định an toàn phòng cháy, chữa cháy, quy trình hàn cắt kim loại an toàn.</p>
-<p lang="vi">- Tuyên truyền phổ biến kiến thức pháp luật về phòng cháy, chữa cháy, đặc tính nguy hiểm cháy nổ của quá trình hàn cắt kim loại, kiến thức về an toàn nói chung, an toàn cháy nổ nói riêng trong quá trình hàn cắt.</p>
-<p lang="vi">- Trong quá trình hàn cắt kim loại phải tổ chức che chắn bằng các vật liệu không cháy hoặc di chuyển các vật liệu dễ cháy ra khỏi khu vực hàn cắt (tối thiểu 10m). Không để vảy hàn có nhiệt độ cao tiếp xúc với các vật liệu dễ cháy, phải có biện pháp an toàn phòng cháy, chữa cháy và phương án xử lý cháy, nổ.</p>
-<p lang="vi">- Trong quá trình hàn cắt kim loại phải cử người trông coi. Phải cử người có mặt thường xuyên trong suốt quá trình hàn cắt, đồng thời kiểm tra thật kỹ trước khi kết thúc việc hàn cắt.</p>
-<p lang="vi">- Chỉ sử dụng các dụng cụ hàn cắt đảm bảo an toàn như các chai khí trong thời hạn kiểm định, dây dẫn khí đảm bảo kín, đường ống dẫn khí phải được bảo vệ tránh tia lửa hàn, xỉ hàn và dầu mỡ, không đặt các chai khí gần nguồn nhiệt, hệ thống điện…</p>
-<p lang="vi">- Trang bị các phương tiện phòng cháy, chữa cháy cần thiết như bình chữa cháy tại khu vực tiến hành hàn cắt để có thể xử lý kịp thời khi có sự cố cháy nổ.</p>
-<p lang="vi">- Thợ hàn phải được tập huấn về nghiệp vụ PCCC, nắm vững đặc điểm nguy hiểm cháy nổ trong hàn cắt kim loại, biết sử dụng thành thạo các loại phương tiện phòng cháy, chữa cháy tại chỗ để có thể dập tắt được đám cháy ngay khi mới phát sinh.</p>
-<p lang="vi">- Áp dụng các phương pháp hàn cắt tiên tiến, sử dụng thợ hàn có tay nghề đã qua đào tạo về công tác an toàn trong quá trình hàn cắt.</p>
-<p lang="vi">- Đối với thợ hàn phải thực hiện các biện pháp an toàn phòng cháy, chữa cháy sau:</p>
-<p lang="vi">+ Chuẩn bị đầy đủ trang bị bảo hộ cá nhân (giày, găng tay, kính hàn…).</p>
-<p lang="vi">+ Sắp xếp nơi làm việc gọn gàng, kiểm tra tình trạng nước, cát, bình chữa cháy trang bị cho khu vực hàn.</p>
-<p lang="vi">+ Chuẩn bị chậu nước để làm nguội mỏ hàn.</p>
-<p lang="vi">+ Cần tiến hành kiểm tra: Các chỗ nối ống cao su với mỏ hàn và bộ giảm áp (dùng nước xà phòng), tình trạng mỏ hàn, bộ giảm áp và ống dẫn khí, độ lưu thông của miệng phun mỏ hàn, độ lưu thông của ống dẫn cao su từ bình ôxy đến mỏ hàn và từ bình khí axêtylen đến mỏ hàn.</p>
-<p lang="vi">+ Không được dùng búa hoặc các dụng cụ phát tia lửa để gõ vào nắp chai chứa khí, không sử dụng bộ giảm áp đã chờn ren, không để chai khí ôxy, các ống cao su dẫn khí tiếp xúc với đường dây dẫn điện, không tự động tháo, lắp bộ phận giảm áp nếu chưa được sự đồng ý của thợ hàn chính, không mở van bình khí axêtylen bằng các dụng cụ, thiết bị không chuyên dùng.</p>
-<p lang="vi">- Trong thời gian làm việc cần chú ý:</p>
-<p lang="vi">+ Khi mồi lửa cho mỏ hàn hơi phải dùng diêm, bật lửa chuyên dùng.</p>
-<p lang="vi">+ Khi hàn không quàng ống dẫn khí vào cổ, vào vai, kẹp chân, cuộn tròn hoặc bẻ gập ống.</p>
-<p lang="vi">+ Khi mỏ hàn hơi đang cháy không mang ra khỏi khu vực làm việc dành riêng cho thợ hàn. Khi hàn ở trên cao không được mang mỏ hàn hơi đang cháy để leo thang.</p>
-<p lang="vi">+ Trong thời gian giải lao, phải tắt lửa mỏ hàn và đóng van cấp khí tới mỏ hàn.</p>
-<p lang="vi">+ Nếu thời gian nghỉ kéo dài (giao ca, ăn trưa) thì ngoài việc tắt lửa mỏ hàn còn phải khóa van bình ôxy, bình khí axêtylen và ở bộ phận giảm áp phải nới hết cỡ nén của lò xo bên trong.</p>
-<p lang="vi">+ Khi mỏ hàn quá nóng thì phải tắt lửa mỏ hàn, nhúng đầu mỏ hàn vào chậu nước sạch, chờ nguội hẳn mới được làm việc trở lại.</p>
-<p lang="vi">+ Khi lửa tạt lại phải đóng ngay van nước của bình sinh khí, đồng thời đóng van bình chứa khí, sau đó nhúng mỏ hàn vào nước sạch chờ cho đến khi nguội hẳn mới làm việc lại.</p>
-<p lang="vi">+ Khi áp suất ở bình khí axêtylen tụt xuống hẳn thì không được tiếp tục làm việc. Phải kiểm tra ngay tình trạng của bình.</p>
-<p lang="vi">+ Khi miệng phun mỏ hàn bị tắc phải dùng dây đồng vừa lỗ phun của mỏ để thông, không được dùng dây thép.
-+ Khi hàn cắt trong thể tích kín phải đốt mỏ hàn từ ngoài mang vào.</p>
-<p lang="vi">+ Hàn cắt trong những gian nhà có sàn gỗ, vật liệu dễ cháy phải dùng tấm tôn hay tấm amiăng che phủ bề mặt chống cháy lan.</p>
-<p lang="vi">+ Hàn cắt trên cao (từ 1,5m trở lên) cần chú ý có thể gây cháy ở phía dưới.</p>
-<p lang="vi">- Các chú ý trong bảo quản và vận chuyển:</p>
-<p lang="vi">+ Chú ý hạn sử dụng của chai chứa khí, chỉ sử dụng các chai còn hạn sử dụng.</p>
-<p lang="vi">+ Nên sử dụng các phương tiện vận chuyển chai chứa khí chuyên dùng, hạn chế vận chuyển bằng tay. Không kéo lê, lăn nằm, chỉ có thể lăn chai ở trạng thái nghiêng.</p>
-<p lang="vi">+ Bảo vệ chai, tránh va đập, bị cắt hoặc bị rơi.</p>
-<p lang="vi">+ Không sử dụng chai chứa khí làm con lăn, giá đỡ.</p>
-<p lang="vi">+ Chai phải được ghi rõ loại khí. Không sử dụng nếu không rõ thành phần.</p>
-<p lang="vi">+ Đánh dấu các chai đã hết khí và phân loại, để riêng.</p>
-<p lang="vi">+ Nhà chứa chai chứa khí phải đảm bảo thông gió. Không để chung chai ôxy với chai chứa khí cháy hoặc các chất ôxy hóa.</p>
-<p lang="vi">+ Không đặt chai chứa khí chạm vào dây điện hoặc nguồn nhiệt, phòng ngừa nguy cơ cháy, nổ.</p>
-<p lang="vi">- Các chú ý khi sử dụng chai khí:</p>
-<p lang="vi">+ Để đảm bảo an toàn cắt kim loại, các chai chứa khí phải được đặt ở vị trí đứng và cố định chắc.</p>
-<p lang="vi">+ Mở chai bằng tay một cách từ từ. Nếu trường hợp không mở được, phải trả chai lại và không cố mở bằng các dụng cụ khác.</p>
-<p lang="vi">+ Van giảm áp và áp kế phải phù hợp với loại khí và áp suất trong chai chứa khí. Người sử dụng không được tự ý sửa chữa van giảm áp.</p>
-<p lang="vi">+ Không được để chai tiếp xúc với ngọn lửa, kim loại nóng chảy, khí nóng hoặc dây điện, tia lửa.</p>
-<p lang="vi">+ Không để chai ôxy bị dây dầu mỡ.</p>
-<p lang="vi">+ Không dùng ôxy thay cho khí nén, khí nitơ khi thử đường ống hoặc dùng trong các phương tiện.</p>
-<p lang="vi">+ Đối với chai C<sub>2</sub>H<sub>2</sub> không mở quá 1,5 vòng.</p>
-<p lang="vi">+ Không kết hợp 1 chai ôxy cho 2 chai khí cháy bằng cách dùng chữ T trên đường ống cấp khí.</p>
-<p lang="vi">+ Ngưng sử dụng khi chai bị rò rỉ, khóa van chai ngay lập tức, vận chuyển chai khí ra vị trí thoáng gió, báo cho người cung cấp.</p>
-<p lang="vi">- Chú ý an toàn hàn cắt kim loại bằng khí:</p>
-<p lang="vi">+ Chú ý ống mềm: không nên quá dài hoặc bị xoắn. Bảo vệ không để bị vật đè hoặc cán qua.</p>
-<p lang="vi">+ Không băng bó các vết hở, xì. Phải cắt bỏ hoặc thay mới.</p>
-<p lang="vi">+ Định kỳ kiểm tra ống mềm. Bảo quản cẩn thận khi không sử dụng.</p>
-<p lang="vi">+ Mở van ôxy trước, xong mới mở van khí cháy khi mồi lửa, tránh tình trạng cháy ngược.</p>
-<p lang="vi">+ Bảo vệ kỹ ống mềm khỏi tia lửa, dầu mỡ và xỉ hàn.</p>
-<p lang="vi">+ Không để mỏ hàn, mỏ cắt quá nóng, phòng cháy ngược.</p>
-<p lang="vi">+ Khóa van giảm áp khi thay mở hàn, tuyệt đối không bẻ gập ống.</p>
-<p lang="vi">+ Sau khi sử dụng chai khí để hàn cắt kim loại, phải đóng kín van khí, tránh trường hợp rò rỉ khí gây nguy hiểm cho cả con người và tài sản.</p>
-<p lang="vi">+ Khi ngưng hàn cắt trong thời gian dài phải: khóa van chai, xì hết khí thừa trong ống và thả lỏng hết vít điều chỉnh trên van giảm áp.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/img318.JPG" alt="img318" width="400px" height="250px">
-</div>
-<p lang="vi" style="text-indent: 0cm; text-align: center;"><i>Hình 3.18. Chai khí để hàn cắt kim loại</i></p>
-<p lang="vi">- An toàn hàn cắt kim loại bằng điện: Cần phòng ngừa các yếu tố nguy cơ gây nguy hiểm như: tia hồ quang, vật hàn nóng chảy, khí độc, bụi kim loại và điện giật bằng các biện pháp:</p>
-<p lang="vi">+ Mang găng tay, bảo hộ phù hợp. Giữ quần áo sạch sẽ, không dính dầu mỡ hoặc các chất dễ cháy.</p>
-+<p lang="vi"> Tại khu vực làm việc không để các vật dễ cháy. Nếu bắt buộc phải có thì phải phủ bằng tấm chịu lửa và có người canh giữ trong suốt quá trình hàn.</p>
-<p lang="vi">+ Kiểm tra cẩn thận sau khi kết thúc công việc vì nếu không kiểm tra có thể xảy ra trường hợp chập, rò điện. Thường xuyên kiểm tra, bảo dưỡng máy hàn, que hàn.</p>
-<p lang="vi">+ Thông gió khu vực làm việc tránh khói gây ngộ độc, công nhân phải được trang bị thiết bị bảo hộ đầy đủ để đảm bảo an toàn hàn cắt kim loại, phòng các rủi ro có thể xảy ra.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/img319.JPG" alt="img319" width="400px" height="250px">
-</div>
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Hình 3.19. Hàn cắt kim loại bằng điện</i></p>
-<p lang="vi" style="text-indent: 0cm"><b>3.3.3. Một số tình huống cháy, nổ trong quá trình hàn cắt </b></p>
-<p lang="vi">- Tình huống 1: Các cơ sở hàn cắt kim loại, thợ hàn cắt kim loại chưa được trang bị kiến thức chuyên môn về PCCC; chưa biết được những đặc tính nguy hiểm cháy, nổ của hàn cắt kim loại; chưa biết biện pháp phòng ngừa sự cố cháy, nổ dẫn đến vi phạm PCCC gây cháy, nổ. </p>
-<p lang="vi">- Tình huống 2: Thợ hàn cắt kim loại khi hàn cắt phát sinh các hạt kim loại nóng chảy với nhiệt độ cao bắn ra xung quanh gặp các vật liệu bông, vải, sợi, giấy, nệm mút… dẫn đến cháy, nổ.</p>
-<p lang="vi">- Tình huống 3: Khi xảy ra sự cố, thợ hàn cắt kim loại không sử dụng các dụng cụ, phương tiện chữa cháy tại chỗ, không giữ được bình tĩnh, lúng túng, sợ hãi; không biết cách để dập tắt đám cháy ngay khi mới phát sinh, thậm chí còn bỏ chạy dẫn đến cháy lan, cháy lớn.</p>
-<p lang="vi">- Tình huống 4: Trong quá trình sử dụng ngọn lửa của khí axêtylen, khí gas để hàn cắt kim loại bằng mỏ hàn, mỏ cắt, do kiểm soát ngọn lửa không tốt dẫn tới cháy các đồ vật khác. </p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic30.PNG" alt="pic30" width="420px" height="250px">
-</div>
-<p lang="vi" style="text-indent: 0cm"><b>3.3.4. Cách xử trí và thoát nạn, thoát hiểm khi có cháy, nổ trong quá trình hàn cắt</b></p>
-<p lang="vi"><b><i>Cách xử trí khi có cháy, nổ trong quá trình hàn cắt</i></b></p>
-<p lang="vi">- Ngắt (cắt) cầu dao (aptomat) điện tổng trước nhà và công trình. Trước khi cắt điện tuyệt đối không được dùng nước để dập cháy đề phòng dẫn điện. </p>
-<p lang="vi">- Hô hoán, báo động cho mọi người xung quanh. Gọi điện báo cháy cho Cảnh sát Phòng cháy và chữa cháy theo số máy 114.</p>
-<p lang="vi">- Sử dụng phương tiện chữa cháy tại chỗ để chữa cháy (nên sử dụng các bình chữa cháy khí CO<sub>2</sub>, bình bột chữa cháy).</p>
-<p lang="vi">- Trường hợp đám cháy lan rộng, bạn không thể xử lý được, hãy bỏ qua, tìm cách thoát ra ngoài, đóng cửa lại và chờ lực lượng PCCC chuyên nghiệp đến.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic31.JPG" alt="pic31" width="620px" height="220px">
-</div>
-<p lang="vi">- Hãy tìm cách ra ngoài thật nhanh, vì đám khói có thể che khuất tầm nhìn gây ra cay mắt.</p> 
-<p lang="vi">Cách thoát nạn, thoát hiểm khi có cháy, nổ trong quá trình hàn cắt</p>
-<p lang="vi">- Tìm cách thoát nạn ra khu vực an toàn thông qua các lối thoát nạn đã định sẵn từ trước. </p>
-<p lang="vi">- Sử dụng các phương tiện bảo vệ cá nhân được trang bị như mặt nạ, găng tay... để phòng khí độc, bỏng trong khi thoát hiểm.</p>
-<p lang="vi">- Bình tĩnh suy xét, hô hoán báo động cho mọi người biết để mau chóng di chuyển ra ngoài qua lối thoát nạn an toàn, không chen lấn xô đẩy nhau tránh tình trạng nhiều người bị thương, mắc kẹt tại các khu vực bên trong nơi xảy cháy.</p>
-<p lang="vi">- Nếu ai đó gặp khó khăn trong quá trình di chuyển hãy nhanh chóng bằng mọi cách đưa họ ra khỏi khu vực nguy hiểm.</p> 
-<p lang="vi">- Kiểm tra nhiệt độ trước khi mở cửa; đưa tay lại gần tay nắm cửa, nếu thấy ấm đừng nên mở vì có thể phía bên kia cửa đang cháy. Bạn nên dùng mu bàn tay để kiểm tra nhằm bảo vệ lòng bàn tay không bị bỏng. Vì lòng bàn tay sẽ hỗ trợ bạn thoát thân hoặc bò ra ngoài bằng thang cứu hỏa.</p>
-<p lang="vi">- Nếu phải mở cửa thoát hiểm, cần nhớ kỹ: Kiểm tra nhiệt độ trước khi mở; khi mở nên tránh mặt và người sang một bên đề phòng lửa tạt. Nên cúi sát người xuống sàn khi mở cửa; nếu nhiệt độ quá cao, tuyệt đối không được mở; nếu khói lùa, dùng vải, giẻ ướt nhét vào khe cửa; hoặc dùng băng dính dán chặt. Sau đó tìm lối thoát sang các phòng khác. </p>
-<p lang="vi">- Trong trường hợp khu vực cửa, lối di chuyển có nhiều khói thì hướng dẫn cho mọi người sử dụng khăn ẩm, khẩu trang ẩm bịt vào mũi để thở và hạ thấp trọng tâm khi di chuyển hoặc bò. </p>
-<p lang="vi">- Trong trường hợp nếu phải băng qua lửa, hãy dùng áo, chăn chất liệu cotton nhúng ướt và trùm lên đầu, lên người.</p>
-<p lang="vi">- Trường hợp cháy, nổ do hàn cắt tại công trình cao tầng, tuyệt đối không di chuyển theo hướng lên trên mà di chuyển ra ngoài bằng cách bò sát mặt đất, bịt khăn thấm nước lên miệng, mũi để tránh bị ngạt khói. Bạn nên bò men theo bờ tường để tìm lối thoát một cách nhanh nhất. </p>
-<p lang="vi">- Trường hợp các khu nhà xưởng nơi thực hiện hàn cắt đã quá cũ, chỉ có một lối thoát hiểm duy nhất nhưng lại bị lửa bùng cháy dẫn đến đổ sập khiến bạn không thể thoát ra cùng với khói, khí độc bao trùm thì cần bình tĩnh dùng chăn ẩm ướt hoặc băng dính bịt kín các khe cửa. Hãy chọn một phòng có cửa sổ để tập hợp mọi người ở cùng với nhau. Nếu không thể thoát ra ngoài bằng cửa sổ, bạn có thể mở cửa để hít thở hoặc gọi giúp đỡ.</p>
-<p lang="vi">- Nếu bạn đã thoát ra ngoài được nhưng còn có người ở trong đám cháy thì hãy đợi đội lính cứu hỏa tới và nói với họ về người bị mắc kẹt. Không nên quay lại đám cháy vì bạn sẽ đặt bản thân vào tình huống nguy hiểm và làm những nỗ lực cứu người của lính cứu hỏa bị chậm lại, gây ảnh hưởng đến nhiều người hơn.</p>
-      </section>
-    </article>
-  </main>
-  <script src="./scripts.js"></script>
-
-
-
-</body>
-
+		<main>
+			<article id="chapter">
+				<h2>
+					<p
+						style="line-height: 1cm; text-indent: 0cm"
+						id="chapter-name"
+					>
+						Chương 3<br /><br />KỸ NĂNG PHÒNG CHÁY, CHỮA CHÁY VÀ CÁCH THOÁT NẠN,
+						THOÁT HIỂM KHI GẶP SỰ CỐ CHÁY, NỔ
+					</p>
+				</h2>
+				<section id="section1">
+					<h3>
+						<p style="text-indent: 0cm">3.1. SỬ DỤNG ĐIỆN</p>
+					</h3>
+					<p style="text-indent: 0cm">
+						<b>3.1.1. Đặc điểm, tính nguy hiểm trong sử dụng điện</b>
+					</p>
+					<p>
+						Điện là nguồn năng lượng phổ biến và không thể thiếu trên tất cả các
+						mặt của đời sống con người. Điện dễ dàng được truyền tải đi xa, có
+						thể sản xuất từ nhiều nguồn năng lượng khác nhau, thay đổi ở nhiều
+						mức điện thế khác nhau. Tuy nhiên điện có các mặt trái của nó đó là
+						gây nguy hiểm cho con người như tạo ra điện trường, điện giật và gây
+						ra cháy, nổ.
+					</p>
+					<p>
+						Trong các vụ cháy có nguyên nhân xuất phát từ điện thì chủ yếu là
+						điện năng đóng vai trò là nguồn nhiệt gây cháy, bên cạnh đó một số
+						thiết bị điện có vỏ hay chất cách điện là nhựa, cao su; dầu máy biến
+						thế… cũng có thể trở thành chất cháy.
+					</p>
+					<p style="text-indent: 0cm">
+						<b>3.1.2. Một số vấn đề lưu ý về PCCN trong sử dụng điện</b>
+					</p>
+					<p style="text-indent: 0cm">
+						<b><i>3.1.2.1. Thiết kế, lắp đặt</i></b>
+					</p>
+					<p>
+						- Hệ thống điện phải được thiết kế, lắp đặt phù hợp với tính chất sử
+						dụng và công năng của công trình. Công suất biến áp phải đáp ứng
+						được phụ tải ở mức lớn nhất theo tính toán. Lắp đặt aptomat tổng và
+						riêng cho từng khu vực; dùng khởi động từ cho các phụ tải lớn.
+					</p>
+					<p>
+						- Đường dây phải đi trong ống gen chống cháy đặt ngầm hoặc buộc gọn
+						gàng nếu ở ngoài tường.
+					</p>
+					<p>
+						- Không dùng bảng điện bằng vật liệu dễ cháy, không lắp trực tiếp
+						thiết bị lên vật liệu dễ cháy. Đối với khu vực chứa gas, hóa chất,
+						hơi khí chất cháy thì phải dùng thiết bị điện chống nổ. Nếu dùng 2
+						nguồn điện hay máy phát dự phòng thì phải có bộ chuyển mạch tự động.
+						Khu vực đặt máy phát hay biến áp phải thoáng khí, có tường ngăn
+						cháy, bể chứa dầu sự cố và có trang thiết bị chữa cháy phù hợp.
+					</p>
+					<p>- Lắp đặt hệ thống thu lôi chống sét cho hệ thống điện.</p>
+					<p>
+						- Thiết bị điện lắp đặt phải phù hợp với mạng điện cả về tần số,
+						điện áp và công suất… các thiết bị trong hệ thống phải đồng bộ.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/img31.JPG"
+							alt="img31"
+							width="510px"
+							height="220px"
+						/>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Hình 3.1. Lắp đặt thiết bị điện phù hợp</i>
+					</p>
+					<p>
+						- Cầu dao, bảng điện phải được bắt chặt và có hộp bảo vệ, cầu chì có
+						đủ nắp đậy; ở những nơi có chất cháy, các thiết bị điện này phải
+						được đặt phía ngoài, ở những nơi có nguy hiểm cháy, nổ phải lắp đặt
+						hệ thống điện an toàn phòng cháy, nổ.
+					</p>
+					<p>- Các mối nối phải chặt và bọc kín bằng chất cách điện.</p>
+					<p>
+						- Không nối hai dây dẫn có chất liệu và điện trở khác nhau để dẫn
+						điện.
+					</p>
+					<p>
+						- Tiếp đất cho các thiết bị máy móc, các bể chứa, các đường ống dẫn
+						nguyên liệu, các phương tiện chuyên chở. Thiết bị nối đất phải có
+						điện trở từ 5-10W.
+					</p>
+					<p>- Tăng độ ẩm của không khí ở khu vực có nguy hiểm về tĩnh điện.</p>
+					<p>- Ion hóa không khí để nâng cao tính dẫn điện của không khí.</p>
+					<p style="text-indent: 0cm">
+						<i><b>3.1.2.2. Sử dụng</b></i>
+					</p>
+					<p>- Sử dụng điện hợp lý, tiết kiệm.</p>
+					<p>
+						- Tắt các thiết bị điện khi ra khỏi phòng kể cả khi có việc phải đi
+						gấp (trừ các thiết bị điện có yêu cầu đặc biệt phải duy trì nguồn
+						điện liên tục và đã được lắp các thiết bị bảo vệ có độ chính xác
+						cao). Khi sử dụng lò nướng hay lò vi sóng, nhất thiết không được để
+						gần vật dễ cháy, khi sử dụng máy sấy quần áo càng không thể tùy ý đi
+						khỏi chỗ sấy để tránh quần áo bị sấy nóng quá phát cháy.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/img32.PNG"
+							alt="img32"
+							width="360px"
+							height="250px"
+						/>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Hình 3.2. Tắt các thiết bị điện khi không dùng đến</i>
+					</p>
+					<p>
+						- Những thiết bị điện không đặt gần những vật dễ cháy như giá treo
+						quần áo, tủ sách, tủ quần áo… nhằm tránh tình trạng bức xạ nhiệt.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/img33.JPG"
+							alt="img33"
+							width="340px"
+							height="250px"
+						/>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Hình 3.3. Không để các thiết bị điện gần những vật dễ cháy</i>
+					</p>
+					<p>
+						- Bóng đèn gắn trong nhà nên gắn cách trần hay tường bằng vật liệu
+						cháy, ít nhất 2,5cm. Vì nếu gắn sát bề mặt tường hay trần thì chỉ
+						cần nhiệt độ 300°C trần tường gỗ sẽ có thể phát cháy, trong khi đó
+						nếu gắn cách 2,5m thì nhiệt độ bóng đèn phải đạt 1500°C mới phát
+						cháy.
+					</p>
+					<p style="text-indent: 0cm">
+						- Dùng thiết bị điện phù hợp với khả năng chịu tải của đường dây
+						điện. Đặc biệt với các thiết bị điện động lực hay phụ tải có công
+						suất lớn, trước khi dùng phải xem xét kỹ lại hệ thống điện và thông
+						số của phụ tải đó. Không nên dùng nhiều thiết bị điện trên cùng một
+						ổ cắm cùng lúc, đặc biệt gần khu vực có nhiều chất cháy.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/img34.PNG"
+							alt="img34"
+							width="290px"
+							height="280px"
+						/>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i
+							>Hình 3.4. Không nên dùng nhiều thiết bị điện trên cùng một ổ
+							cắm</i
+						>
+					</p>
+					<p>
+						- Không để dây điện bị kẹt ở chân bàn, chân tủ hay khe cửa. Không để
+						đường dây điện kéo dài chạy qua tấm thảm lót sàn hoặc qua vật liệu
+						cháy hay thiết bị sinh nhiệt.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/img35.jpg"
+							alt="img35"
+							width="530px"
+							height="220px"
+						/>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Hình 3.5. Không để dây điện bị kẹt</i>
+					</p>
+					<p>
+						- Phích cắm điện phải chặt, không nên để lỏng lẻo nhằm tránh điện
+						trở tiếp xúc phát sinh nhiệt bắt cháy nhựa của ổ, phích cắm hoặc
+						những vật dụng xung quanh. Máy nước nóng có thể phát nổ hay chạm
+						chập nên chú ý kiểm tra bộ phận điều tiết tự động có hư hỏng không.
+						Khi sử dụng đồ điện nhất thiết không được để trẻ em đến gần đùa
+						nghịch, để tránh bị điện giật hoặc gây cháy. Tại khu vực bếp nấu, ổ
+						cắm, thiết bị điện phải cách xa bếp gas ít nhất 1 - 2m.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/img36.JPG"
+							alt="img36"
+							width="200px"
+							height="250px"
+						/>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Hình 3.6. Khoảng cách an toàn giữa thiết bị điện và bếp gas</i>
+					</p>
+					<p>
+						- Định kỳ vệ sinh máy tính, tivi (TV) vì sử dụng quá lâu trong môi
+						trường có bụi, bụi sẽ tích tụ dễ khiến lớp biên bên ngoài hư hỏng,
+						gây rò rỉ điện hoặc do côn trùng, chuột cắn hư hỏng lớp vỏ ngoài dây
+						điện, dẫn đến chập mạch gây cháy nổ.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/img37.JPG"
+							alt="img37"
+							width="370px"
+							height="250px"
+						/>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Hình 3.7. Nên vệ sinh định kỳ các thiết bị</i>
+					</p>
+					<p>
+						- Dây điện trong nhà nếu đã cũ, phần vỏ bọc bên ngoài đã hư hỏng
+						hoặc phích cắm hỏng cần phải sửa chữa thay thế ngay.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/img38.jpeg"
+							alt="img38"
+							width="590px"
+							height="250px"
+						/>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i
+							>Hình 3.8. Sửa chữa, thay thế kịp thời khi thiết bị điện bị
+							hỏng</i
+						>
+					</p>
+					<p>
+						- Cầu chì bị đứt, thông thường đó là sự cảnh báo quá tải, nhất thiết
+						không được ngộ nhận là do cầu chì quá nhỏ mà đổi sang dùng cầu chì
+						to hoặc dây đồng, dây kẽm thay thế.
+					</p>
+					<p>
+						- Gần phòng máy và thiết bị điện công suất lớn cần đặt các bình chữa
+						cháy để đề phòng.
+					</p>
+					<p>
+						- Dùng các thiết bị máy móc như vôn kế tĩnh điện, tĩnh nghiệm điện
+						có tụ điện, tín hiệu tự báo động báo có tĩnh điện để kiểm tra tĩnh
+						điện.
+					</p>
+					<div class="video-container">
+						<video controls>
+							<source
+								src="../video/video7.mp4"
+								type="video/mp4"
+							/>
+							Your browser does not support the video tag.
+						</video>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i
+							>Video 7. Phòng ngừa cháy, nổ do quá tải điện vào mùa nắng nóng</i
+						>
+					</p>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>(Nguồn: VTV5)</i>
+					</p>
+					<p style="text-indent: 0cm">
+						<b>3.1.3. Một số tình huống cháy, nổ trong sử dụng điện</b>
+					</p>
+					<p style="text-indent: 0cm">
+						<i><b>3.1.3.1. Ngắn mạch</b></i>
+					</p>
+					<p>
+						Ngắn mạch là hiện tượng các pha chập nhau hoặc các pha chập nhau và
+						chạm đất. Khi dòng điện ngắn mạch vượt quá nhiều lần so với dòng
+						điện cho phép, nhiệt độ dây dẫn tăng nhanh có thể dẫn đến cháy, nổ.
+						Ngắn mạch thường kèm theo cung lửa điện làm nóng chảy dây dẫn. Nổ
+						điện tạo ra khối lượng hạt kim loại có kích thước từ 50 - 2500 μm.
+						Các giọt kim loại mang nhiệt lượng đủ lớn bắn ra môi trường khi gặp
+						vật liệu cháy sẽ gây cháy.
+					</p>
+					<p>
+						Ngắn mạch dẫn đến giảm mạnh điện áp trên lưới điện do có thể làm rối
+						loạn một bộ phận hay toàn bộ mạng điện cung cấp cho các hộ tiêu thụ.
+						Động cơ ngừng hoạt động có thể gây hư hỏng nổ hoặc cháy. Khi điện áp
+						giảm, tốc độ quay giảm, phụ tải tăng, động cơ điện bị phát nóng quá
+						mức dẫn đến giảm thời gian hoạt động và trở thành nguyên nhân gây sự
+						cố.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/img39.JPG"
+							alt="img39"
+							width="400px"
+							height="250px"
+						/>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Hình 3.9. Hiện tượng ngắn mạch</i>
+					</p>
+					<p><i>Tình huống phát sinh cháy do ngắn mạch</i></p>
+					<p>
+						- Tình huống 1: Dây dẫn và dây cáp bị hỏng do hậu quả của việc kéo
+						căng quá mức… khi chất cách điện bị hỏng, trong ruột cáp xuất hiện
+						dòng điện rò rỉ, dòng này sẽ chuyển thành dòng ngắn mạch gây cháy,
+						nổ.
+					</p>
+					<p>
+						- Tình huống 2: Hóa chất hay hơi nước lọt vào bên trong vỏ thiết bị
+						điện gây hư hỏng và gây rò rỉ điện dẫn đến cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 3: Chất cách điện của thiết bị điện có thể bị hỏng do
+						tác dụng của nhiệt độ cao hay ngọn lửa trong quá trình cháy, do quá
+						điện áp, do sét đánh thẳng và sét cảm ứng, do chuyển điện áp từ
+						thiết bị cao hơn 100 V sang thiết bị nhỏ hơn 1000V.
+					</p>
+					<p>
+						- Tình huống 4: Các dây tải điện trần trên không bị chập dưới tác
+						dụng của gió hay do vật liệu kim loại văng lên đường dây… hoặc do
+						sai lầm của công nhân trong quá trình thao tác, sửa chữa thiết bị
+						điện gây cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 5: Việc đấu nối giữa các dây dẫn với thiết bị không
+						đúng kỹ thuật, không chặt dẫn đến sinh nhiệt trong quá trình hoạt
+						động gây cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 6: Sét đánh thẳng vào đường dây điện dẫn đến cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 7: Các cuộn dây của động cơ điện không đảm bảo tiêu
+						chuẩn cách điện; sử dụng lâu ngày bị lão hóa, động cơ bị kẹt quay
+						chậm hoặc dừng quay dẫn đến cháy, nổ.
+					</p>
+					<p style="text-indent: 0cm">
+						<i><b>3.1.3.2. Quá tải</b></i>
+					</p>
+					<p>
+						Quá tải là sự cố trong mạng điện xảy ra khi cường độ dòng điện làm
+						việc lớn hơn cường độ dòng điện cho phép. Quá tải nguy hiểm không
+						kém gì ngắn mạch vì nó khó phát hiện, thiết bị bảo vệ (ví dụ:
+						aptomat) không phát hiện ra. Quá tải kéo dài dẫn đến hỏng cách điện
+						và cũng có thể dẫn đến ngắn mạch.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/img310.PNG"
+							alt="img32"
+							width="400px"
+							height="250px"
+						/>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Hình 3.10. Hiện tượng quá tải điện</i>
+					</p>
+					<p><i>Phương pháp phát hiện quá tải</i></p>
+					<p>
+						- Dùng Ampe kế để kiểm tra cường độ dòng điện và so sánh với bảng
+						tiêu chuẩn cường độ dòng điện cho phép.
+					</p>
+					<p>
+						- Có thể phát hiện bằng mắt thường hoặc bằng tay khi thấy tại vị trí
+						ổ cắm điện, đường dây bị biến dạng, biến màu và đặt tay lên cảm thấy
+						nóng hơn bình thường.
+					</p>
+					<p><i>Tình huống phát sinh cháy do quá tải</i></p>
+					<p>
+						- Tình huống 8: Trong thi công, chọn dây dẫn, dây cáp không đảm bảo
+						khiến cường độ dòng điện thực tế lớn hơn trị số cường độ cho phép
+						(Itt > Icp) xảy ra sự cố quá tải gây cháy.
+					</p>
+					<p>
+						- Tình huống 9: Trong sử dụng lắp thêm phụ tải ngoài tính toán dẫn
+						đến quá tải gây cháy.
+					</p>
+					<p>
+						- Tình huống 10: Chế độ vận hành không đối xứng dẫn đến sự cố quá
+						tải gây cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 11: Động cơ điện bị kẹt, quay chậm hoặc dừng quay dẫn
+						đến cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 12: Lắp đặt nhiều thiết bị điện nhưng không cải tạo,
+						thay thế hệ thống dây dẫn điện đúng tiêu chuẩn dẫn đến cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 13: Cắm nhiều thiết bị điện cùng một lúc vào một ổ cắm
+						dẫn đến cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 14: Không lắp các thiết bị tự ngắt (aptomat, cầu
+						chì...) hoặc lắp các thiết bị tự ngắt không đúng tiêu chuẩn dẫn đến
+						cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 15: Lâu ngày không kiểm tra, bảo dưỡng động cơ điện dẫn
+						đến cháy, nổ.
+					</p>
+					<p style="text-indent: 0cm">
+						<b><i>3.1.3.3. Điện trở tiếp xúc</i></b>
+					</p>
+					<p>
+						Điện trở tiếp xúc là điện trở ở những chỗ chuyển tiếp dòng điện hay
+						điểm đấu nối của dây dẫn, thiết bị từ một bề mặt tiếp xúc này sang
+						một diện tích tiếp xúc khác qua diện tích tiếp xúc thực tế của
+						chúng. Nhiệt phát sinh ngay tại điểm tiếp xúc do thành phần điện trở
+						R tại đó lớn hơn nên theo phương trình Q = I<sup>2</sup>.R.t thì giá
+						trị Q sẽ lớn hơn bình thường.
+					</p>
+					<p><i>Tình huống phát sinh cháy do điện trở tiếp xúc</i></p>
+					<p>
+						- Tình huống 16: Sự co thắt mạnh của đường dây dẫn điện làm tiết
+						diện tại đó nhỏ đi gây ra hiện tượng điện trở tiếp xúc dẫn đến cháy,
+						nổ.
+					</p>
+					<p>
+						- Tình huống 17: Lực ép ở tiếp điểm yếu khiến diện tích tiếp xúc
+						thực tế tại đó nhỏ đi gây ra hiện tượng điện trở tiếp xúc dẫn đến
+						cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 18: Vật liệu dẫn điện có tính dẫn điện kém: bề mặt bị
+						ôxy hóa, bị bẩn… gây ra hiện tượng điện trở tiếp xúc dẫn đến cháy,
+						nổ.
+					</p>
+					<p>
+						- Tình huống 19: Bề mặt tiếp xúc làm nhẵn kém nên diện tích tiếp xúc
+						giảm gây ra hiện tượng điện trở tiếp xúc dẫn đến cháy, nổ.
+					</p>
+					<p style="text-indent: 0cm">
+						<b><i>3.1.3.4. Hồ quang điện</i></b>
+					</p>
+					<p>
+						Hồ quang điện là hiện tượng phóng điện trong không khí giữa 2 cực
+						điện khi hàn điện, đóng hay ngắt thiết bị điện... Sẽ thực sự nguy
+						hiểm nếu nó nằm trong môi trường có hơi khí chất cháy, nổ.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/img311.jpeg"
+							alt="img311"
+							width="330px"
+							height="500px"
+						/>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Hình 3.11. Hiện tượng hồ quang điện</i>
+					</p>
+					<p><i>Tình huống phát sinh cháy do xuất hiện hồ quang điện</i></p>
+					<p>
+						- Tình huống 20: Do 2 cực tiếp xúc nhau quá gần nên xuất hiện hiện
+						tượng hồ quang điện gây ra cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 21: Do môi trường giữa 2 điện cực có nhiều ion dẫn
+						điện… (hơi nước, hóa chất) nên xuất hiện hiện tượng hồ quang điện
+						gây ra cháy, nổ.
+					</p>
+					<p style="text-indent: 0cm">
+						<i><b>3.1.3.5. Thiết bị điện sinh nhiệt</b></i>
+					</p>
+					<p>
+						Thiết bị điện sinh nhiệt là các thiết bị điện tỏa nhiệt ra xung
+						quanh như bóng đèn, máy sấy tóc, máy sưởi, bàn là, cục nóng của điều
+						hòa… Nếu bên cạnh các thiết bị này có các chất cháy, thì có thể dẫn
+						đến cháy.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/img312.jpeg"
+							alt="img312"
+							width="500px"
+							height="250px"
+						/>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Hình 3.12. Một số thiết bị điện sinh nhiệt</i>
+					</p>
+					<p><i>Tình huống phát sinh cháy do thiết bị điện sinh nhiệt</i></p>
+					<p>
+						- Tình huống 22: Để chất cháy tiếp xúc trực tiếp hoặc gần thiết bị
+						điện quá mức cho phép dẫn đến sinh nhiệt gây ra cháy, nổ.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/img313.JPG"
+							alt="img33"
+							width="550px"
+							height="250px"
+						/>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i
+							>Hình 3.13. Vị trí ổ cắm, cầu dao nơi dễ phát sinh tia lửa và chập
+							cháy</i
+						>
+					</p>
+					<p>
+						- Tình huống 23: Thiết bị điện quá tải, phát nóng quá mức cho phép
+						gây ra cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 24: Thiết bị điện (nổ, vỡ) các mảnh có mang nhiệt rơi
+						xuống chất cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 25: Trong quá trình sử dụng các động cơ điện: mô tơ
+						điện, quạt điện không đảm bảo an toàn, vận hành không đúng quy trình
+						kỹ thuật, không bảo trì, bảo dưỡng thường xuyên dẫn tới bị kẹt, làm
+						động cơ phát nóng quá mức, hỏng lớp cách điện dẫn tới chập mạch,
+						cháy đường dây dẫn điện.
+					</p>
+					<p style="text-indent: 0cm">
+						<i><b>3.1.3.6. Tĩnh điện</b></i>
+					</p>
+					<p>
+						Tĩnh điện phát sinh do ma sát giữa các vật cách điện với nhau, giữa
+						vật cách điện với vật dẫn điện do va đập của các chất lỏng cách điện
+						(xăng, dầu) khi bơm rót hoặc va đập của các chất lỏng với kim loại
+						hay khi nghiền nát các hạt nhỏ rắn cách điện.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/img314.JPG"
+							alt="img34"
+							width="400px"
+							height="250px"
+						/>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Hình 3.14. Hiện tượng tĩnh điện</i>
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/img315.JPG"
+							alt="img35"
+							width="400px"
+							height="250px"
+						/>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Hình 3.15. Cháy do tĩnh điện</i>
+					</p>
+					<p>
+						- Tình huống 26: Tĩnh điện gây ra hiện tượng phóng điện do các máy
+						móc thiết bị, các bể chứa, bồn chứa, ống dẫn xăng dầu không được
+						tiếp đất gây cháy nổ, hỏa hoạn trong các ngành công nghiệp xăng,
+						dầu, gas…
+					</p>
+					<p style="text-indent: 0cm">
+						<b
+							>3.1.4. Cách xử trí và thoát nạn, thoát hiểm khi có cháy, nổ điện
+						</b>
+					</p>
+					<p>
+						<b><i>Cách xử trí khi có cháy, nổ điện</i></b>
+					</p>
+					<p>
+						- Khi sử dụng điện phát sinh sự cố hay tình trạng bất thường thì
+						trước tiên phải xem xét và ngắt aptomat, cắt cầu dao, cắt công tắc,
+						rút phích cắm để tránh tình trạng đáng tiếc xảy ra tiếp theo.
+					</p>
+					<p>- Liên hệ lực lượng Cảnh sát PCCC theo số điện thoại 114.</p>
+					<p>
+						- Nếu đường dây điện bốc cháy, để tránh cháy lan thì phải ngắt nguồn
+						nhánh hay nguồn chính ngay lập tức. Trước khi cắt điện tuyệt đối
+						không được dùng nước để dập cháy đề phòng dẫn điện.
+					</p>
+					<p>
+						- Nếu cháy trong nhà, công trình, nhưng chưa có khả năng cháy lan
+						thì có thể không cần cắt điện để tận dụng ánh sáng đèn điện phục vụ
+						công tác thoát nạn.
+					</p>
+					<p>
+						- Nếu cháy ở thiết bị điện trong phòng nhưng chưa ảnh hưởng đến hệ
+						thống điện thì chỉ cần tắt (rút) thiết bị điện đó ra. Nếu có bình
+						chữa cháy bằng bột thì có thể sử dụng mà không cần cắt điện.
+					</p>
+					<p>
+						<i><b>Cách thoát nạn, thoát hiểm khi có cháy, nổ điện</b></i>
+					</p>
+					<p>
+						- Bình tĩnh suy xét, hô hoán báo động cho mọi người biết để mau
+						chóng di chuyển ra ngoài qua lối thoát nạn an toàn, không chen lấn
+						xô đẩy nhau tránh tình trạng nhiều người bị thương, mắc kẹt tại các
+						khu vực bên trong nơi xảy cháy.
+					</p>
+					<p>
+						- Nếu ai đó gặp khó khăn trong quá trình di chuyển hãy nhanh chóng
+						bằng mọi cách đưa họ ra khỏi khu vực nguy hiểm.
+					</p>
+					<p>
+						- Kiểm tra nhiệt độ trước khi mở cửa; đưa tay lại gần tay nắm cửa,
+						nếu thấy ấm đừng nên mở vì có thể phía bên kia cửa đang cháy. Bạn
+						nên dùng mu bàn tay để kiểm tra nhằm bảo vệ lòng bàn tay không bị
+						bỏng. Vì lòng bàn tay sẽ hỗ trợ bạn thoát thân hoặc bò ra ngoài bằng
+						thang cứu hỏa.
+					</p>
+					<p>
+						- Nếu phải mở cửa, kể cả cửa nhà, cửa thoát hiểm, cần nhớ kỹ: Kiểm
+						tra nhiệt độ trước khi mở; khi mở nên tránh mặt và người sang một
+						bên đề phòng lửa tạt. Nên cúi sát người xuống sàn khi mở cửa; nếu
+						nhiệt độ quá cao, tuyệt đối không được mở; nếu khói lùa, dùng vải,
+						giẻ ướt nhét vào khe cửa; hoặc dùng băng dính dán chặt. Sau đó tìm
+						lối thoát sang các phòng khác.
+					</p>
+					<p>
+						- Trong trường hợp khu vực cửa, lối di chuyển có nhiều khói thì
+						hướng dẫn cho mọi người sử dụng khăn ẩm, khẩu trang ẩm bịt vào mũi
+						để thở và hạ thấp trọng tâm khi di chuyển hoặc bò.
+					</p>
+					<p>
+						- Trong trường hợp nếu phải băng qua lửa, người dân hãy dùng áo,
+						chăn chất liệu cotton nhúng ướt và trùm lên đầu, lên người.
+					</p>
+					<p>
+						- Di chuyển ra ngoài bằng cách bò sát mặt đất, bịt khăn thấm nước
+						lên miệng, mũi để tránh bị ngạt khói. Bạn nên bò men theo bờ tường
+						để tìm lối thoát một cách nhanh nhất. Khi ra đến ngoài phòng bạn cần
+						phải bình tĩnh di chuyển theo thang bộ nếu ở nhà cao tầng.
+					</p>
+					<p>
+						- Với nhà cao tầng, không nên sử dụng thang máy thoát nạn vì cháy có
+						thể gây nổ nguồn điện, bạn sẽ bị kẹt hoặc ngạt khí.
+					</p>
+					<p>
+						- Nếu không có lối ra, hãy di chuyển ra ban công, cửa sổ vì ở đó
+						thường hay lắp ống thoát hiểm, ròng rọc cá nhân hay xe thang của lực
+						lượng PCCC chĩa vào để cứu người. Từ đây hãy gọi to; dùng khăn, áo
+						sáng màu hoặc đèn pin, điện thoại có phát sáng... ra hiệu cho lực
+						lượng Cảnh sát PCCC biết.
+					</p>
+					<p>
+						- Nếu bạn đã thoát ra ngoài được nhưng còn có người ở trong đám cháy
+						thì hãy đợi đội lính cứu hỏa tới và nói với họ về người bị mắc kẹt.
+						Không nên quay lại đám cháy vì bạn sẽ đặt bản thân vào tình huống
+						nguy hiểm và làm những nỗ lực cứu người của lính cứu hỏa bị chậm
+						lại, gây ảnh hưởng đến nhiều người hơn.
+					</p>
+				</section>
+				<section id="section2">
+					<h3>
+						<p style="text-indent: 0cm">3.2. KHÍ ĐỐT HÓA LỎNG</p>
+					</h3>
+					<p>
+						Cùng với sự phát triển của các ngành công nghiệp, ngành công nghiệp
+						sản xuất và sử dụng nguồn nguyên liệu từ dầu mỏ và khí cũng được
+						phát triển mạnh mẽ với mục đích chủ yếu là giải quyết vấn đề nhiên
+						liệu động cơ, nhiên liệu công nghiệp, nhiên liệu dân dụng. Trong sự
+						phát triển đó công nghiệp chế biến khí đã phát triển không ngừng, nó
+						đem lại hiệu quả kinh tế cao cho nền kinh tế. Khí dầu mỏ hóa lỏng
+						(Liquefied Petroleum Gas - LPG hoặc khí gas) là mặt hàng chiếm tỷ
+						trọng trên 98% khí đốt, gas là mặt hàng thiết yếu có vai trò quan
+						trọng trong việc đảm bảo an ninh năng lượng. Đây là hàng hóa thuộc
+						diện kinh doanh có điều kiện, ảnh hưởng đến nhiều lĩnh vực của đời
+						sống kinh tế xã hội nên hoạt động kinh doanh và sử dụng gas phải
+						được đảm bảo an toàn.
+					</p>
+					<p>
+						Ở điều kiện nhiệt độ và áp suất thường, gas tồn tại ở trạng thái
+						khí. Tuy nhiên, do gas có tỷ số dãn nở thể tích lớn nên để thuận
+						tiện và kinh tế trong quá trình bảo quản, vận chuyển và sử dụng, gas
+						thường được hóa lỏng bằng cách nén vào các bình chứa chịu áp lực ở
+						nhiệt độ thường hoặc làm lạnh hóa lỏng để tồn chứa ở áp suất thấp.
+					</p>
+					<p>
+						Đặc trưng lớn nhất của gas là chúng được tồn chứa ở trạng thái bão
+						hòa tức là tồn tại cả dạng lỏng và hơi, nên với thành phần không
+						đổi, áp suất hơi bão hòa trong bình chứa không phụ thuộc vào lượng
+						gas có trong bình, mà hoàn toàn phụ thuộc vào nhiệt độ bên ngoài.
+					</p>
+					<p>
+						Gas là mặt hàng rất dễ cháy nổ và quy định của Nhà nước là hàng hóa
+						kinh doanh có điều kiện.
+					</p>
+					<p style="text-indent: 0cm">
+						<b>3.2.1. Đặc điểm, tính nguy hiểm cháy, nổ của gas</b>
+					</p>
+					<p>
+						Gas là loại nhiên liệu dễ cháy, khi kết hợp với không khí tạo thành
+						hỗn hợp cháy nổ. Khi đạt tới giới hạn nồng độ cháy, nổ, dưới tác
+						dụng của nguồn nhiệt hoặc ngọn lửa trần sẽ bắt cháy làm phá hủy
+						thiết bị, cơ sở vật chất, công trình.
+					</p>
+					<p>
+						Giới hạn cháy, nổ của hỗn hợp hơi gas với ôxy trong không khí có thể
+						xảy ra từ nồng độ rất thấp (1,5% đến 10% thể tích). Chính vì vậy gas
+						nguy hiểm về cháy, nổ hơn nhiều so với các loại chất đốt, nhiên liệu
+						khác.
+					</p>
+					<p>
+						Ở nhiệt độ lớn hơn 0°C trong môi trường không khí bình thường với áp
+						suất bằng áp suất khí quyển, gas bị biến đổi từ thể lỏng thành thể
+						hơi theo tỷ lệ thể tích 1 lit gas thể lỏng hóa thành khoảng 250 lit
+						ở thể hơi. Trong điều kiện nhiệt độ môi trường bình thường gas bốc
+						hơi rất mãnh liệt, vận tốc bay hơi của gas nhanh, dễ dàng khuếch
+						tán, hòa trộn với không khí thành hỗn hợp nguy hiểm cháy nổ.
+					</p>
+					<p>
+						Trong môi trường đám cháy, khi nhiệt độ tăng lên, áp suất trong bình
+						chứa tăng nhanh, van an toàn xả hơi gas ra ngoài rất mạnh làm sự
+						cháy phát triển nhanh và dữ dội. Nếu van an toàn không mở được,
+						nhiệt độ cao làm áp suất tăng quá mức có thể dẫn tới nổ bình chứa.
+					</p>
+					<p>
+						Hỗn hợp hơi gas với không khí có vận tốc cháy đẳng tích lớn dễ dẫn
+						tới nổ hỗn hợp hơi, phá vỡ kết cấu chứa và bao che chúng gây cháy
+						lan trên diện rộng.
+					</p>
+					<p>
+						Ở thể hơi (gas) trong môi trường không khí với áp suất bằng áp suất
+						khí quyển, gas nặng hơn so với không khí: butan 2,07 lần; propan
+						1,55 lần. Do đó hơi gas thoát ra ngoài sẽ bay là là trên mặt đất,
+						tích tụ ở những nơi kín gió, những nơi trũng, những hang hốc của kho
+						chứa, bếp… Trong thời điểm này nếu có phát sinh tia lửa (do ma sát,
+						tia lửa điện) hoặc các nguồn nhiệt khác sẽ phát sinh cháy, nổ.
+					</p>
+					<p>
+						Nhiệt độ ngọn lửa của gas khi cháy rất cao từ 1900°C – 1950°C, có
+						khả năng đốt cháy và nung nóng chảy hầu hết các chất. Dễ làm hư hỏng
+						các mối liên kết trên đường ống, bồn chứa, làm tăng khả năng rò rỉ
+						khí gas do vậy làm tăng thêm mức độ nguy hiểm về cháy, nổ.
+					</p>
+					<p>
+						Nhiệt độ sôi của gas thấp (từ -45°C đến -2°C ) nên để gas lỏng tiếp
+						xúc trực tiếp với da sẽ bị bỏng lạnh, nhất là với dòng gas rò rỉ
+						trực tiếp vào da nếu không có trang bị bảo hộ lao động. Gas ở trạng
+						thái nguyên chất không có mùi, không màu, không độc hại với người và
+						gia sfúc nên việc phát hiện rò rỉ là rất khó khăn, không kịp thời.
+						Vì vậy gas được pha trộn thêm chất tạo mùi mercaptan với tỷ lệ nhất
+						định để có mùi đặc trưng dễ phát hiện khi có rò rỉ.
+					</p>
+					<p>
+						Khi xảy ra cháy nổ gas thì thường gây thiệt rất hại lớn, nguy hiểm
+						cho người, phá hoại công trình, máy móc thiết bị. Thông thường khi
+						có sự cố, gas thoát ra từ những chỗ nứt vỡ, rò rỉ phun ra ngoài
+						thành những luồng hơi và hạt lỏng lan tràn rất nhanh trong không
+						khí, nếu chỗ vỡ lớn có thể tạo thành vũng chất lỏng. Khi gặp nguồn
+						nhiệt sẽ bùng lên thành đám mây lửa rất nguy hiểm bao trùm toàn bộ
+						thể tích, tại nơi rò rỉ có thể hình thành luồng lửa dài.
+					</p>
+					<div class="video-container">
+						<video controls>
+							<source
+								src="../video/video8.mp4"
+								type="video/mp4"
+							/>
+							Your browser does not support the video tag.
+						</video>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i
+							>Video 8. Kinh hoàng vụ nổ khí gas thổi tung quán lẩu ở Quảng
+							Ninh</i
+						>
+					</p>
+					<p style="text-indent: 0cm">
+						<b
+							>3.2.2. Một số vấn đề lưu ý về PCCN trong kinh doanh, sử dụng
+							gas</b
+						>
+					</p>
+					<p>
+						Để đảm bảo an toàn PCCC trong quá trình kinh doanh gas, chủ cửa hàng
+						phải thực hiện các yêu cầu sau:
+					</p>
+					<p style="text-indent: 0cm">
+						<b><i>3.2.2.1. Trong thiết kế xây dựng</i></b>
+					</p>
+					<p>
+						- Cửa hàng phải được thiết kế đảm bảo các yêu cầu theo tiêu chuẩn
+						TCVN 6223:2011 “Cửa hàng khí dầu mỏ hóa lỏng (LPG) - Yêu cầu chung
+						về an toàn” và được cơ quan chức năng thẩm duyệt, nghiệm thu về PCCC
+						theo quy định.
+					</p>
+					<p>
+						- Khối lượng gas trong tất cả các chai được phép tồn chứa tại cửa
+						hàng là 500kg đối với diện tích tối thiểu 12m<sup>2</sup> và được
+						phép chứa thêm 60kg cho mỗi mét vuông diện tích tăng thêm của khu
+						vực kho tồn chứa hoặc cửa hàng nói chung, không kể khu phụ nhưng
+						tổng lượng khí gas không được vượt quá 1000kg. Trong trường hợp có
+						kho riêng thì kho chứa phải được thiết kế xây dựng theo tiêu chuẩn
+						TCVN 6304:1997 “Chai chứa khí đốt hóa lỏng - Yêu cầu an toàn trong
+						bảo quản, xếp dỡ và vận chuyển” và phải lưu ý những điểm sau:
+					</p>
+					<p>
+						+ Kho phải có ít nhất 02 lối ra vào, cửa mở hướng ra ngoài, nền kho
+						vững chắc, bằng phẳng, không trơn trượt, ngang bằng hoặc cao hơn mặt
+						bằng xung quanh, làm bằng vật liệu không cháy. Mọi hầm hố, kênh rãnh
+						phải nằm cách khu vực kho chứa chai, chứa khí đốt hóa lỏng ít nhất
+						2m, trường hợp ngược lại thì phải được đậy kín. Hàng rào kho chắc
+						chắn cao ít nhất 1,8m và không gây ảnh hưởng tới thông gió tự nhiên.
+						Phải treo biển cấm lửa, cấm hút thuốc, hướng dẫn chữa cháy tại vị
+						trí dễ thấy trước cửa kho.
+					</p>
+					<p>
+						+ Không sử dụng các nguồn nhiệt trong kho, các loại xe có động cơ
+						không được vào khu vực kho. Các xe của kho có thể đỗ trong khoảng
+						cách an toàn, nhưng phải cách kho ít nhất 3m.
+					</p>
+					<p>
+						+ Thiết bị chiếu sáng phải có bảo vệ phòng nổ, nguồn điện được khống
+						chế bằng thiết bị đóng ngắt chung (cầu dao, aptomat…), phải có hệ
+						thống chống sét.
+					</p>
+					<p>
+						- Đối với kho chứa 25000kg khí hóa lỏng trở lên cần có nguồn nước
+						đảm bảo 2300 lit nước/phút và liên tục trong 60 phút.
+					</p>
+					<p>- Đối với kho ngoài trời:</p>
+					<p>
+						+ Kho chứa 1000kg trở lên phải có rào cao ít nhất 1,8m ngăn cách để
+						chia thành lô nhỏ.
+					</p>
+					<p>
+						+ Kho chứa chai rỗng phải cách kho chứa chai đầy ít nhất 3m, các
+						hàng rào bảo vệ, nhà hoặc nguồn gây cháy cố định ít nhất 1m, cách
+						bình ôxy, vật liệu dễ cháy và chất độc ít nhất 2m.
+					</p>
+					<p>
+						+ Nếu kho có mái che có tổng lượng khí đốt hóa lỏng tồn là 400kg thì
+						mái phải làm bằng vật liệu nhẹ chịu nhiệt và cao hơn đỉnh chồng chai
+						cao nhất là 1 m; cột chống phải chắc chắn và có giới hạn chịu lửa ít
+						nhất 30 phút, kho phải được trang bị hệ thống nước chữa cháy cố định
+						có vận tốc phun là 12,5 lit/m<sup>2</sup>/phút nếu diện tích mái kho
+						lớn hơn 10x10m.
+					</p>
+					<p>- Đối với kho trong nhà:</p>
+					<p>+ Tổng lượng khí gas tồn chứa không được quá 25000kg.</p>
+					<p>
+						+ Kho phải xây dựng bằng vật liệu có giới hạn chịu lửa ít nhất 60
+						phút, cột chống tường ngăn làm bằng vật liệu có giới hạn chịu lửa ít
+						nhất 30 phút, lỗ thông hơi trên tường và trên mái phải chiếm 2,5%
+						diện tích tường.
+					</p>
+					<p>
+						+ Đối với kho có lượng khí gas nhiều nhất là 1000kg thì cho phép bố
+						trí trong tầng 1 của ngôi nhà 2 tầng, trong đó cửa, trần, sàn kho có
+						giới hạn chịu lửa ít nhất 30 phút, cửa phải bố trí ở tường ngoài
+						cùng và có chiều cao ít nhất 2,5m; nếu tòa nhà dùng để ở, tường phân
+						cách phải có giới hạn chịu lửa 60 phút; phải trang bị hệ thống báo
+						cháy tự động.
+					</p>
+					<p>
+						+ Cho phép bảo quản chai khí gas trong buồng nhỏ với điều kiện:
+						400kg trong nhà 1 tầng, 300kg trong nhà nhiều tầng không có người ở,
+						70kg trong nhà có người ở.
+					</p>
+					<p>
+						+ Buồng chứa phải bảo đảm thoáng gió có giới hạn chịu lửa ít nhất 30
+						phút, phải có thiết bị báo cháy tự động.
+					</p>
+					<p style="text-indent: 0cm">
+						<b><i>3.2.2.2. Trong quá trình hoạt động</i></b>
+					</p>
+					<p>
+						- Hệ thống điện trong cửa hàng phải có thiết bị bảo vệ đặt trong hộp
+						kín. Thiết bị chiếu sáng và công tắc phải đảm bảo phòng nổ. Nếu
+						không phải có giải pháp chiếu sáng từ bên ngoài qua hai lớp kính
+						hoặc tận dụng tối đa ánh sáng tự nhiên trong suốt thời gian bán
+						hàng, phải có hệ thống chiếu sáng sự cố dự phòng. Tất cả các thiết
+						bị điện phải đặt cách chai khí gas tối thiểu 1,5m.
+					</p>
+					<p>
+						- Cửa hàng phải niêm yết biển “cấm lửa”, “cấm hút thuốc”, nội quy,
+						tiêu lệnh PCCC ở nơi dễ thấy, dễ đọc.
+					</p>
+					<p>
+						- Nhân viên cửa hàng phải nắm được những kiến thức cơ bản về gas,
+						được huấn luyện, kiểm tra, cấp giấy chứng chỉ về PCCC và huấn luyện
+						kỹ thuật an toàn trong kinh doanh gas.
+					</p>
+					<p>
+						- Tại cửa hàng phải trang bị đầy đủ phương tiện chữa cháy ban đầu
+						theo quy định, đảm bảo kịp thời xử lý khi có sự cố cháy xảy ra.
+					</p>
+					<p>
+						- Thường xuyên tiến hành tự kiểm tra công tác an toàn PCCC và duy
+						trì các điều kiện đảm bảo an toàn PCCC cho cửa hàng trong suốt quá
+						trình hoạt động.
+					</p>
+					<p>
+						- Sắp xếp các chai (bình) chứa gas trong cửa hàng kinh doanh gas
+						phải đảm bảo theo quy định.
+					</p>
+					<p>- Khi tồn chứa chai gas, các van chai luôn vặn chặt.</p>
+					<p>
+						- Nghiêm cấm tồn chứa, sử dụng, kinh doanh khí ôxy trong các cửa
+						hàng bán khí đốt hóa lỏng và chai khí gas rỗng trên mái nhà.
+					</p>
+					<p>
+						- Khi xếp chai khí gas phải xếp đứng và van an toàn phải xếp quay về
+						1 phía, van chai luôn đóng chặt; chiều rộng các chồng chai là 1,5m,
+						chiều cao lớn nhất là 2,5m và phải bảo đảm khoảng cách an toàn theo
+						quy định tại Bảng 1, Điều 5.1.7 TCVN 6304:1997.
+					</p>
+					<p>
+						- Khi chai khí gas bị rò rỉ phải xác định và đánh dấu chỗ rò rỉ và
+						chuyển chai đó ra chỗ thoáng gió, cách xa nguồn gây cháy và các chai
+						khí gas khác. Sau đó nếu không xử lý được phải thông báo sự cố cho
+						người cung cấp hàng để xử lý.
+					</p>
+					<p>
+						- Khi ngừng việc đun nấu nhớ đóng điều áp sau đó tắt công tắc bếp và
+						cuối cùng là khóa van bình (nếu là bình loại 12kg).
+					</p>
+					<p>
+						- Khi bật bếp thì thao tác ngược lại, mở van bình (nếu là bình loại
+						12kg), mở điều áp sau đó mới bật bếp.
+					</p>
+					<p>
+						- Nên sử dụng loại bếp gas có bộ phận cảm ứng nhiệt tự động, ngắt
+						gas khi nước tràn hoặc gió lùa làm bếp tắt lửa. Nếu bếp không có bộ
+						phận cảm ứng nhiệt thì khi đun phải thường xuyên chú ý để kịp thời
+						tắt công tắc bếp nếu bếp bị tắt lửa do nước tràn hoặc gió lùa. Chỉ
+						bật lại bếp khi không còn mùi gas trong khu vực bếp.
+					</p>
+					<p>
+						- Thường xuyên kiểm tra ống dẫn gas, nếu phát hiện thấy có hiện
+						tượng rạn nứt phải thông báo cho đại lý hoặc nhà phân phối để thay
+						dây.
+					</p>
+					<p>
+						- Khi phát hiện có mùi gas (mùi trứng thối) phải lập tức tắt các
+						nguồn lửa, khóa van bình, đóng điều áp. Tuyệt đối không đóng hoặc
+						ngắt công tắc điện, quạt điện làm phát sinh tia lửa điện gây cháy nổ
+						khí gas.
+					</p>
+					<p>
+						- Mở thoáng cửa ra vào thông với gian bếp, dùng các dụng cụ thủ công
+						để quạt, đẩy khí gas ra ngoài.
+					</p>
+					<p>
+						- Quét nước xà phòng để tìm chỗ rò rỉ, tuyệt đối không dùng bật lửa
+						để dò tìm.
+					</p>
+					<p>
+						- Có thể dùng xà phòng bánh để bịt chỗ rò rồi dùng băng keo hoặc dây
+						cao su để hạn chế rò rỉ đến mức thấp nhất, trường hợp bình gas rò rỉ
+						không khắc phục được, cần đưa đến nơi thoáng gió, xa cống rãnh, xa
+						nguồn lửa và báo ngay cho cửa hàng đại lý cung cấp gas.
+					</p>
+					<p><i>Những điều cần lưu ý khi sử dụng bếp gas</i></p>
+					<p>
+						Sử dụng bếp gas đun nấu thức ăn rất tiện lợi và nhanh nhưng khi dùng
+						cần hết sức cẩn thận vì nếu có sự cố rò rỉ gas dễ dẫn tới nổ hơi gas
+						sẽ gây thiệt hại rất nghiêm trọng.
+					</p>
+					<p>
+						Để đảm bảo an toàn, trong quá trình sử dụng bếp gas chúng ta cần lưu
+						ý những vấn đề sau:
+					</p>
+					<p>
+						- Bình chứa gas phải đặt trong khoang riêng biệt, cách xa bếp đun,
+						ngăn cách với bếp đun bằng vật liệu không cháy.
+					</p>
+					<p>
+						- Van tổng của bình gas nên chọn loại van xoáy, chất liệu bằng đồng.
+						Sau cụm van tổng cần lắp thêm 01 van an toàn tự động ngắt khi lửa ở
+						bếp bị tắt mà công tắc ở bếp vẫn bật.
+					</p>
+					<p>
+						- Dây dẫn gas, các khớp nối liên kết giữa bếp, dây dẫn, van xả và
+						bình gas phải được lắp đặt đúng kỹ thuật, chắc chắn, đảm bảo kín
+						(thường xuyên kiểm tra thử độ kín bằng nước xà phòng).
+					</p>
+					<p>
+						- Kiểm tra tắt các bếp đun sau khi nấu ăn, khóa van tổng ở cổ bình
+						gas sau khi kết thúc việc đun nấu và vệ sinh bếp.
+					</p>
+					<p>
+						- Khi phát hiện mùi gas hoặc thiết bị báo rò gas phát tín hiệu, phải
+						nhanh chóng loại trừ các nguồn lửa, nguồn nhiệt ở gần khu vực để
+						bình gas, mở cửa để hơi gas thoát ra ngoài, kiểm tra xác định vị trí
+						rò rỉ để khắc phục, xử lý. Lúc này tuyệt đối không bật, tắt các công
+						tắc điện, cắm hoặc rút phích cắm ra khỏi ổ điện.
+					</p>
+					<p style="text-indent: 0cm"><b>3.2.3. Lắp đặt bếp gas an toàn </b></p>
+					<p>
+						- Bình gas phải đặt trong khoang riêng biệt, cách xa bếp đun, ngăn
+						cách với bếp đun bằng vật liệu không cháy.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/img316.jpg"
+							alt="img316"
+							width="380px"
+							height="250px"
+						/>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Hình 3.16. Khoảng cách an toàn giữa bếp gas và bình gas</i>
+					</p>
+					<p>
+						- Van tổng của bình gas nên chọn loại van xoáy, chất liệu bằng đồng.
+						Sau cụm van tổng cần lắp thêm van an toàn tự động ngắt khi lửa ở bếp
+						tắt mà công tắc bếp vẫn bật.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic27.PNG"
+							alt="pic27"
+							width="350px"
+							height="200px"
+						/>
+					</div>
+					<p>- Lắp đầu báo rò gas.</p>
+					<p>
+						- Dây dẫn gas, các khớp nối phải được lắp đúng kỹ thuật, chắc chắn
+						đảm bảo kín. Thường xuyên kiểm tra độ kín bằng xà phòng (khoảng 1-2
+						năm nên thay dây dẫn một lần).
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/img317.JPG"
+							alt="img37"
+							width="450px"
+							height="250px"
+						/>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Hình 3.17. Thường xuyên kiểm tra dây dẫn gas</i>
+					</p>
+					<p>
+						- Kiểm tra tắt các bếp đun sau khi nấu ăn, khóa van tổng ở cổ bình
+						gas, sau khi kết thúc việc đun nấu phải thường xuyên vệ sinh bếp.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic28.JPG"
+							alt="pic28"
+							width="480px"
+							height="250px"
+						/>
+					</div>
+					<p style="text-indent: 0cm">
+						<b>3.2.4. Một số tình huống cháy, nổ do gas</b>
+					</p>
+					<p>
+						Trong quá trình kinh doanh, sử dụng khí đốt hóa lỏng luôn có khả
+						năng hình thành môi trường nguy hiểm cháy, nổ của gas do nhiều
+						nguyên nhân khác nhau:
+					</p>
+					<p>
+						- Tình huống 1: Cửa hàng kinh doanh gas nằm trong khu dân cư với
+						tình trạng cũ nát, chật hẹp, khả năng thông gió kém, khí gas khi bị
+						rò rỉ không thoát đi được tạo thành môi trường cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 2: Nơi đặt bình gas không đúng quy định, đặt bình gas ở
+						những nơi không thông gió, có những lỗ trũng, trong góc tường, hốc
+						bếp, gầm cầu thang. Khi có rò rỉ, hơi gas tích tụ lại gặp nguồn lửa
+						gây cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 3: Hiện tượng san, chiết gas trái phép tại cửa hàng, do
+						áp lực cao, thiết bị không chuyên dùng, bị rò rỉ gas và gây cháy,
+						nổ.
+					</p>
+					<p>
+						- Tình huống 4: Nạp lại gas vào bình gas du lịch, do nạp nhiều lần,
+						bình không đảm bảo an toàn, bị rò rỉ, gây cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 5: Bình gas du lịch thường được thiết kế cho loại
+						butan, khi nạp bu-pro, áp suất cao gây ra rò rỉ gas dẫn đến cháy,
+						nổ.
+					</p>
+					<p>
+						- Tình huống 6: Các thiết bị và phụ kiện không đảm bảo độ kín. Khí
+						gas thoát ra ngoài có thể do các chỗ nối ống cao su với bình khí và
+						bếp không chặt, ống cao su sử dụng lâu ngày bị lão hóa, rạn nứt, vỡ
+						gây cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 7: Các bình gas đã quá thời hạn sử dụng bị ăn mòn hóa
+						học có thể tạo các vết nứt, các van khóa trên bình không đảm bảo có
+						thể làm rò rỉ khí gas ra ngoài. Các bếp gas hoặc thiết bị sử dụng
+						nếu không có các thiết bị an toàn như rơ le an toàn khi tắt lửa, rơ
+						le an toàn khi quá nhiệt, cầu chì… làm thoát ra khí gas khi người sử
+						dụng có sơ xuất bất cẩn dẫn đến cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 8: Trong quá trình vận chuyển chai (bình) gas tới cửa
+						hàng hoặc từ cửa hàng đi đặt bình không thẳng đứng, không đúng quy
+						phạm, bị va đập, gây rò rỉ gas, gặp nguồn lửa gây cháy. Bình gas sử
+						dụng trên các phương tiện di động như tàu hỏa, ghe thuyền… không cố
+						định chặt, dây dẫn bị hở, gas thoát ra ngoài gặp nguồn lửa gây cháy.
+					</p>
+					<p>
+						- Tình huống 9: Sử dụng ngọn lửa trần trong cửa hàng: nấu ăn, thắp
+						hương thờ cúng, đánh diêm, hút thuốc… dẫn đến cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 10: Tia lửa điện phát sinh từ những ổ cắm, công tắc,
+						cầu dao điện. Các cửa hàng kinh doanh gas lâu đời có hệ thống điện
+						chưa đảm bảo, dây điện chưa đi trong ống kín, bóng điện chưa là bóng
+						phòng nổ nên khi gặp sự cố về điện gây cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 11: Năng lượng cơ học phát sinh do va đập, ma sát của
+						các vật cứng: do sét đánh khi trời mưa giông có sấm sét dẫn đến
+						cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 12: Tồn chứa chất lỏng dễ cháy (xăng, dầu) với số lượng
+						lớn bằng các loại dụng cụ thô sơ, không đảm bảo an toàn, các chất
+						này bay hơi thoát ra ngoài không khí tạo thành hỗn hợp gặp nguồn
+						nhiệt hoặc tia lửa phát sinh trong khu vực dẫn tới cháy, nổ.
+					</p>
+					<p><i>Một số ví dụ điển hình: </i></p>
+					<p>
+						- Ngày 11/12/2011 xảy ra cháy tại cửa hàng kinh doanh gas Phú Vinh ở
+						thôn Vân Trì, Minh Khai, Từ Liêm, Hà Nội do chủ cửa hàng vi phạm các
+						quy định về PCCC gây cháy. Vụ cháy gây ra thiệt hại nghiêm trọng về
+						người: 02 người chết cháy là vợ của chủ cửa hàng và người con 8
+						tháng tuổi.
+					</p>
+					<p>
+						- Ngày 12/3/2001, tại Hà Nam, một gia đình sử dụng bếp gas tự chế,
+						do thiếu kiến thức về phòng cháy, chữa cháy gas; trong khi đang đun
+						nấu thấy ngọn lửa yếu tưởng thiếu gas, đã dẫn ống khí gas từ bình cũ
+						để lắp vào bình mới trong khi không tắt bếp. Lửa từ bếp bắt cháy vào
+						dòng gas từ bình cũ đã phun ra gây cháy toàn bộ căn nhà, làm 5 người
+						trong gia đình bị thiệt mạng. Đáng lưu ý là gia đình này làm dịch vụ
+						san nạp gas trái phép.
+					</p>
+					<p style="text-indent: 0cm">
+						<b
+							>3.2.5. Cách xử trí và thoát nạn, thoát hiểm khi có cháy, nổ
+							gas</b
+						>
+					</p>
+					<p>
+						<b><i>Cách xử trí khi có cháy, nổ gas</i></b>
+					</p>
+					<p>
+						- Khi phát hiện cháy ở cửa hàng kinh doanh gas, người phát hiện phải
+						hô to để báo động cho mọi người biết cùng tham gia chữa cháy.
+					</p>
+					<p>
+						- Sử dụng phương tiện chữa cháy tại chỗ để dập tắt đám cháy.Chữa
+						cháy ban đầu đối với cửa hàng gas có thể sử dụng phương pháp kìm hãm
+						(ức chế) hóa học phản ứng cháy.
+					</p>
+					<p>
+						- Ngay sau khi phun bột, phải sử dụng nước để làm mát (kể cả khi đám
+						cháy đã được dập tắt).
+					</p>
+					<p>
+						- Gọi điện báo cho Công an Phòng cháy và chữa cháy theo số điện
+						thoại 114.
+					</p>
+					<p>
+						- Trong quá trình chữa cháy, phải luôn chú ý dùng nước làm mát và
+						tìm cách đóng van khóa, cắt nguồn cung cấp khí gas vào đám cháy.
+					</p>
+					<p>
+						- Việc phun nước làm mát các bình gas lân cận phải làm mát liên tục
+						từ khi mới cháy, trong khi phun nước dập tắt đám cháy, sau khi đám
+						cháy đã được dập tắt hoàn toàn cho tới khi các bình đã hoàn toàn
+						nguội hẳn.
+					</p>
+					<p>
+						- Khi lực lượng Cảnh sát PCCC tham gia chữa cháy, cần kết hợp phun
+						nước làm mát và phun bọt để chữa cháy.
+					</p>
+					<p>
+						Do việc tổ chức chữa cháy ở cửa hàng tồn chứa gas phức tạp, phải sử
+						dụng nhiều lực lượng và phương tiện để làm mát bình cháy, công trình
+						kế cận và dập tắt đám cháy, cho nên để đảm bảo cho việc chữa cháy
+						đạt kết quả, nhất thiết ở các cơ sở kinh doanh gas phải tiến hành
+						lập và thực tập phương án chữa cháy.
+					</p>
+					<p><i>Cách xử trí khi rò rỉ khí gas tại nhà</i></p>
+					<p>
+						- Khi phát hiện mùi gas hoặc thiết bị báo phát tín hiệu phải nhanh
+						chóng xác định vị trí bị rò rỉ. Dùng nước xà phòng bôi lên những nơi
+						nghi bị rò rỉ để xác định có bị rò rỉ hay không. Tuyệt đối không thể
+						dùng ngọn lửa để tìm chỗ rò rỉ. Đánh dấu vị trí rò rỉ.
+					</p>
+					<p>
+						- Loại trừ ngay các nguồn lửa, nguồn nhiệt gần khu vực bình gas.
+					</p>
+					<p>
+						- Phải mở cửa sổ, cửa ra vào để hơi gas thoát ra ngoài; tuyệt đối
+						không được bật hoặc tắt công tắc điện, công tắc quạt, điều hòa, rút
+						hoặc cắm phích điện vì sẽ tạo tia lửa điện ở trong công tắc, ổ cắm
+						gây nổ khí gas.
+					</p>
+					<p>
+						- Bịt chặt chỗ rò rỉ lại và kịp thời di chuyển bình bị rò rỉ ra
+						ngoài, đặt xa nguồn lửa và nơi đông người.
+					</p>
+					<p>- Phải thông báo cấm các nguồn lửa, nguồn nhiệt gây cháy.</p>
+					<p>
+						- Không được tháo bỏ hoặc sửa van chai đã bị hư hỏng mà phải chuyển
+						cho cơ sở nạp xử lý.
+					</p>
+					<p>
+						- Khoanh vùng xếp đặt các bình bị rò rỉ, treo biển cấm người qua lại
+						và thông báo ngay sự cố cho cơ sở cung cấp gas.
+					</p>
+					<div class="video-container">
+						<video controls>
+							<source
+								src="../video/video9.mp4"
+								type="video/mp4"
+							/>
+							Your browser does not support the video tag.
+						</video>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Video 9. Cần làm gì khi phát hiện mùi gas trong nhà?</i>
+					</p>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>(Nguồn: VTC24)</i>
+					</p>
+					<br />
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic29.png"
+							alt="pic29"
+							width="720px"
+							height="250px"
+						/>
+					</div>
+					<p><i>Cách thoát nạn, thoát hiểm khi có cháy, nổ gas</i></p>
+					<p>
+						- Khi xảy ra cháy, nổ, hãy tìm cách ra ngoài thật nhanh, vì đám khói
+						có thể che khuất tầm nhìn gây ra cay mắt.
+					</p>
+					<p>
+						- Tránh xa khu vực chứa bình gas, đề phòng nổ bình gas và ngộ độc
+						khí gas.
+					</p>
+					<p>
+						- Khi thoát hiểm không cố thu những đồ có giá trị, không tìm hiểu
+						đám cháy.
+					</p>
+					<p>
+						- Trước khi mở cửa, hãy đặt mu bàn tay lên cánh cửa, nếu thấy ấm,
+						đừng mở - mặt kia của cánh cửa đang cháy. Dùng mu bàn tay để thử,
+						không dùng lòng bàn tay. Vì lòng bàn tay bị bỏng sẽ cản trở việc
+						thoát thân của bạn khi bạn bò hay xuống thang cứu hỏa.
+					</p>
+					<p>
+						- Nếu đang chạy thoát cùng người khác, hãy đi cùng nhau nếu có thể.
+					</p>
+					<p>
+						- Thoát hiểm qua cửa dẫn ra ngoài nên là lựa chọn đầu tiên của bạn,
+						nhưng bạn cũng có thể kiểm tra xem cửa sổ có thể là lối chạy thoát
+						được không. Thậm chí cửa sổ trên tầng cao cũng có ích khi bạn cần
+						giúp đỡ từ lính cứu hỏa hay từ người khác.
+					</p>
+					<p>
+						- Nếu không thể thoát ra ngoài nhanh được vì lửa hay khói đã chặn
+						mất lối thoát, ra ngoài bằng cửa sổ: ném chăn, gối, đệm xuống đất ở
+						bên ngoài để đỡ bạn.
+					</p>
+					<p>
+						- Nếu bạn không thể mở cửa sổ, hãy dùng một vật nặng để đập vỡ nó ở
+						góc cuối, khi chạm vào các mép sắc cần dùng vải, khăn mặt hay chăn.
+					</p>
+					<p>
+						- Hạ thấp cơ thể bạn bằng cách đặt tay lên bậc cửa sổ trước khi thả
+						mình xuống.
+					</p>
+					<p>
+						- Nếu không thể ra ngoài, hãy tập hợp mọi người vào một phòng: chọn
+						một phòng có cửa sổ nếu có thể, ngăn khói và lửa vào qua cửa bằng
+						cách chặn các khe hở quanh cửa với khăn trải giường, chăn, quần áo
+						hoặc băng dính.
+					</p>
+					<p>
+						- Nếu trong phòng có cửa sổ nhưng không giúp bạn thoát ra được, hãy
+						mở nó ra và đứng trước cửa sổ để hít thở và gọi giúp đỡ.
+					</p>
+					<p>
+						- Nếu bạn có thể lấy được một mảnh quần áo hay khăn mặt, hãy đặt nó
+						trên miệng để không hít khói vào. Tốt hơn nếu bạn nhúng ướt miếng
+						vải trước khi che lên miệng.
+					</p>
+					<p>
+						- Nếu ra ngoài được, bạn nên tìm một nơi an toàn gần đám cháy để
+						đợi. Nếu còn có người trong khu vực cháy, hãy đợi đội lính cứu hỏa
+						tới. Bạn có thể kể với họ về người bị mắc kẹt và họ sẽ tìm người mắc
+						kẹt giúp bạn nhanh hơn.
+					</p>
+					<p>
+						- Nếu quay lại nhà bị cháy, bạn sẽ làm cho những nỗ lực cứu người
+						mất tích của lính cứu hỏa bị chậm lại, đồng thời tự đặt bản thân vào
+						tình huống rất nguy hiểm.
+					</p>
+				</section>
+				<section id="section3">
+					<h3>
+						<p style="text-indent: 0cm">3.3. TRONG QUÁ TRÌNH HÀN CẮT</p>
+					</h3>
+					<p style="text-indent: 0cm"><b>3.3.1. Đặc điểm cháy, nổ</b></p>
+					<p>
+						Trong quá trình thi công, những thợ sử dụng ngọn lửa có nhiệt độ cao
+						để làm nóng chảy kim loại và cho chúng dính kết với nhau theo tiêu
+						chuẩn gọi là hàn.
+					</p>
+					<p>
+						Còn nếu sử dụng khí cháy có nhiệt độ cao hơn để làm nóng chảy các
+						tấm, thanh kim loại thành các tấm, thanh kim loại có kích thước cần
+						dùng hoặc khi phá dỡ các kết cấu kim loại liên kết với nhau được gọi
+						là cắt.
+					</p>
+					<p>
+						Ngọn lửa các khí cháy có thể sử dụng khí axêtylen, khí đốt hóa lỏng
+						(gas) được nạp sẵn trong các bình chứa khí cùng với các bình chứa
+						khí ôxy.
+					</p>
+					<p>
+						Khi muốn sử dụng chỉ cần có thêm thiết bị chuyên dùng gọi là mỏ hàn.
+						Ngoài phương pháp hàn cắt kim loại sử dụng khí axêtylen hay khí đốt
+						hóa lỏng, còn dùng phương pháp hàn điện. Khi hàn cắt kim loại, nhiệt
+						độ tâm ngọn lửa đạt tới 3000°C, nhiệt độ mối hàn khoảng 1700°C –
+						1800°C.
+					</p>
+					<p>
+						Trong quá trình hàn cắt kim loại sẽ làm phát sinh các hạt kim loại
+						nóng chảy (nhiệt độ đạt trên 1000°C) bắn tung tóe ra xung quanh rất
+						dễ gây cháy khi tiếp xúc với các vật liệu cháy. Đặc biệt, quy trình
+						cắt kim loại có quá trình dùng luồng ôxy có lưu lượng và áp lực lớn
+						thổi bạt lớp ôxit kim loại và một phần kim loại nóng chảy ra ngoài.
+						Khi các hạt kim loại nóng chảy với nhiệt độ cao tiếp xúc với các vật
+						liệu dễ cháy như vải, giấy, nệm mút… (nhiệt độ bắt cháy khoảng 250°C
+						– 400°C) sẽ rất dễ gây cháy. Nếu sự cháy không được phát hiện kịp
+						thời và có các biện pháp xử lý ban đầu, đám cháy sẽ phát triển mạnh;
+						vận tốc cháy lan tăng dần, dẫn đến cháy lớn gây thiệt hại nghiêm
+						trọng.
+					</p>
+					<p style="text-indent: 0cm">
+						<b
+							>3.3.2. Một số vấn đề cần lưu ý về PCCN trong quá trình hàn cắt</b
+						>
+					</p>
+					<center>
+						<div class="audio-container">
+							<audio controls>
+								<source
+									src="../audio/audio7.mp3"
+									type="audio/mp3"
+								/>
+								Your browser does not support the audio element.
+							</audio>
+						</div>
+					</center>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Audio 7. Nguyên tắc PCCC cơ bản trong quá trình hàn cắt</i>
+					</p>
+					<p>
+						- Người đứng đầu các cơ sở cần nêu cao trách nhiệm về phòng cháy,
+						chữa cháy, quan tâm và đầu tư cho công tác phòng cháy, chữa cháy.
+					</p>
+					<p>
+						- Ban hành nội quy, quy định an toàn phòng cháy, chữa cháy, quy
+						trình hàn cắt kim loại an toàn.
+					</p>
+					<p>
+						- Tuyên truyền phổ biến kiến thức pháp luật về phòng cháy, chữa
+						cháy, đặc tính nguy hiểm cháy nổ của quá trình hàn cắt kim loại,
+						kiến thức về an toàn nói chung, an toàn cháy nổ nói riêng trong quá
+						trình hàn cắt.
+					</p>
+					<p>
+						- Trong quá trình hàn cắt kim loại phải tổ chức che chắn bằng các
+						vật liệu không cháy hoặc di chuyển các vật liệu dễ cháy ra khỏi khu
+						vực hàn cắt (tối thiểu 10m). Không để vảy hàn có nhiệt độ cao tiếp
+						xúc với các vật liệu dễ cháy, phải có biện pháp an toàn phòng cháy,
+						chữa cháy và phương án xử lý cháy, nổ.
+					</p>
+					<p>
+						- Trong quá trình hàn cắt kim loại phải cử người trông coi. Phải cử
+						người có mặt thường xuyên trong suốt quá trình hàn cắt, đồng thời
+						kiểm tra thật kỹ trước khi kết thúc việc hàn cắt.
+					</p>
+					<p>
+						- Chỉ sử dụng các dụng cụ hàn cắt đảm bảo an toàn như các chai khí
+						trong thời hạn kiểm định, dây dẫn khí đảm bảo kín, đường ống dẫn khí
+						phải được bảo vệ tránh tia lửa hàn, xỉ hàn và dầu mỡ, không đặt các
+						chai khí gần nguồn nhiệt, hệ thống điện…
+					</p>
+					<p>
+						- Trang bị các phương tiện phòng cháy, chữa cháy cần thiết như bình
+						chữa cháy tại khu vực tiến hành hàn cắt để có thể xử lý kịp thời khi
+						có sự cố cháy nổ.
+					</p>
+					<p>
+						- Thợ hàn phải được tập huấn về nghiệp vụ PCCC, nắm vững đặc điểm
+						nguy hiểm cháy nổ trong hàn cắt kim loại, biết sử dụng thành thạo
+						các loại phương tiện phòng cháy, chữa cháy tại chỗ để có thể dập tắt
+						được đám cháy ngay khi mới phát sinh.
+					</p>
+					<p>
+						- Áp dụng các phương pháp hàn cắt tiên tiến, sử dụng thợ hàn có tay
+						nghề đã qua đào tạo về công tác an toàn trong quá trình hàn cắt.
+					</p>
+					<p>
+						- Đối với thợ hàn phải thực hiện các biện pháp an toàn phòng cháy,
+						chữa cháy sau:
+					</p>
+					<p>
+						+ Chuẩn bị đầy đủ trang bị bảo hộ cá nhân (giày, găng tay, kính
+						hàn…).
+					</p>
+					<p>
+						+ Sắp xếp nơi làm việc gọn gàng, kiểm tra tình trạng nước, cát, bình
+						chữa cháy trang bị cho khu vực hàn.
+					</p>
+					<p>+ Chuẩn bị chậu nước để làm nguội mỏ hàn.</p>
+					<p>
+						+ Cần tiến hành kiểm tra: Các chỗ nối ống cao su với mỏ hàn và bộ
+						giảm áp (dùng nước xà phòng), tình trạng mỏ hàn, bộ giảm áp và ống
+						dẫn khí, độ lưu thông của miệng phun mỏ hàn, độ lưu thông của ống
+						dẫn cao su từ bình ôxy đến mỏ hàn và từ bình khí axêtylen đến mỏ
+						hàn.
+					</p>
+					<p>
+						+ Không được dùng búa hoặc các dụng cụ phát tia lửa để gõ vào nắp
+						chai chứa khí, không sử dụng bộ giảm áp đã chờn ren, không để chai
+						khí ôxy, các ống cao su dẫn khí tiếp xúc với đường dây dẫn điện,
+						không tự động tháo, lắp bộ phận giảm áp nếu chưa được sự đồng ý của
+						thợ hàn chính, không mở van bình khí axêtylen bằng các dụng cụ,
+						thiết bị không chuyên dùng.
+					</p>
+					<p>- Trong thời gian làm việc cần chú ý:</p>
+					<p>
+						+ Khi mồi lửa cho mỏ hàn hơi phải dùng diêm, bật lửa chuyên dùng.
+					</p>
+					<p>
+						+ Khi hàn không quàng ống dẫn khí vào cổ, vào vai, kẹp chân, cuộn
+						tròn hoặc bẻ gập ống.
+					</p>
+					<p>
+						+ Khi mỏ hàn hơi đang cháy không mang ra khỏi khu vực làm việc dành
+						riêng cho thợ hàn. Khi hàn ở trên cao không được mang mỏ hàn hơi
+						đang cháy để leo thang.
+					</p>
+					<p>
+						+ Trong thời gian giải lao, phải tắt lửa mỏ hàn và đóng van cấp khí
+						tới mỏ hàn.
+					</p>
+					<p>
+						+ Nếu thời gian nghỉ kéo dài (giao ca, ăn trưa) thì ngoài việc tắt
+						lửa mỏ hàn còn phải khóa van bình ôxy, bình khí axêtylen và ở bộ
+						phận giảm áp phải nới hết cỡ nén của lò xo bên trong.
+					</p>
+					<p>
+						+ Khi mỏ hàn quá nóng thì phải tắt lửa mỏ hàn, nhúng đầu mỏ hàn vào
+						chậu nước sạch, chờ nguội hẳn mới được làm việc trở lại.
+					</p>
+					<p>
+						+ Khi lửa tạt lại phải đóng ngay van nước của bình sinh khí, đồng
+						thời đóng van bình chứa khí, sau đó nhúng mỏ hàn vào nước sạch chờ
+						cho đến khi nguội hẳn mới làm việc lại.
+					</p>
+					<p>
+						+ Khi áp suất ở bình khí axêtylen tụt xuống hẳn thì không được tiếp
+						tục làm việc. Phải kiểm tra ngay tình trạng của bình.
+					</p>
+					<p>
+						+ Khi miệng phun mỏ hàn bị tắc phải dùng dây đồng vừa lỗ phun của mỏ
+						để thông, không được dùng dây thép. + Khi hàn cắt trong thể tích kín
+						phải đốt mỏ hàn từ ngoài mang vào.
+					</p>
+					<p>
+						+ Hàn cắt trong những gian nhà có sàn gỗ, vật liệu dễ cháy phải dùng
+						tấm tôn hay tấm amiăng che phủ bề mặt chống cháy lan.
+					</p>
+					<p>
+						+ Hàn cắt trên cao (từ 1,5m trở lên) cần chú ý có thể gây cháy ở
+						phía dưới.
+					</p>
+					<p>- Các chú ý trong bảo quản và vận chuyển:</p>
+					<p>
+						+ Chú ý hạn sử dụng của chai chứa khí, chỉ sử dụng các chai còn hạn
+						sử dụng.
+					</p>
+					<p>
+						+ Nên sử dụng các phương tiện vận chuyển chai chứa khí chuyên dùng,
+						hạn chế vận chuyển bằng tay. Không kéo lê, lăn nằm, chỉ có thể lăn
+						chai ở trạng thái nghiêng.
+					</p>
+					<p>+ Bảo vệ chai, tránh va đập, bị cắt hoặc bị rơi.</p>
+					<p>+ Không sử dụng chai chứa khí làm con lăn, giá đỡ.</p>
+					<p>
+						+ Chai phải được ghi rõ loại khí. Không sử dụng nếu không rõ thành
+						phần.
+					</p>
+					<p>+ Đánh dấu các chai đã hết khí và phân loại, để riêng.</p>
+					<p>
+						+ Nhà chứa chai chứa khí phải đảm bảo thông gió. Không để chung chai
+						ôxy với chai chứa khí cháy hoặc các chất ôxy hóa.
+					</p>
+					<p>
+						+ Không đặt chai chứa khí chạm vào dây điện hoặc nguồn nhiệt, phòng
+						ngừa nguy cơ cháy, nổ.
+					</p>
+					<p>- Các chú ý khi sử dụng chai khí:</p>
+					<p>
+						+ Để đảm bảo an toàn cắt kim loại, các chai chứa khí phải được đặt ở
+						vị trí đứng và cố định chắc.
+					</p>
+					<p>
+						+ Mở chai bằng tay một cách từ từ. Nếu trường hợp không mở được,
+						phải trả chai lại và không cố mở bằng các dụng cụ khác.
+					</p>
+					<p>
+						+ Van giảm áp và áp kế phải phù hợp với loại khí và áp suất trong
+						chai chứa khí. Người sử dụng không được tự ý sửa chữa van giảm áp.
+					</p>
+					<p>
+						+ Không được để chai tiếp xúc với ngọn lửa, kim loại nóng chảy, khí
+						nóng hoặc dây điện, tia lửa.
+					</p>
+					<p>+ Không để chai ôxy bị dây dầu mỡ.</p>
+					<p>
+						+ Không dùng ôxy thay cho khí nén, khí nitơ khi thử đường ống hoặc
+						dùng trong các phương tiện.
+					</p>
+					<p>
+						+ Đối với chai C<sub>2</sub>H<sub>2</sub> không mở quá 1,5 vòng.
+					</p>
+					<p>
+						+ Không kết hợp 1 chai ôxy cho 2 chai khí cháy bằng cách dùng chữ T
+						trên đường ống cấp khí.
+					</p>
+					<p>
+						+ Ngưng sử dụng khi chai bị rò rỉ, khóa van chai ngay lập tức, vận
+						chuyển chai khí ra vị trí thoáng gió, báo cho người cung cấp.
+					</p>
+					<p>- Chú ý an toàn hàn cắt kim loại bằng khí:</p>
+					<p>
+						+ Chú ý ống mềm: không nên quá dài hoặc bị xoắn. Bảo vệ không để bị
+						vật đè hoặc cán qua.
+					</p>
+					<p>+ Không băng bó các vết hở, xì. Phải cắt bỏ hoặc thay mới.</p>
+					<p>
+						+ Định kỳ kiểm tra ống mềm. Bảo quản cẩn thận khi không sử dụng.
+					</p>
+					<p>
+						+ Mở van ôxy trước, xong mới mở van khí cháy khi mồi lửa, tránh tình
+						trạng cháy ngược.
+					</p>
+					<p>+ Bảo vệ kỹ ống mềm khỏi tia lửa, dầu mỡ và xỉ hàn.</p>
+					<p>+ Không để mỏ hàn, mỏ cắt quá nóng, phòng cháy ngược.</p>
+					<p>+ Khóa van giảm áp khi thay mở hàn, tuyệt đối không bẻ gập ống.</p>
+					<p>
+						+ Sau khi sử dụng chai khí để hàn cắt kim loại, phải đóng kín van
+						khí, tránh trường hợp rò rỉ khí gây nguy hiểm cho cả con người và
+						tài sản.
+					</p>
+					<p>
+						+ Khi ngưng hàn cắt trong thời gian dài phải: khóa van chai, xì hết
+						khí thừa trong ống và thả lỏng hết vít điều chỉnh trên van giảm áp.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/img318.JPG"
+							alt="img318"
+							width="400px"
+							height="250px"
+						/>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Hình 3.18. Chai khí để hàn cắt kim loại</i>
+					</p>
+					<p>
+						- An toàn hàn cắt kim loại bằng điện: Cần phòng ngừa các yếu tố nguy
+						cơ gây nguy hiểm như: tia hồ quang, vật hàn nóng chảy, khí độc, bụi
+						kim loại và điện giật bằng các biện pháp:
+					</p>
+					<p>
+						+ Mang găng tay, bảo hộ phù hợp. Giữ quần áo sạch sẽ, không dính dầu
+						mỡ hoặc các chất dễ cháy.
+					</p>
+					+
+					<p>
+						Tại khu vực làm việc không để các vật dễ cháy. Nếu bắt buộc phải có
+						thì phải phủ bằng tấm chịu lửa và có người canh giữ trong suốt quá
+						trình hàn.
+					</p>
+					<p>
+						+ Kiểm tra cẩn thận sau khi kết thúc công việc vì nếu không kiểm tra
+						có thể xảy ra trường hợp chập, rò điện. Thường xuyên kiểm tra, bảo
+						dưỡng máy hàn, que hàn.
+					</p>
+					<p>
+						+ Thông gió khu vực làm việc tránh khói gây ngộ độc, công nhân phải
+						được trang bị thiết bị bảo hộ đầy đủ để đảm bảo an toàn hàn cắt kim
+						loại, phòng các rủi ro có thể xảy ra.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/img319.JPG"
+							alt="img319"
+							width="400px"
+							height="250px"
+						/>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Hình 3.19. Hàn cắt kim loại bằng điện</i>
+					</p>
+					<p style="text-indent: 0cm">
+						<b>3.3.3. Một số tình huống cháy, nổ trong quá trình hàn cắt </b>
+					</p>
+					<p>
+						- Tình huống 1: Các cơ sở hàn cắt kim loại, thợ hàn cắt kim loại
+						chưa được trang bị kiến thức chuyên môn về PCCC; chưa biết được
+						những đặc tính nguy hiểm cháy, nổ của hàn cắt kim loại; chưa biết
+						biện pháp phòng ngừa sự cố cháy, nổ dẫn đến vi phạm PCCC gây cháy,
+						nổ.
+					</p>
+					<p>
+						- Tình huống 2: Thợ hàn cắt kim loại khi hàn cắt phát sinh các hạt
+						kim loại nóng chảy với nhiệt độ cao bắn ra xung quanh gặp các vật
+						liệu bông, vải, sợi, giấy, nệm mút… dẫn đến cháy, nổ.
+					</p>
+					<p>
+						- Tình huống 3: Khi xảy ra sự cố, thợ hàn cắt kim loại không sử dụng
+						các dụng cụ, phương tiện chữa cháy tại chỗ, không giữ được bình
+						tĩnh, lúng túng, sợ hãi; không biết cách để dập tắt đám cháy ngay
+						khi mới phát sinh, thậm chí còn bỏ chạy dẫn đến cháy lan, cháy lớn.
+					</p>
+					<p>
+						- Tình huống 4: Trong quá trình sử dụng ngọn lửa của khí axêtylen,
+						khí gas để hàn cắt kim loại bằng mỏ hàn, mỏ cắt, do kiểm soát ngọn
+						lửa không tốt dẫn tới cháy các đồ vật khác.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic30.PNG"
+							alt="pic30"
+							width="420px"
+							height="250px"
+						/>
+					</div>
+					<p style="text-indent: 0cm">
+						<b
+							>3.3.4. Cách xử trí và thoát nạn, thoát hiểm khi có cháy, nổ trong
+							quá trình hàn cắt</b
+						>
+					</p>
+					<p>
+						<b><i>Cách xử trí khi có cháy, nổ trong quá trình hàn cắt</i></b>
+					</p>
+					<p>
+						- Ngắt (cắt) cầu dao (aptomat) điện tổng trước nhà và công trình.
+						Trước khi cắt điện tuyệt đối không được dùng nước để dập cháy đề
+						phòng dẫn điện.
+					</p>
+					<p>
+						- Hô hoán, báo động cho mọi người xung quanh. Gọi điện báo cháy cho
+						Cảnh sát Phòng cháy và chữa cháy theo số máy 114.
+					</p>
+					<p>
+						- Sử dụng phương tiện chữa cháy tại chỗ để chữa cháy (nên sử dụng
+						các bình chữa cháy khí CO<sub>2</sub>, bình bột chữa cháy).
+					</p>
+					<p>
+						- Trường hợp đám cháy lan rộng, bạn không thể xử lý được, hãy bỏ
+						qua, tìm cách thoát ra ngoài, đóng cửa lại và chờ lực lượng PCCC
+						chuyên nghiệp đến.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic31.JPG"
+							alt="pic31"
+							width="620px"
+							height="220px"
+						/>
+					</div>
+					<p>
+						- Hãy tìm cách ra ngoài thật nhanh, vì đám khói có thể che khuất tầm
+						nhìn gây ra cay mắt.
+					</p>
+					<p>
+						Cách thoát nạn, thoát hiểm khi có cháy, nổ trong quá trình hàn cắt
+					</p>
+					<p>
+						- Tìm cách thoát nạn ra khu vực an toàn thông qua các lối thoát nạn
+						đã định sẵn từ trước.
+					</p>
+					<p>
+						- Sử dụng các phương tiện bảo vệ cá nhân được trang bị như mặt nạ,
+						găng tay... để phòng khí độc, bỏng trong khi thoát hiểm.
+					</p>
+					<p>
+						- Bình tĩnh suy xét, hô hoán báo động cho mọi người biết để mau
+						chóng di chuyển ra ngoài qua lối thoát nạn an toàn, không chen lấn
+						xô đẩy nhau tránh tình trạng nhiều người bị thương, mắc kẹt tại các
+						khu vực bên trong nơi xảy cháy.
+					</p>
+					<p>
+						- Nếu ai đó gặp khó khăn trong quá trình di chuyển hãy nhanh chóng
+						bằng mọi cách đưa họ ra khỏi khu vực nguy hiểm.
+					</p>
+					<p>
+						- Kiểm tra nhiệt độ trước khi mở cửa; đưa tay lại gần tay nắm cửa,
+						nếu thấy ấm đừng nên mở vì có thể phía bên kia cửa đang cháy. Bạn
+						nên dùng mu bàn tay để kiểm tra nhằm bảo vệ lòng bàn tay không bị
+						bỏng. Vì lòng bàn tay sẽ hỗ trợ bạn thoát thân hoặc bò ra ngoài bằng
+						thang cứu hỏa.
+					</p>
+					<p>
+						- Nếu phải mở cửa thoát hiểm, cần nhớ kỹ: Kiểm tra nhiệt độ trước
+						khi mở; khi mở nên tránh mặt và người sang một bên đề phòng lửa tạt.
+						Nên cúi sát người xuống sàn khi mở cửa; nếu nhiệt độ quá cao, tuyệt
+						đối không được mở; nếu khói lùa, dùng vải, giẻ ướt nhét vào khe cửa;
+						hoặc dùng băng dính dán chặt. Sau đó tìm lối thoát sang các phòng
+						khác.
+					</p>
+					<p>
+						- Trong trường hợp khu vực cửa, lối di chuyển có nhiều khói thì
+						hướng dẫn cho mọi người sử dụng khăn ẩm, khẩu trang ẩm bịt vào mũi
+						để thở và hạ thấp trọng tâm khi di chuyển hoặc bò.
+					</p>
+					<p>
+						- Trong trường hợp nếu phải băng qua lửa, hãy dùng áo, chăn chất
+						liệu cotton nhúng ướt và trùm lên đầu, lên người.
+					</p>
+					<p>
+						- Trường hợp cháy, nổ do hàn cắt tại công trình cao tầng, tuyệt đối
+						không di chuyển theo hướng lên trên mà di chuyển ra ngoài bằng cách
+						bò sát mặt đất, bịt khăn thấm nước lên miệng, mũi để tránh bị ngạt
+						khói. Bạn nên bò men theo bờ tường để tìm lối thoát một cách nhanh
+						nhất.
+					</p>
+					<p>
+						- Trường hợp các khu nhà xưởng nơi thực hiện hàn cắt đã quá cũ, chỉ
+						có một lối thoát hiểm duy nhất nhưng lại bị lửa bùng cháy dẫn đến đổ
+						sập khiến bạn không thể thoát ra cùng với khói, khí độc bao trùm thì
+						cần bình tĩnh dùng chăn ẩm ướt hoặc băng dính bịt kín các khe cửa.
+						Hãy chọn một phòng có cửa sổ để tập hợp mọi người ở cùng với nhau.
+						Nếu không thể thoát ra ngoài bằng cửa sổ, bạn có thể mở cửa để hít
+						thở hoặc gọi giúp đỡ.
+					</p>
+					<p>
+						- Nếu bạn đã thoát ra ngoài được nhưng còn có người ở trong đám cháy
+						thì hãy đợi đội lính cứu hỏa tới và nói với họ về người bị mắc kẹt.
+						Không nên quay lại đám cháy vì bạn sẽ đặt bản thân vào tình huống
+						nguy hiểm và làm những nỗ lực cứu người của lính cứu hỏa bị chậm
+						lại, gây ảnh hưởng đến nhiều người hơn.
+					</p>
+				</section>
+			</article>
+		</main>
+		<script src="./scripts.js"></script>
+	</body>
 </html>

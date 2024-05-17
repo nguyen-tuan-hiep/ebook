@@ -1,507 +1,1512 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Chapter 4</title>
+		<link
+			rel="stylesheet"
+			href="./styles.css"
+		/>
+	</head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chapter 4</title>
-  <link rel="stylesheet" href="./styles.css">
-</head>
+	<body data-theme="light">
+		<header class="noPrint">
+			<div class="logo-img">
+				<a href="../index.html"
+					><img
+						src="../img/logo.png"
+						id="logo"
+				/></a>
+				<div class="logo-text">
+					<span style="font-size: 14px">BỘ THÔNG TIN VÀ TRUYỀN THÔNG</span>
+					<span style="font-size: 18px; font-weight: bold"
+						>NHÀ XUẤT BẢN THÔNG TIN VÀ TRUYỀN THÔNG</span
+					>
+				</div>
+			</div>
 
-<body data-theme="light">
-  <header class="noPrint">
-    <div class="logo-img">
-      <a href="../index.html"><img src="../img/logo.png" id="logo"></a>
-      <div class="logo-text">
-        <span style="font-size: 14px;">BỘ THÔNG TIN VÀ TRUYỀN THÔNG</span>
-        <span style="font-size: 18px; font-weight: bold;">NHÀ XUẤT BẢN THÔNG TIN VÀ TRUYỀN THÔNG</span>
-      </div>
-    </div>
+			<div class="controls">
+				<div style="height: 40px">
+					<img
+						src="../img/darkmode.svg"
+						alt="Dark"
+						class="icon darkmode-icon"
+						width="40px"
+						onclick="toggleDarkMode()"
+					/>
+					<img
+						src="../img/lightmode.svg"
+						alt="Dark"
+						class="icon lightmode-icon"
+						width="40px"
+						onclick="toggleDarkMode()"
+						style="display: none"
+					/>
+				</div>
 
-    <div class="controls">
+				<div
+					style="height: 40px"
+					class="slider-container"
+				>
+					<input
+						id="fontSizeSlider"
+						type="range"
+						min="16"
+						max="30"
+						value="22"
+						class="slider"
+						oninput="changeFontSize(this.value)"
+					/>
+					<img
+						src="../img/font-size.svg"
+						alt="font-size"
+						class="font-size-icon icon"
+						width="40px"
+					/>
+				</div>
 
-      <div style="height: 40px;">
-        <img src="../img/darkmode.svg" alt="Dark" class="icon darkmode-icon" width="40px" onclick="toggleDarkMode()">
-        <img src="../img/lightmode.svg" alt="Dark" class="icon lightmode-icon" width="40px" onclick="toggleDarkMode()"
-          style="display: none;">
-      </div>
+				<div style="height: 40px">
+					<img
+						src="../img/fullscreen.svg"
+						alt="Fullscreen"
+						width="40px"
+						class="icon"
+						onclick="toggleFullscreen()"
+					/>
+				</div>
 
-      <div style="height: 40px;" class="slider-container">
+				<div style="height: 40px">
+					<img
+						src="../img/printer.svg"
+						alt="Print"
+						width="40px"
+						class="icon"
+						onclick="window.print()"
+					/>
+				</div>
 
-        <input id="fontSizeSlider" type="range" min="16" max="30" value="22" class="slider"
-          oninput="changeFontSize(this.value)">
-        <img src="../img/font-size.svg" alt="font-size" class="font-size-icon icon" width="40px">
-      </div>
+				<img
+					src="../img/menu.svg"
+					alt="Menu"
+					class="menu-button icon"
+					width="40px"
+				/>
+				<nav class="popup-menu">
+					<a href="#">I. Chapter 1</a>
+					<a href="chapter1.html#section1">1. Introduction</a>
+					<a href="chapter1.html#section2">2. History</a>
+					<a href="chapter1.html#section3">3. Popularization</a>
+					<a href="chapter2.html">II. Chapter 2</a>
+					<a href="chapter2.html#section1">1. Introduction</a>
+					<a href="chapter2.html#section2">2. History</a>
+					<a href="chapter3.html">III. Chapter 3</a>
+					<a href="chapter3.html#section1">1. Introduction</a>
+					<a href="chapter3.html#section2">2. History</a>
+					<a href="chapter4.html">IV. Chapter 4</a>
+					<a href="chapter4.html#section1">1. Introduction</a>
+					<a href="chapter4.html#section2">2. History</a>
+				</nav>
+			</div>
+		</header>
 
-      <div style="height: 40px;">
-        <img src="../img/fullscreen.svg" alt="Fullscreen" width="40px" class="icon" onclick="toggleFullscreen()">
-      </div>
+		<a href="chapter3.html">
+			<img
+				src="../img/left-arrow.svg"
+				alt="Left arrow"
+				class="icon arrow-left noPrint"
+			/>
+		</a>
+		<a href="phuluc.html">
+			<img
+				src="../img/right-arrow.svg"
+				alt="Right arrow"
+				class="icon arrow-right noPrint"
+			/>
+		</a>
+		<img
+			src="../img/up-arrow.svg"
+			alt="Up arrow"
+			class="icon arrow-up noPrint"
+			onclick="scrollToTop()"
+		/>
+		<img
+			src="../img/up-arrow.svg"
+			alt="Down arrow"
+			class="icon arrow-down noPrint"
+			onclick="scrollToBottom()"
+		/>
 
-      <div class="text-with-icon">
-        <div>
-          <div class="language-selector" onclick="toggleLanguage()">
-            Eng
-          </div>
-        </div>
-        <img src="../img/language.svg" alt="language" class="language-icon icon" width="40px"
-          onclick="toggleLanguage()">
-      </div>
+		<main>
+			<article id="chapter">
+				<h2>
+					<p
+						style="line-height: 1cm; text-indent: 0cm"
+						id="chapter-name"
+					>
+						Chương 4<br /><br />HƯỚNG DẪN SƠ CẤP CỨU NGƯỜI BỊ NẠN VÀ XỬ LÝ MỘT
+						SỐ TÌNH HUỐNG THƯỜNG GẶP
+					</p>
+				</h2>
+				<section id="section1">
+					<h3>
+						<p style="text-indent: 0cm">
+							4.1. HƯỚNG DẪN SƠ CẤP CỨU NGƯỜI BỊ NẠN
+						</p>
+					</h3>
+					<p style="text-indent: 0cm"><b>4.1.1. Sơ cấp cứu người bị nạn</b></p>
+					<p style="text-indent: 0cm">
+						<b><i>4.1.1.1. Khái niệm, mục đích sơ cấp cứu</i></b>
+					</p>
+					<p>
+						Hậu quả của cháy, nổ gây ra có thể rất nghiêm trọng về tính mạng:
+						nạn nhân bị đa chấn thương, chấn thương vùi lấp, suy hô hấp, bỏng
+						đường hô hấp, bỏng toàn thân, chấn thương sọ não do bị văng, đập
+						hoặc bị các mảnh đổ vỡ do nổ rơi vào đầu. Số lượng nạn nhân bị chấn
+						thương tùy thuộc vào cháy, nổ tại hộ gia đình, tại nơi làm việc hay
+						nơi tập trung đông người.
+					</p>
+					<p>
+						Sơ cấp cứu là những trợ giúp hoặc những chữa trị ngay lúc ban đầu
+						cho nạn nhân (người bị nạn) bị bất cứ một chấn thương sự cố hay một
+						bệnh đột ngột nào đó, trước khi xe cấp cứu, bác sỹ hay người có
+						chuyên môn đến chữa trị.
+					</p>
+					<p>
+						Người bị nạn là những người đang bị đe dọa trực tiếp đến tâm lý, sức
+						khỏe và tính mạng bởi những yếu tố nguy hiểm như: nhiệt độ cao,
+						khói, lửa, sản phẩm cháy độc hại, hóa chất độc hại, nguy cơ sụp đổ
+						cấu kiện xây dựng, nổ thiết bị máy móc, điện thế cao trong các sự cố
+						cháy, nổ, tai nạn lao động, tai nạn giao thông...
+					</p>
+					<p><i>Mục đích sơ cấp cứu: </i></p>
+					<p>- Duy trì sự sống, giảm thiểu các trường hợp thương vong.</p>
+					<p>- Hạn chế tình trạng xấu đi của người bị nạn.</p>
+					<p>- Hỗ trợ người bị nạn hồi tỉnh, thúc đẩy quá trình hồi phục.</p>
+					<p>Không sơ cứu kịp thời, hậu quả sẽ:</p>
+					<p>+ Khi ngừng hô hấp sau 4 phút: tim ngừng đập.</p>
+					<p>+ Khi ngừng hô hấp sau 4 đến 6 phút: não bộ tổn thương.</p>
+					<p>+ Khi ngừng hô hấp sau 6 đến 10 phút: não bộ tổn thương nặng.</p>
+					<p>+ Khi ngừng hô hấp trên 10 phút: chết não hoàn toàn (tử vong).</p>
+					<p style="text-indent: 0cm">
+						<i><b>4.1.1.2. Nguyên tắc sơ cấp cứu</b></i>
+					</p>
+					<p>
+						Chỉ tiến hành ở môi trường an toàn. An toàn cho cả người cứu và nạn
+						nhân. Phải áp dụng các biện pháp và sử dụng dụng cụ đảm bảo an toàn
+						cá nhân cho người sơ cứu như đeo khẩu trang, đi găng tay…
+					</p>
+					<p>
+						Xem xét những gì đang xảy ra một cách nhanh chóng và bình tĩnh tìm
+						những nguy hiểm đối với bản thân và nạn nhân. Khám xét gọi hỏi kiểm
+						tra tổng thể hô hấp, tuần hoàn, nếu cần thì phải hô hấp nhân tạo và
+						ép tim ngoài lồng ngực.
+					</p>
+					<p>
+						Cố gắng nhờ người khác cùng giúp, nhớ nói lại tình trạng nạn nhân
+						trong khi thao tác. Nếu tình trạng nạn nhân nguy hiểm cần kết hợp
+						gọi 115 hay chuyển đến trung tâm y tế.
+					</p>
+					<p>
+						Khi quan sát thấy không có dấu hiệu nguy hiểm thể hiện ra ngoài thì
+						vẫn phải xem xét kỹ lưỡng các triệu chứng chấn thương hay bệnh tật.
+					</p>
+					<p style="text-indent: 0cm">
+						<b><i>4.1.1.3. Các phương pháp di chuyển người bị nạn</i></b>
+					</p>
+					<p>
+						Nếu bạn không thể loại bỏ được mối nguy hiểm đe dọa đến mạng sống,
+						bạn phải cố gắng đưa nạn nhân tránh ra xa đến một khoảng cách an
+						toàn nào đó. Trước tiên, hãy thử đưa nạn nhân ra khỏi nơi nguy hiểm.
+						Trong nhiều tình huống bạn sẽ cần người giúp đỡ và các dụng cụ
+						chuyên môn.
+					</p>
+					<p>
+						<i
+							>Các động tác di chuyển người bị nạn khi có một người thực hiện</i
+						>
+					</p>
+					<p>
+						Tùy vào trạng thái sức khỏe và trọng lượng nạn nhân cũng như tình
+						hình cụ thể mà áp dụng một trong các biện pháp sau:
+					</p>
+					<p>
+						- Dìu (nạng) người bị nạn: Áp dụng khi nạn nhân còn tỉnh, có thể đi
+						lại được.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic32.PNG"
+							alt="pic32"
+							width="550px"
+							height="250px"
+						/>
+					</div>
+					<p>
+						- Bế (ẵm) người bị nạn: Áp dụng khi nạn nhân không tự di chuyển
+						được.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic33.png"
+							alt="pic33"
+							width="550px"
+							height="250px"
+						/>
+					</div>
+					<p>
+						- Cõng người bị nạn: Áp dụng khi nạn nhân không tự mình đi được.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic34.PNG"
+							alt="pic34"
+							width="250px"
+							height="250px"
+						/>
+					</div>
+					<p>
+						- Vác người bị nạn: Áp dụng khi nạn nhân bất tỉnh hay còn tỉnh không
+						tự mình đi lại được.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic35.PNG"
+							alt="pic32"
+							width="550px"
+							height="250px"
+						/>
+					</div>
+					<p>
+						- Kéo người bị nạn: Áp dụng cho nạn nhân nặng cân, bất tỉnh hay còn
+						tỉnh nhưng không đi lại được.
+					</p>
+					<p>
+						- Khi khoảng không gian phía trên rộng, người cứu có thể đứng thẳng
+						người để kéo.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic36.PNG"
+							alt="pic36"
+							width="190px"
+							height="250px"
+						/>
+					</div>
+					<p>
+						- Khi khoảng không gian phía trên hẹp, người cứu phải bò để kéo.
+					</p>
+					<p>- Hoặc khi nạn nhân mặc áo gió hoặc áo dài, dày:</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic37.png"
+							alt="pic37"
+							width="550px"
+							height="250px"
+						/>
+					</div>
+					<p>
+						<i
+							>Các động tác di chuyển người bị nạn khi có hai người thực hiện</i
+						>
+					</p>
+					<p>
+						- Kiệu người bị nạn: Áp dụng cho nạn nhân nặng cân còn tỉnh hoặc bất
+						tỉnh, không đi lại được và trong môi trường có thể có khói, khí độc
+						(người cứu vẫn đeo mặt nạ).
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic38.PNG"
+							alt="pic38"
+							width="200px"
+							height="250px"
+						/>
+					</div>
+					<p>
+						- Khiêng người bị nạn: Áp dụng cho nạn nhân nặng cân còn tỉnh hoặc
+						bất tỉnh, không đi lại được và trong môi trường có thể có khói khí
+						độc (người cứu vẫn đeo mặt nạ).
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic39.png"
+							alt="pic39"
+							width="550px"
+							height="250px"
+						/>
+					</div>
+					<p><i>Các biện pháp khác</i></p>
+					<p>
+						- Dùng cáng để di chuyển nạn nhân (cáng thông thường, cáng địa hình,
+						cáng bánh xe, cáng ghế, cáng tự tạo)
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic40.PNG"
+							alt="pic40"
+							width="400px"
+							height="250px"
+						/>
+					</div>
+					<p>- Dùng chăn kéo</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic41.PNG"
+							alt="pic41"
+							width="400px"
+							height="250px"
+						/>
+					</div>
+					<p style="text-indent: 0cm">
+						<b>4.1.2. Sơ cứu ngừng hô hấp tuần hoàn</b>
+					</p>
+					<p>
+						- Mục đích: Là một biện pháp nhằm kích thích tim đập lại, cung cấp
+						dưỡng khí để phổi thở lại trong trường hợp nạn nhân bị ngừng tim, bị
+						ngừng hô hấp hay vừa bị ngừng tim và ngừng hô hấp.
+					</p>
+					<p>- Nguyên nhân:</p>
+					<p>
+						+ Thiếu ôxy: Trong điều kiện đám cháy sinh ra nhiều khói khí độc,
+						sập nhà, thắt cổ tự tử, chết đuối, tai nạn giao thông, tai nạn lao
+						động…
+					</p>
+					<p>+ Điện giật, sặc, hạ thân nhiệt nặng.</p>
+					<p>+ Giảm hoặc tăng canxi máu.</p>
+					<p>- Triệu chứng:</p>
+					<p>
+						+ Mất ý thức đột ngột: gọi to không trả lời, lay mạnh không đáp ứng.
+					</p>
+					<p>+ Ngừng thở hoặc thở ngáp.</p>
+					<p>+ Lồng ngực không di động.</p>
+					<p>
+						+ Mất mạch cảnh (mạch đi lên cổ), mạch bẹn: sờ không thấy mạch đập.
+					</p>
+					<p>+ Máu ngừng chảy từ các vết thương.</p>
+					<p>+ Da và sắc mặt tím tái nhợt nhạt.</p>
+					<p>+ Giãn đồng tử, mất phản xạ ánh sáng (triệu chứng muộn).</p>
+					<p style="text-indent: 0cm; text-align: center">
+						<b>Phác đồ sơ cấp cứu</b>
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic42.jpg"
+							alt="pic42"
+							width="350px"
+							height="400px"
+						/>
+					</div>
+					<p style="text-indent: 0cm"><b>4.1.3. Sơ cứu ngừng hô hấp</b></p>
+					<p style="text-indent: 0cm">
+						<b
+							><i
+								>4.1.3.1. Kỹ thuật kiểm tra hơi thở (cách xác định nạn nhân
+								ngừng thở)</i
+							></b
+						>
+					</p>
+					<p>
+						- Áp má vào miệng nạn nhân, kiểm tra xem có nghe thấy hoặc cảm nhận
+						thấy hơi thở của nạn nhân hay không.
+					</p>
+					<p>- Quan sát các cử động vùng ngực xem có thấy di động hay không.</p>
+					<p>- Kết hợp kiểm tra mạch đập (tiếng tim).</p>
+					<p>
+						Xem, nghe và cảm nhận trong 5 giây trước khi đưa ra kết luận là nạn
+						nhân có thở hay không.
+					</p>
+					<p style="text-indent: 0cm">
+						<b><i>4.1.3.2. Khai thông đường thở</i></b>
+					</p>
+					<p>
+						- Đặt nạn nhân nằm ngửa, ưỡn cổ, nơi thoáng khí, nằm trên nền cứng,
+						phẳng.
+					</p>
+					<p>- Nới rộng quần áo nạn nhân.</p>
+					<p>
+						- Một tay đặt trên trán của nạn nhân đẩy trán ra phía sau, tay kia
+						đẩy cằm lên cao sao cho đầu ngửa, cổ ưỡn ra tối đa hoặc dùng 1 tay
+						đỡ dưới gáy nạn nhân, tay kia đè và đẩy mạnh xuống dưới lên trán nạn
+						nhân (động tác này có tác dụng làm cổ dãn ra và đẩy gốc lưỡi khỏi
+						chèn vào vùng hầu họng).
+					</p>
+					<p>
+						<i>Chú ý:</i> Khi nghi ngờ chấn thương đốt sống cổ thì chỉ nâng hàm
+						dưới lên, tránh di chuyển đầu cổ nhiều.
+					</p>
+					<p>
+						- Lấy dị vật đường thở: Móc sạch đầm dãi, dị vật, tháo răng giả (nếu
+						có).
+					</p>
 
-      <div style="height: 40px;">
-        <img src="../img/printer.svg" alt="Print" width="40px" class="icon" onclick="window.print()">
-      </div>
-
-      <img src="../img/menu.svg" alt="Menu" class="menu-button icon" width="40px">
-      <nav class="popup-menu">
-        <a href="#">I. Chapter 1</a>
-        <a href="chapter1.html#section1">1. Introduction</a>
-        <a href="chapter1.html#section2">2. History</a>
-        <a href="chapter1.html#section3">3. Popularization</a>
-        <a href="chapter2.html">II. Chapter 2</a>
-        <a href="chapter2.html#section1">1. Introduction</a>
-        <a href="chapter2.html#section2">2. History</a>
-        <a href="chapter3.html">III. Chapter 3</a>
-        <a href="chapter3.html#section1">1. Introduction</a>
-        <a href="chapter3.html#section2">2. History</a>
-        <a href="chapter4.html">IV. Chapter 4</a>
-        <a href="chapter4.html#section1">1. Introduction</a>
-        <a href="chapter4.html#section2">2. History</a>
-      </nav>
-
-    </div>
-  </header>
-
-  <a href="chapter3.html">
-    <img src="../img/left-arrow.svg" alt="Left arrow" class="icon arrow-left noPrint">
-  </a>
-  <a href="phuluc.html">
-    <img src="../img/right-arrow.svg" alt="Right arrow" class="icon arrow-right noPrint">
-  </a>
-  <img src="../img/up-arrow.svg" alt="Up arrow" class="icon arrow-up noPrint" onclick="scrollToTop()" />
-  <img src="../img/up-arrow.svg" alt="Down arrow" class="icon arrow-down noPrint" onclick="scrollToBottom()" />
-
-
-  <main>
-    <article id="chapter">
-      <h2>
-        <p lang="vi" style="line-height: 1cm; text-indent:0cm" id="chapter-name">Chương
-          4<br/><br />HƯỚNG DẪN SƠ CẤP CỨU NGƯỜI BỊ NẠN VÀ XỬ LÝ MỘT SỐ TÌNH HUỐNG THƯỜNG GẶP
-        </p>
-      </h2>
-      <section id="section1">
-        <h3>
-          <p lang="vi" style="text-indent: 0cm">4.1. HƯỚNG DẪN SƠ CẤP CỨU NGƯỜI BỊ NẠN</p>
-        </h3>
-        <p lang="vi" style="text-indent: 0cm"><b>4.1.1. Sơ cấp cứu người bị nạn</b></p>
-<p lang="vi" style="text-indent: 0cm"><b><i>4.1.1.1. Khái niệm, mục đích sơ cấp cứu</i></b></p>
-<p lang="vi">Hậu quả của cháy, nổ gây ra có thể rất nghiêm trọng về tính mạng: nạn nhân bị đa chấn thương, chấn thương vùi lấp, suy hô hấp, bỏng đường hô hấp, bỏng toàn thân, chấn thương sọ não do bị văng, đập hoặc bị các mảnh đổ vỡ do nổ rơi vào đầu. Số lượng nạn nhân bị chấn thương tùy thuộc vào cháy, nổ tại hộ gia đình, tại nơi làm việc hay nơi tập trung đông người.</p>
-<p lang="vi">Sơ cấp cứu là những trợ giúp hoặc những chữa trị ngay lúc ban đầu cho nạn nhân (người bị nạn) bị bất cứ một chấn thương sự cố hay một bệnh đột ngột nào đó, trước khi xe cấp cứu, bác sỹ hay người có chuyên môn đến chữa trị.</p>
-<p lang="vi">Người bị nạn là những người đang bị đe dọa trực tiếp đến tâm lý, sức khỏe và tính mạng bởi những yếu tố nguy hiểm như: nhiệt độ cao, khói, lửa, sản phẩm cháy độc hại, hóa chất độc hại, nguy cơ sụp đổ cấu kiện xây dựng, nổ thiết bị máy móc, điện thế cao trong các sự cố cháy, nổ, tai nạn lao động, tai nạn giao thông...</p>
-<p lang="vi"><i>Mục đích sơ cấp cứu: </i></p>
-<p lang="vi">- Duy trì sự sống, giảm thiểu các trường hợp thương vong.</p>
-<p lang="vi">- Hạn chế tình trạng xấu đi của người bị nạn.</p>
-<p lang="vi">- Hỗ trợ người bị nạn hồi tỉnh, thúc đẩy quá trình hồi phục.</p>
-<p lang="vi">Không sơ cứu kịp thời, hậu quả sẽ:</p>
-<p lang="vi">+ Khi ngừng hô hấp sau 4 phút: tim ngừng đập.</p>
-<p lang="vi">+ Khi ngừng hô hấp sau 4 đến 6 phút: não bộ tổn thương.</p>
-<p lang="vi">+ Khi ngừng hô hấp sau 6 đến 10 phút: não bộ tổn thương nặng.</p>
-<p lang="vi">+ Khi ngừng hô hấp trên 10 phút: chết não hoàn toàn (tử vong).</p>
-<p lang="vi" style="text-indent: 0cm"><i><b>4.1.1.2. Nguyên tắc sơ cấp cứu</b></i></p>
-<p lang="vi">Chỉ tiến hành ở môi trường an toàn. An toàn cho cả người cứu và nạn nhân. Phải áp dụng các biện pháp và sử dụng dụng cụ đảm bảo an toàn cá nhân cho người sơ cứu như đeo khẩu trang, đi găng tay…</p>
-<p lang="vi">Xem xét những gì đang xảy ra một cách nhanh chóng và bình tĩnh tìm những nguy hiểm đối với bản thân và nạn nhân. Khám xét gọi hỏi kiểm tra tổng thể hô hấp, tuần hoàn, nếu cần thì phải hô hấp nhân tạo và ép tim ngoài lồng ngực.</p>
-<p lang="vi">Cố gắng nhờ người khác cùng giúp, nhớ nói lại tình trạng nạn nhân trong khi thao tác. Nếu tình trạng nạn nhân nguy hiểm cần kết hợp gọi 115 hay chuyển đến trung tâm y tế.</p>
-<p lang="vi">Khi quan sát thấy không có dấu hiệu nguy hiểm thể hiện ra ngoài thì vẫn phải xem xét kỹ lưỡng các triệu chứng chấn thương hay bệnh tật.</p>
-<p lang="vi" style="text-indent: 0cm"><b><i>4.1.1.3. Các phương pháp di chuyển người bị nạn</i></b></p>
-<p lang="vi">Nếu bạn không thể loại bỏ được mối nguy hiểm đe dọa đến mạng sống, bạn phải cố gắng đưa nạn nhân tránh ra xa đến một khoảng cách an toàn nào đó. Trước tiên, hãy thử đưa nạn nhân ra khỏi nơi nguy hiểm. Trong nhiều tình huống bạn sẽ cần người giúp đỡ và các dụng cụ chuyên môn.</p>
-<p lang="vi"><i>Các động tác di chuyển người bị nạn khi có một người thực hiện</i></p>
-<p lang="vi">Tùy vào trạng thái sức khỏe và trọng lượng nạn nhân cũng như tình hình cụ thể mà áp dụng một trong các biện pháp sau:</p>
-<p lang="vi">- Dìu (nạng) người bị nạn: Áp dụng khi nạn nhân còn tỉnh, có thể đi lại được.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic32.PNG" alt="pic32" width="550px" height="250px">
-</div> 
-<p lang="vi">- Bế (ẵm) người bị nạn: Áp dụng khi nạn nhân không tự di chuyển được.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic33.png" alt="pic33" width="550px" height="250px">
-</div> 
-<p lang="vi">- Cõng người bị nạn: Áp dụng khi nạn nhân không tự mình đi được.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic34.PNG" alt="pic34" width="250px" height="250px">
-</div> 
-<p lang="vi">- Vác người bị nạn: Áp dụng khi nạn nhân bất tỉnh hay còn tỉnh không tự mình đi lại được.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic35.PNG" alt="pic32" width="550px" height="250px">
-</div> 
-<p lang="vi">- Kéo người bị nạn: Áp dụng cho nạn nhân nặng cân, bất tỉnh hay còn tỉnh nhưng không đi lại được.</p>
-<p lang="vi">- Khi khoảng không gian phía trên rộng, người cứu có thể đứng thẳng người để kéo.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic36.PNG" alt="pic36" width="190px" height="250px">
-</div> 
-<p lang="vi">- Khi khoảng không gian phía trên hẹp, người cứu phải bò để kéo.</p>
-<p lang="vi">- Hoặc khi nạn nhân mặc áo gió hoặc áo dài, dày:</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic37.png" alt="pic37" width="550px" height="250px">
-</div> 
-<p lang="vi"><i>Các động tác di chuyển người bị nạn khi có hai người thực hiện</i></p>
-<p lang="vi">- Kiệu người bị nạn: Áp dụng cho nạn nhân nặng cân còn tỉnh hoặc bất tỉnh, không đi lại được và trong môi trường có thể có khói, khí độc (người cứu vẫn đeo mặt nạ).</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic38.PNG" alt="pic38" width="200px" height="250px">
-</div> 
-<p lang="vi">- Khiêng người bị nạn: Áp dụng cho nạn nhân nặng cân còn tỉnh hoặc bất tỉnh, không đi lại được và trong môi trường có thể có khói khí độc (người cứu vẫn đeo mặt nạ).</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic39.png" alt="pic39" width="550px" height="250px">
-</div> 
-<p lang="vi"><i>Các biện pháp khác</i></p>
-<p lang="vi">- Dùng cáng để di chuyển nạn nhân (cáng thông thường, cáng địa hình, cáng bánh xe, cáng ghế, cáng tự tạo) </p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic40.PNG" alt="pic40" width="400px" height="250px">
-</div> 
-<p lang="vi">- Dùng chăn kéo</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic41.PNG" alt="pic41" width="400px" height="250px">
-</div> 
-<p lang="vi" style="text-indent: 0cm"><b>4.1.2. Sơ cứu ngừng hô hấp tuần hoàn</b></p>
-<p lang="vi">- Mục đích: Là một biện pháp nhằm kích thích tim đập lại, cung cấp dưỡng khí để phổi thở lại trong trường hợp nạn nhân bị ngừng tim, bị ngừng hô hấp hay vừa bị ngừng tim và ngừng hô hấp.</p>
-<p lang="vi">- Nguyên nhân:</p>
-<p lang="vi">+ Thiếu ôxy: Trong điều kiện đám cháy sinh ra nhiều khói khí độc, sập nhà, thắt cổ tự tử, chết đuối, tai nạn giao thông, tai nạn lao động…</p>
-<p lang="vi">+ Điện giật, sặc, hạ thân nhiệt nặng.</p>
-<p lang="vi">+ Giảm hoặc tăng canxi máu.</p>
-<p lang="vi">- Triệu chứng:</p>
-<p lang="vi">+ Mất ý thức đột ngột: gọi to không trả lời, lay mạnh không đáp ứng.</p>
-<p lang="vi">+ Ngừng thở hoặc thở ngáp.</p>
-<p lang="vi">+ Lồng ngực không di động.</p>
-<p lang="vi">+ Mất mạch cảnh (mạch đi lên cổ), mạch bẹn: sờ không thấy mạch đập.</p>
-<p lang="vi">+ Máu ngừng chảy từ các vết thương.</p>
-<p lang="vi">+ Da và sắc mặt tím tái nhợt nhạt.</p>
-<p lang="vi">+ Giãn đồng tử, mất phản xạ ánh sáng (triệu chứng muộn).</p>
-<p lang="vi" style="text-indent: 0cm; text-align: center"><b>Phác đồ sơ cấp cứu</b></p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic42.jpg" alt="pic42" width="350px" height="400px">
-</div> 
-<p lang="vi" style="text-indent: 0cm"><b>4.1.3. Sơ cứu ngừng hô hấp</b></p>
-<p lang="vi" style="text-indent: 0cm"><b><i>4.1.3.1. Kỹ thuật kiểm tra hơi thở (cách xác định nạn nhân ngừng thở)</i></b></p>
-<p lang="vi">- Áp má vào miệng nạn nhân, kiểm tra xem có nghe thấy hoặc cảm nhận thấy hơi thở của nạn nhân hay không.</p>
-<p lang="vi">- Quan sát các cử động vùng ngực xem có thấy di động hay không.</p>
-<p lang="vi">- Kết hợp kiểm tra mạch đập (tiếng tim).</p>
-<p lang="vi">Xem, nghe và cảm nhận trong 5 giây trước khi đưa ra kết luận là nạn nhân có thở hay không.</p>
-<p lang="vi" style="text-indent: 0cm"><b><i>4.1.3.2. Khai thông đường thở</i></b></p>
-<p lang="vi">- Đặt nạn nhân nằm ngửa, ưỡn cổ, nơi thoáng khí, nằm trên nền cứng, phẳng.</p>
-<p lang="vi">- Nới rộng quần áo nạn nhân.</p>
-<p lang="vi">- Một tay đặt trên trán của nạn nhân đẩy trán ra phía sau, tay kia đẩy cằm lên cao sao cho đầu ngửa, cổ ưỡn ra tối đa hoặc dùng 1 tay đỡ dưới gáy nạn nhân, tay kia đè và đẩy mạnh xuống dưới lên trán nạn nhân (động tác này có tác dụng làm cổ dãn ra và đẩy gốc lưỡi khỏi chèn vào vùng hầu họng).</p>
-<p lang="vi"><i>Chú ý:</i> Khi nghi ngờ chấn thương đốt sống cổ thì chỉ nâng hàm dưới lên, tránh di chuyển đầu cổ nhiều.</p>
-<p lang="vi">- Lấy dị vật đường thở: Móc sạch đầm dãi, dị vật, tháo răng giả (nếu có).</p>
-
-<p lang="vi"><i>Thủ thuật Heimlich đứng</i></p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic43.PNG" alt="pic43" width="300px" height="250px">
-</div> 
-<p lang="vi">+ Làm thủ thuật Heimlich nếu nghi ngờ có dị vật đường hô hấp đối với người lớn và trẻ lớn <b><i>(ấn 5 cái dứt khoát - lặp lại 6-10 lần)</i></b>.</p>
-<p lang="vi"><i>Thủ thuật Heimlich nằm</i></p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic44.PNG" alt="pic44" width="350px" height="250px">
-</div>
-<p lang="vi">Trường hợp đặc biệt: với trẻ nhỏ thì kết hợp vỗ lưng và ấn ngực.</p>
-<div class="video-container">
-  <video controls>
-      <source src="../video/video10.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-  </video>
-</div>
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Video 10. Hướng dẫn thực hiện thủ thuật Heimlich</i></p>
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>(Nguồn: VTC Now)</i></p>
-<p lang="vi" style="text-indent: 0cm"><b><i>4.1.3.3. Hỗ trợ hô hấp</i></b></p>
-<p lang="vi">- Thổi ngạt kiểu miệng - miệng;</p>
-<p lang="vi">- Thổi ngạt kiểu miệng - mũi;</p>
-<p lang="vi">- Hô hấp nhân tạo bằng bóng Ambu;</p>
-<p lang="vi">- Hô hấp kiểu nằm ngửa.</p>
-<p lang="vi">Tần suất 10 - 12 lần/phút với người lớn; 20 lần/phút đối với trẻ em từ 1 - 8 tuổi; thổi nhanh và nhẹ hơn với tần suất 30 lần/phút với trẻ bé và sơ sinh.</p>
-</div><div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic45.PNG" alt="pic45" width="580px" height="250px">
-</div> 
-<p lang="vi" style="text-indent: 0cm"><b>4.1.4. Sơ cứu ngừng tim</b></p>
-<p lang="vi">- Xác định ngừng tim:</p>
-<p lang="vi">+ Nạn nhân ngất, da xanh tím, bắt mạch bẹn, mạch cảnh không có, nạn nhân ngừng thở, đồng tử giãn.</p>
-<p lang="vi">+ Để đầu nạn nhân ngửa ra sau, người sơ cứu ngồi cạnh một bên nạn nhân, dùng 3 đầu ngón tay kiểm tra động mạch cảnh hoặc động mạch bẹn không thấy đập hoặc áp tai trực tiếp lên vùng tim không thấy tim đập.</p>
-<p lang="vi">+ Bắt mạch trong 5 giây trước khi kết luận là mạch còn đập hay không.</p>
-<p lang="vi">- Tiến hành ép tim:</p>
-<p lang="vi">+ Khi kiểm tra thấy tim ngừng đập phải đấm vào ngực nạn nhân 5-6 cái rồi ép tim ngoài lồng ngực ngay.</p>
-<p lang="vi">+ Nới lỏng quần áo, đặt nạn nhân nằm ngửa, trên nền phẳng, cứng. Người cứu quỳ ngang ngực nạn nhân đặt một bàn tay lên khoảng 1/3 xương ức tính từ dưới lên. Đặt lòng bàn tay thứ hai lồng lên tay thứ nhất và kéo lật ngược các ngón của bàn thứ nhất sao cho chỉ có gốc bàn tay tác động vào ngực nạn nhân.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic46.png" alt="pic46" width="700px" height="250px">
-</div>
-<p lang="vi">+ Giữ hai khuỷu và cánh tay thẳng, dồn sức nặng phần trên cơ thể ép mạnh xuống ngực nạn nhân với tần số khoảng 80-100 lần/phút (trẻ em 1 tuổi: 100 lần/phút; trẻ sơ sinh: 120 lần/phút).</p>
-<p lang="vi">- Thổi ngạt kết hợp với ép tim ngoài lồng ngực: Cứ 2 lần hô hấp miệng - miệng, xoa bóp ép tim 20-30 lần.</p>
-<div class="video-container">
-  <video controls>
-      <source src="../video/video11.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-  </video>
-</div>
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Video 11. Hướng dẫn sơ cứu ngừng tim ở người lớn</i></p>
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>(Nguồn: VTC Now)</i></p>
-<p lang="vi">Trường hợp: có một người cấp cứu:</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic47.JPG" alt="pic47" width="530px" height="250px">
-</div> 
-<p lang="vi">Trường hợp: có 2 người cùng cấp cứu:</p>
- <div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic48.jpg" alt="pic48" width="520px" height="250px">
-</div> 
-<p lang="vi">- Những dấu hiệu sau đây chứng tỏ ép tim - thổi ngạt có hiệu quả:</p>
-<p lang="vi">+ Lồng ngực nở ra mỗi khi thổi hơi vào phổi.</p>
-<p lang="vi">+ Sờ thấy mạch bẹn hoặc mạch cảnh mỗi khi ép tim.</p>
-<p lang="vi">+ Màu da bớt tím tái.</p>
-<p lang="vi">+ Có dấu hiệu tự thở.</p>
-<p lang="vi">+ Tim của nạn nhân đập lại.</p>
-<p lang="vi">- Ngừng ép tim - thổi ngạt khi:</p>
-<p lang="vi">+ Thời gian cấp cứu trên 60 phút mà không có kết quả.</p>
-<p lang="vi">+ Tim không đập lại.</p>
-<p lang="vi">+ Đồng tử giãn và không còn phản xạ ánh sáng đã được 15-20 phút.</p>
-<p lang="vi">+ Khi nạn nhân hồi phục.</p>
-<p lang="vi"><i>Chú ý:</i></p>
-<p lang="vi">- Đối với trẻ em làm nhẹ và nhanh hơn.</p>
-<p lang="vi">- Quá trình ép cần quan sát mạch cổ (nếu ép đúng mạch cổ sẽ phồng lên). Khi tim bắt đầu đập trở lại thì quan sát mạch cổ hoặc mạch bẹn và ép theo mạch cổ hoặc mạch bẹn đó.</p>
-<p lang="vi">- Ép đúng kỹ thuật, đủ độ sâu: </p>
-<p lang="vi">+ Người lớn: ép 2 tay, sâu 4-5cm.</p>
-<p lang="vi">+ Trẻ em học cấp 1, cấp 2: ép sâu từ  3-4cm.</p>
-<p lang="vi">+ Trẻ em học mẫu giáo: ép sâu từ 2-3cm, ép 1 tay. </p>
-<p lang="vi">+ Em bé còn bế: ép sâu từ 1-2cm, ép 2 ngón. Cứ khoảng 2 phút thì ngừng lại vài giây để kiểm tra hô hấp, tuần hoàn.</p>
-<p lang="vi" style="text-indent: 0cm"><b>4.1.5. Cầm máu khẩn cấp</b></p>
-<p lang="vi"><i>Mục tiêu:</i> Cầm máu ngay tại chỗ, gọi người đến cứu trợ.</p>
-<p lang="vi"><i>Cách nhận biết đứt động mạch chân, tay </i></p>
-<p lang="vi">- Tay, chân bị cụt, dập nát hoặc thấy máu phụt ra thành tia tại vị trí tổn thương.</p>
-<p lang="vi"><i>Xử lý:</i> Cởi hoặc vén quần, áo ra khỏi vết thương từ 4-8cm.</p>
-<p lang="vi">Nguyên tắc cầm máu: Dùng ngón tay cái hoặc điện thoại di động, miếng gỗ... ép chặt lên phía trên đường đi động mạch, cách vị trí đứt 3-4cm để cầm máu, rồi xử lý theo các kỹ năng sau:</p>
-<p lang="vi">- Kỹ năng thứ 1: </p>
-<p lang="vi">+ Ở tay thì ép cẳng tay vào cánh tay, rồi ép cánh tay vào sườn, để giảm áp lực máu chảy. </p>
-<p lang="vi">+ Ở chân, nằm ngửa ra, ép cẳng chân vào đùi, ép đùi vào bụng hay giơ lên cao để giảm áp lực máu chảy.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic49.jpg" alt="pic49" width="300px" height="350px">
-</div> 
-<p lang="vi">- Kỹ năng thứ 2: Dùng băng cuộn bản rộng 8cm, băng chặt tối đa tại vị trí tổn thương, băng nhiều vòng chồng lên nhau, băng rộng lên trên. Dùng băng thun tốt nhất. </p>
-<p lang="vi">- Kỹ năng thứ 3: Dùng băng cuộn bản rộng 8cm băng chặt tối đa trên vị trí tổn thương 3-5cm, băng nhiều vòng chồng lên nhau, rồi băng ép vết thương. Dùng băng thun tốt nhất (garo).</p>
-<p lang="vi">- Kỹ năng thứ 4: Dùng dây bản rộng 4 cm hoặc gấp đôi chiều rộng cuốn băng thun lại, cuốn 2-3 vòng trên vị trí tổn thương 3-5cm, buộc chặt lại, luồn ngón tay trỏ xuống dưới dây, xoắn chặt cho máu cầm lại. Ghi họ tên, thời gian garo cầm máu vào mảnh giấy rồi buộc vào vị trí cầm máu. Vào y tế hoặc gọi 115 đến cứu trợ.</p>
-<p lang="vi">- Kỹ năng nới băng cầm máu (garo): Cứ 25 phút nới garo một lần, nới khoảng 2 phút, trước khi nới phải băng ép ở trên vị trí tổn thương để giảm áp lực chảy máu, nới từ từ. Không có đồng hồ theo dõi ta thấy da ở dưới vị trí buộc thâm tím thì phải nới garo, rồi để chi thấp xuống cho máu lưu thông, nới đến khi thấy màu da ở dưới hồng lên là được. Nới hết mà không thấy máu phụt ra thì không cần garo nữa, nhưng vẫn giữ băng ép ở trên, băng vết thương lại. Nếu máu vẫn phụt ra phải garo lại.</p> 
-<p lang="vi">Trường hợp chi bị đứt rời ra, sát trùng ngay đoạn chi này cho vào túi nhựa hoặc quấn vải sạch bỏ vào hộp nước đá (hộp xốp), đưa ngay vào bệnh viện để nối lại.</p>
-<p lang="vi" style="text-indent: 0cm"><b>4.1.6. Băng vết thương</b></p>
-<p lang="vi"><i>Mục tiêu:</i> Cầm máu, chống sốc, chống nhiễm trùng.</p> 
-<p lang="vi"><i>Phương tiện và các bước băng </i></p>
-<p lang="vi">- Dùng cồn 70°, cồn iốt 10% (không xót), ôxy già 30%... sát trùng vết thương. Không có thì dùng nước sạch rửa vết thương, không có nữa thì vẫn phải băng cầm máu, vào y tế ngay. </p>
-<p lang="vi">- Ngày nay, có hai loại băng được sử dụng rộng rãi trong nước, ngoài nước. Băng urgo rất thuận tiện, có đủ loại to, vừa, nhỏ, có sẵn thuốc sát trùng, dán kín vết thương là xong. Băng thun dễ sử dụng, cầm máu tốt, dùng làm dây garo cầm máu, băng cố định một số xương gãy thay nẹp, dùng xong giặt sạch lại dùng được nhiều lần. Cả hai loại băng trên có bán ở hiệu thuốc. </p>
-<p lang="vi">- Bông, gạc. </p>
-<p lang="vi">- Không có băng thì dùng khẩu trang hoặc xé áo để băng.</p> 
-<p lang="vi">- Băng vừa chặt, băng chặt quá máu không lưu thông (thấy da tím tái), băng lỏng không cầm được máu.</p> 
-<p lang="vi">- Không để nút buộc, đầu băng trên vết thương. </p>
-<p lang="vi">- Chườm lạnh để giảm đau, giảm sưng, giảm chảy máu.</p>
-<p lang="vi"><i>Các bước tiến hành cuốn băng: </i></p>
-<p lang="vi"><b><i>- Bước 1:</i></b> Cởi hoặc vén quần áo ra khỏi vết thương rồi để vị trí tổn thương lên cao, sát trùng vết thương xoắn ốc từ trong ra khỏi vết thương 2cm để đẩy chất bẩn ra ngoài, rồi đặt gạc chườm lên vết thương 2cm.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic50.jpg" alt="pic50" width="620px" height="250px">
-</div> 
-<p lang="vi"><b><i>- Bước 2: </i></b>Cố định đầu băng: Đặt đầu cuộn băng ở đoạn nhỏ nhất, cách vết thương 2-3cm, cuốn 2-3 vòng tròn chồng lên nhau để cố định hoặc buộc chắc đầu băng vào cũng được. </p>
-<p lang="vi"><b><i>- Bước 3: </i></b>Băng vết thương: Cuốn băng vòng xoắn ốc hoặc theo hình số 8 (dấu x), từ đoạn nhỏ đến đoạn to mới chắc, cứ vòng sau đè lên vòng trước một nửa (1/2) cuộn băng, phải băng qua vết thương từ 2-3cm.</p>
-<p lang="vi"><b><i>- Bước 4:</i></b> Kết thúc: Cuộn thêm 2-3 vòng tròn trùng khít lên nhau, dùng móc, ghim, băng dính cố định đầu băng lại hoặc tạo ra hai dải buộc vào cơ thể.</p> 
-<p lang="vi"><b><i>- Bước 5:</i></b> Kiểm tra máu lưu thông rồi đưa đến y tế. </p>
-<p lang="vi"><i>Lưu ý:</i> Không cho nạn nhân uống nước nhiều một lúc, cho uống ít một. </p>
-<div class="video-container">
-  <video controls>
-      <source src="../video/video12.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-  </video>
-</div>
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Video 12. Hướng dẫn băng bó cơ bản</i></p>
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>(Nguồn: VTC Now)</i></p>
-<p lang="vi" style="text-indent: 0cm"><b><i>4.1.6.1. Băng vết thương đầu, hàm, mặt </i></b></p>
-<p lang="vi">- Băng vết thương rách da đầu, da mặt: Dùng băng urgo thuận tiện nhất, băng đầu phải cắt tóc quanh vết thương mới băng được. </p>
-<p lang="vi">- Băng vết thương lột da đầu: Nạn nhân bị lột da đầu, ta lấy da đó úp lên như cũ hoặc cho vào hộp nước đá đưa đến bệnh viện, băng như sau: Tở đầu cuộn băng ra khoảng ngón tay. Một tay cầm chắc đoạn băng này đặt trên mang tai, một tay cầm cuộn băng băng lên đỉnh đầu xuống tới hàm rồi vòng lên đầu, đè lên nửa dải băng trước. Cứ băng như vậy sang hai bên cho kín hết vết thương rồi bắt chéo hai đầu cuộn băng lại, băng một vòng quanh đầu qua hai mang tai rồi buộc hai đầu băng vào nền sọ.</p>
-<p lang="vi" style="text-indent: 0cm"><b><i>4.1.6.2. Băng vết thương mắt</i></b> </p>
-<p lang="vi">- Vết thương lòi mắt: Cấm đụng chạm vào mắt, dùng chén vô trùng úp lên rồi băng ép trôn chén lại. </p>
-<p lang="vi">- Băng một mắt. </p>
-<p lang="vi">+ Dùng băng urgo, băng dính... băng ép lại. </p>
-<p lang="vi">+ Nếu dùng băng cuộn thì buộc đầu băng vào hộp sọ, băng chếch lên ngang đầu phía bên mắt lành, băng chéo xuống mắt bị tổn thương cho tới dái tai, sau đó vòng về sau gáy chếch lên đầu, băng kín vết thương thì cố định đầu băng lại hoặc băng ngược lại cũng được.</p>
-<p lang="vi">- Băng hai mắt: Dùng băng cuộn băng vòng tròn qua hai mắt, băng kín vết thương thì buộc hai đầu băng lại, dùng băng dính, urgo rất thuận tiện và đơn giản. </p>
-<p lang="vi" style="text-indent: 0cm"><b><i>4.1.6.3. Băng vết thương ở ngực, lưng, bụng </i></b></p>
-<p lang="vi">- Vết thương vừa, nhỏ.</p>
-<p lang="vi">- Vết thương lớn máu chảy nhiều: Dùng băng thun, băng xoắn ốc từ nhỏ đến to, băng kín hết vết thương, cố định đầu băng lại. Vết thương lồng ngực hở có tiếng phì phò, đặt gạc dày lên vết thương, hoặc băng chặt nhiều vòng chồng lên vết thương, băng đến khi hết tiếng phì phò mới được. </p>
-<p lang="vi">- Vết thương lòi ruột: Cấm đụng chạm hoặc nhét ruột vào bụng, để nạn nhân nằm ngửa. Dùng bát vô khuẩn phù hợp úp lên, băng ép trôn bát vào thành bụng. Không có bát dùng vòng xuyến đặt lên rồi băng lại. Cấm cho nạn nhân ăn, uống.</p>
-<p lang="vi">- Vết thương có dị vật cắm sâu vào ngực, bụng, lưng:</p> 
-<p lang="vi">+ Không rút dị vật ra khỏi vết thương. </p>
-<p lang="vi">+ Dùng ngón tay ép chặt xung quanh dị vật. </p>
-<p lang="vi">+ Chèn bông, băng, gạc dày lên, băng chặt quanh dị vật, cấm băng phủ lên dị vật. Dùng băng urgo rất tốt.</p> 
-<p lang="vi" style="text-indent: 0cm"><b><i>4.1.6.4. Băng vết thương các chi </i></b></p>
-<p lang="vi">- Băng vết thương vừa, nhỏ: Dùng băng urgo, băng dính, băng 4 dải, băng bướm rất hiệu quả, thuận tiện.</p>
-<p lang="vi">- Băng vết thương to máu chảy nhiều: Phải dùng băng cuộn băng xoắn ốc hoặc băng số 8, dùng băng thun tốt nhất.</p>
-<p lang="vi">- Băng bàn tay, bàn chân, gót chân: Cố định đầu cuộn băng trên các ngón tay, ngón chân (để hở đầu ngón ra ngoài để kiểm soát máu lưu thông). Dùng băng thun băng xoắn ốc hoặc số 8 hay băng 4 dải cũng được, dùng băng urgo thuận tiện nhất.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic51.jpg" alt="pic51" width="640px" height="250px">
-</div> 
-<p lang="vi" style="text-indent: 0cm"><b>4.1.7. Sơ cứu chấn thương cột sống, cổ </b></p>
-<p lang="vi"><b><i>Bước 1:</i></b> <i>Dấu hiệu nghi chấn thương cột sống:</i></p> 
-<p lang="vi">- Đau vùng cổ, gáy.</p>
-<p lang="vi">- Chấn thương nhiều xung quanh vùng hàm mặt, vai, gáy, đầu.</p> 
-<p lang="vi">- Yếu hoặc giảm vận động tứ chi hoặc 2 chi trên.</p>
-<p lang="vi">- Bệnh nhân chấn thương sọ não hôn mê sâu.</p>
-<p lang="vi"><b><i>Bước 2:</i></b> <i>Tiến hành sơ cứu</i></p>
-<p lang="vi">- Khuyên nạn nhân không được cố vận động.</p>
-<p lang="vi">- Giữ đầu và cổ nạn nhân nguyên tư thế ban đầu cho đến khi đội cấp cứu đến.</p>
-<p lang="vi">- Nếu không thể chuyển ngay nạn nhân đến bệnh viện thì phải: nới rộng cổ áo và lót một vòng đệm cổ.</p>
-<p lang="vi">- Đắp chăn cho nạn nhân trong khi chờ đợi xe cấp  cứu.</p>
-<p lang="vi">- Nếu buộc phải di chuyển nạn nhân thì phải xử trí như sau:</p>
-<p lang="vi">+ Lót vòng đệm cổ. Cắt bìa cứng: chiều rộng khoảng 8-10cm, dài bằng chu vi vòng cổ. Sau đó dùng khăn mềm gói lại.</p>
-<p lang="vi">+ Quấn vòng này quanh cổ nạn nhân và buộc nút ở phía trước của cổ.</p>
-<p lang="vi">+ Đảm bảo chắc chắn rằng vòng đệm cổ không gây tắc nghẽn đường thở.</p>
-<p lang="vi">+ Phải có người khiêng giữ đầu - vai - cổ thành một khối và phối hợp nhiều người cùng khuân chuyển (4 người).</p>
-<p lang="vi">+ Khi đã chuyển lên cáng hoặc phản cứng thì lót chèn vào hai bên cổ của bệnh nhân để hạn chế di lệch.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic52.JPG" alt="pic52" width="280px" height="250px">
-</div>      
-</section>
-      <section id="section2">
-        <h3>
-          <p lang="vi" style="text-indent: 0cm">4.2. HƯỚNG DẪN XỬ LÝ MỘT SỐ TÌNH HUỐNG THƯỜNG GẶP</p>
-        </h3>
-        <p lang="vi" style="text-indent: 0cm"><b>4.2.1. Xử lý tình huống nạn nhân bị điện giật</b></p>
-<p lang="vi">Khi có người bị tai nạn điện, việc tiến hành sơ cứu nhanh chóng, kịp thời và đúng phương pháp là các yếu tố quyết định để cứu sống nạn nhân. Các thí nghiệm và thực tế cho thấy rằng từ lúc bị điện giật đến một phút sau được cứu chữa thì 90% trường hợp cứu sống, để 6 phút sau mới cứu chỉ có thể cứu sống 10%, nếu để từ 10 phút mới cấp cứu thì rất ít trường hợp cứu sống được. Việc sơ cứu phải thực hiện đúng phương pháp mới có hiệu quả và tác dụng cao.</p>
-<p lang="vi">Khi sơ cứu người bị tai nạn cần thực hiện các bước cơ bản sau:</p>
-<p lang="vi">- Tách nạn nhân ra khỏi nguồn điện.</p>
-<p lang="vi">+ Nếu nạn nhân chạm vào điện hạ áp cần: Nhanh chóng cắt nguồn điện (cầu dao, aptomat, cầu chì...); nếu không thể cắt nhanh nguồn điện thì phải dùng các vật cách điện khô như sào, gậy tre, gỗ khô để gạt dây điện ra khỏi nạn nhân, nếu nạn nhân nắm chặt vào dây điện cần phải đứng trên các vật cách điện khô (bệ gỗ) để kéo nạn nhân ra hoặc đi ủng hay dùng găng tay cách điện để gỡ nạn nhân ra; cũng có thể dùng dao rìu với cán gỗ khô, kìm cách điện để chặt hoặc cắt đứt dây điện.</p>
-<p lang="vi">+ Nếu nạn nhân bị chạm hoặc bị phóng điện từ thiết bị có điện áp cao: Không thể đến cứu ngay trực tiếp mà cần phải đi ủng, dùng gậy, sào cách điện để tách nạn nhân ra khỏi phạm vi có điện. Đồng thời báo cho người quản lý đến cắt điện trên đường dây. Nếu người bị nạn đang làm việc ở đường dây trên cao, dùng dây nối đất làm ngắn mạch đường dây. Khi làm ngắn mạch và nối đất cần phải tiến hành nối đất trước, sau đó ném dây lên làm ngắn mạch đường dây. Dùng các biện pháp để đỡ chống rơi, ngã nếu người bị nạn ở trên cao.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic53.JPG" alt="pic53" width="300px" height="250px">
-</div>    
-<p lang="vi">- Đặt nạn nhân nằm ở nơi thoáng mát.</p>
-<p lang="vi">- Kiểm tra xem nạn nhân còn thở hay không bằng cách áp má vào mũi nạn nhân và xem lồng ngực có di động hay không hoặc dùng tay đặt vào động mạch hai bên cổ nạn nhân.</p>
-<p lang="vi">+ Với nạn nhân bất tỉnh, không có dấu hiệu thở: Tiến hành hô hấp nhân tạo và ép tim lồng ngực tại chỗ, cho đến khi tự thở được hoặc xác định nạn nhân chắc chắn đã chết thì mới dừng lại.</p>
-<p lang="vi">Nếu phải kết hợp cả ép tim với thổi ngạt, cứ 1 phút thổi ngạt 20 lần, 1 lần thổi 2 hơi.</p>
-<p lang="vi">+ Với nạn nhân còn tỉnh: Kiểm tra mức độ tổn thương ở các vị trí nặng hay nhẹ. Đặc biệt, kiểm tra tổn thương nguy hiểm trước như ở đốt sống cổ bởi những tổn thương này có thể gây liệt nếu không sơ cấp cứu kịp thời, sau đó tiến hành kiểm tra các bộ phận còn lại. Động viên, an ủi để nạn nhân yên tâm.</p>
-<p lang="vi">- Nhanh chóng đưa nạn nhân tới cơ sở y tế gần nhất.</p>
-<div class="video-container">
-  <video controls>
-      <source src="../video/video13.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-  </video>
-</div>
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Video 13. Hướng dẫn sơ cấp cứu nạn nhân bị điện giật</i></p>
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>(Nguồn: Kênh H1)</i></p>
-<p lang="vi"><b><i>Những lưu ý khi sơ cứu người bị điện giật</i></b></p>
-<p lang="vi">- Tuyệt đối không để nạn nhân bị ngã và gây ra tổn thương nghiêm trọng hơn.</p>
-<p lang="vi">- Không được chạm vào nạn nhân khi chưa ngắt nguồn điện, không được dùng tay không để kéo nạn nhân ra khỏi nguồn điện vì có thể bạn sẽ bị điện giật.</p>
-<p lang="vi">- Phải giữ cho mình một tâm thái thật bình tĩnh, tránh hoảng loạn để đảm bảo sơ cứu an toàn cho nạn nhân.</p>
-<p lang="vi" style="text-indent: 0cm"><b>4.2.2. Xử lý tình huống nạn nhân bị bỏng</b></p>
-<p lang="vi"><b><i>Tác nhân gây bỏng</i></b></p>
-<p lang="vi">- Bỏng do sức nhiệt:</p>
-<p lang="vi">+ Sức nhiệt khô;</p>
-<p lang="vi">+ Sức nhiệt ướt.</p>
-<p lang="vi">- Bỏng do hóa chất: </p>
-<p lang="vi">+ Bỏng do bazơ;</p>
-<p lang="vi">+ Bỏng do axit.</p>
-<p lang="vi">- Bỏng do điện.</p>
-<p lang="vi">- Bỏng do các tia vật lý.</p>
-<p lang="vi"><b><i>Dấu hiệu nhận biết</i></b></p>
-<p lang="vi">- Nạn nhân thấy dấu hiệu đau rát vùng tổn thương sau khi tiếp xúc với tác nhân gây bỏng.</p>
-<p lang="vi">- Vùng da bị bỏng thay đổi màu sắc: đỏ, sẫm màu hoặc cháy đen.</p>
-<p lang="vi">- Có thể xuất hiện nốt phỏng nước hoặc sưng phồng vùng da bị bỏng.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic54.JPG" alt="pic54" width="380px" height="250px">
-</div>    
-<p lang="vi"><b><i>Các bước sơ cứu nạn nhân ngay sau khi bị bỏng</i></b></p>
-<p lang="vi"><b><i>Bước 1:</i></b> <i>Loại bỏ nguyên nhân gây bỏng ra khỏi cơ thể</i></p>
-<p lang="vi">- Dập tắt lửa đang cháy trên người.</p>
-<p lang="vi">- Tháo bỏ quần áo dính nước sôi hoặc chất gây bỏng.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic55.jpg" alt="pic55" width="420px" height="250px">
-</div>    
-<p lang="vi"><b><i>Bước 2:</i></b> <i>Làm mát vết bỏng</i></p>
-<p lang="vi">- Nhanh chóng làm mát vùng bị tổn thương (thường dùng nước mát: từ 15-45 phút (thường cho tới khi hết đau rát) tránh làm vỡ, trợt vòm nốt bỏng).</p>
-<p lang="vi">- Cho nước từ vòi nước máy chảy trực tiếp lên vùng bỏng hoặc ngâm phần chi bị bỏng trong nước mát cho đến khi nào nạn nhân thấy đỡ đau rát.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic56.JPG" alt="pic56" width="420px" height="250px">
-</div>    
-<p lang="vi">- Hoặc bọc vùng da bị bỏng chắc chắn rồi đổ nước mát lên.</p>
-<p lang="vi">- Nếu có thuốc xịt bỏng thì xịt vào vùng bỏng (không bôi các loại dầu mỡ, thuốc, kem đánh răng…).</p>
-<p lang="vi"><b><i>Bước 3:</i></b> <i>Băng che phủ vết bỏng</i></p>
-<p lang="vi">- Tháo bỏ những vật cứng trên vùng bỏng như giày, ủng, vòng nhẫn trước khi vết bỏng sưng nề.</p>
-<p lang="vi">- Che phủ vùng bỏng bằng gạc, vải vô khuẩn nếu có hoặc vải sạch.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic57.JPG" alt="pic57" width="350px" height="250px">
-</div>    
-<p lang="vi"><b><i>Bước 4:</i></b> <i>Đề phòng biến chứng</i></p>
-<p lang="vi">- Đặt nạn nhân ở tư thế nằm.</p>
-<p lang="vi">- Trấn an nạn nhân.</p>
-<p lang="vi">- Chuyển nạn nhân đến cơ sở y tế gần nhất càng sớm càng tốt.</p>
-<p lang="vi"><i>Chú ý:</i> Tuyệt đối không:</p>
-<p lang="vi">- Dùng nước đá để làm mát vết bỏng hoặc ngâm toàn bộ cơ thể vào trong nước.</p>
-<p lang="vi">- Sờ vào vết bỏng.</p>
-<div class="video-container">
-  <video controls>
-      <source src="../video/video14.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-  </video>
-</div>
-<p lang="vi" style="text-indent: 0cm; text-align: center"><i>Video 14. Hướng dẫn sơ cấp cứu nạn nhân bị bỏng</i></p>
-<p lang="vi" style="text-indent: 0cm"><b>4.2.3. Xử lý tình huống nạn nhân bị gãy xương</b></p>
-<p lang="vi"><b><i>Bước 1:</i></b><i>Xác định xem có gãy xương không</i></p>
-<p lang="vi">- Đau vùng chi bị gãy.</p>
-<p lang="vi">- Sưng nề.</p>
-<p lang="vi">- Biến dạng.</p>
-<p lang="vi">- Vết thương chảy máu vùng sưng nề, có thể có chồi xương ra ngoài.</p>
-<p lang="vi">- Giảm hoặc không thể co duỗi, gập chi bị thương.</p>
-<p lang="vi">- Ấn vào vùng gãy sẽ thấy đau nhói hoặc thấy lạo sạo.</p>
-<p lang="vi"><b><i>Bước 2:</i></b> <i>Chuẩn bị phương tiện bất động chi gãy</i></p>
-<p lang="vi">- Chuẩn bị 3 thanh nẹp.</p>
-<p lang="vi">- Vật liệu: có thể là thanh tre, gỗ, bìa rất cứng.</p>
-<p lang="vi">- Kích cỡ: chiều dài (từ trên gối đến quá gót chân); chiều rộng khoảng 6-8 cm.</p>
-<p lang="vi">- Dây buộc: có thể bằng vải cắt, dây nilon...</p>
-<p lang="vi"><b><i>Bước 3:</i></b> <i>Tiến hành nẹp chi</i></p>
-<p lang="vi">- Người thứ nhất: Tay nắm cổ chân, tay đỡ gót chân giữ cố định liên tục. </p>
-<p lang="vi">- Người thứ hai: Đỡ và nâng cẳng chân cùng người thứ nhất.</p>
-<p lang="vi">- Người thứ ba: Đặt 1 nẹp phía dưới, 2 nẹp hai bên chân và lót gót chân, mắt cá chân, 2 bên đầu gối.
-+ Cuốn và buộc cổ chân, trên và dưới chỗ gãy, trên gối. </p>
-<p lang="vi">+ Buộc 2 chân vào với nhau.</p>
-<p lang="vi">+ Chuyển nạn nhân lên cáng hoặc tấm phản bằng 4 người.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic58.jpg" alt="pic58" width="420px" height="250px">
-</div>    
-<p lang="vi" style="text-indent: 0cm"><b>4.2.4. Xử lý khi bị bắt lửa vào quần áo</b></p>
-<p lang="vi">Quần áo bị bắt lửa sẽ gây hoảng sợ, bạn nên thực hiện như sau:</p>
-<p lang="vi">- Bình tĩnh, không hoảng sợ, dừng chạy ngay lập tức.</p>
-<p lang="vi">- Nằm nhanh xuống sàn nhà hoặc áp mình vào tường phía trước hoặc sau.</p>
-<p lang="vi">- Không lấy tay dập lửa; không được nhảy ngay vào hồ bơi, bể chứa hay thùng nước nếu không chắc chắn đó là nơi an toàn vì nước có thể bị nấu sôi do lửa tác động.</p>
-<p lang="vi">- Một tay che miệng, một tay che mắt, mũi và tiếp tục cuộn tròn cho tới khi tắt lửa.</p>
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src="./../img/pic59.JPG" alt="pic59" width="420px" height="200px">
-</div>    
-<p lang="vi" style="text-indent: 0cm"><b>4.2.5. Xử lý khi bị kẹt trong thang máy</b></p>
-<p lang="vi">Trong cuộc sống hiện đại, thang máy được dùng làm phương tiện di chuyển chính và không thể thiếu trong các tòa nhà cao tầng, chung cư, trung tâm thương mại và cả trong các hộ gia đình… </p>
-<p lang="vi">Thang máy thật sự là một cỗ máy an toàn, rất an toàn... Tuy nhiên nó vẫn là một loại máy móc, để nó có thể hoạt động tốt thì việc sản xuất lắp đặt và vận hành đúng cách, bảo trì thường xuyên là điều cực kỳ cần thiết kèm theo đó chính là kỹ năng sử dụng thang máy của chính các hành khách.</p>
-<p lang="vi"><b><i>Những sự cố chúng ta có thể gặp khi di chuyển bằng thang máy</i></b></p>
-<p lang="vi">- Thang máy đến vị trí tầng yêu cầu nhưng cửa buồng thang bị kẹt không mở ra được.</p>
-<p lang="vi">- Sự cố ngừng hoạt động: Thang đang di chuyển dừng đột ngột do mất điện hay lỗi hệ thống điều khiển.</p>
-<p lang="vi">- Sự cố hệ thống điều khiển: Thang máy chạy với tốc độ nhanh hơn bình thường, di chuyển ngược hướng điều khiển hoặc không dừng đúng điểm có lệnh gọi.</p>
-<p lang="vi">- Sự cố rơi tự do: Do sự cố hệ thống máy kéo và cáp kéo (rất hiếm khi xảy ra).</p>
-<p lang="vi"><b><i>Xử lý khi bị kẹt trong thang máy </i></b></p>
-<p lang="vi"><i>Thứ nhất: Giữ bình tĩnh</i></p>
-<p lang="vi">- Điều đầu tiên và quan trọng nhất cần làm trong lúc này là phải thật bình tĩnh. Chúng ta nên nhớ rằng có rất ít trường hợp có người chết khi bị nhốt trong thang máy và gần như chúng ta có thể thoát khỏi một cái thang máy đóng kín mà không hề bị trầy xước.</p>
-<p lang="vi">- Nếu như cảm thấy quá sợ hãi, hãy cố gắng loại khỏi đầu những sự suy diễn và lo lắng không đáng có của bạn. Thư giãn để giảm bớt nỗi sợ hãi. Giữ bình tĩnh để có thể sống sót. Trường hợp thường gặp nhất là chúng ta phải đợi cho tới khi thang máy bắt đầu hoạt động trở lại.</p>
-<p lang="vi"><i>Thứ hai: Thử nút mở cửa</i></p>
-<p lang="vi">Khi thang máy đột ngột dừng lại, chúng ta không nhất thiết phải bấm loạn xạ các nút đến các tầng khác để xem nó có di chuyển tiếp hay không. Thay vào đó, hãy thử bấm nút mở cửa. Nếu thang máy vẫn không có phản ứng thì hãy ấn chuông gọi cứu hộ hoặc kêu cứu.</p>
-<p lang="vi"><i>Thứ ba: Chờ thiết bị cứu hộ trong thang máy</i></p>
-<p lang="vi">Thang máy tải khách hiện nay đều có bộ cứu hộ tự động (Automatic Rescue Device - ARD) có tác dụng trong trường hợp thang máy mất điện sẽ đưa thang về tầng gần nhất để cho người bị kẹt trong thang có thể thoát ra ngoài thông qua hệ thống tích điện. Tuy nhiên trong một số trường hợp thì hệ thống ARD bị hỏng hóc hoặc không hoạt động thì người bị kẹt phải nhờ sự trợ giúp bên ngoài.</p>
-<p lang="vi"><i>Thứ tư: Liên lạc với những người ở ngoài</i></p>
-<p lang="vi">Khi thang máy bị lỗi, người phía trong cần bình tĩnh để liên lạc ra bên ngoài bằng điện thoại di động hoặc điện thoại trong thang máy, nếu không có hoặc điện thoại không sử dụng được, có thể tìm cách gọi to, đập vào cửa thang... để kịp thời báo hiệu ra bên ngoài.</p>
-<p lang="vi">Hãy tìm số điện thoại hotline (người cầm số hotline là chuyên viên có kỹ thuật nên bạn hoàn toàn có thể tin tưởng và nghe theo hướng dẫn của họ) trên bảng hướng dẫn sử dụng trong thang máy và gọi điện để báo tình hình và chờ đợi người giúp đỡ.</p>
-<p lang="vi"><i>Thứ năm: Không tự ý trèo ra ngoài qua cửa thoát hiểm</i></p>
-<p lang="vi">Trong thời gian chờ đợi, hãy cố giữ bình tĩnh và không nên tìm cách cậy cửa. Tuyệt đối không leo ra ngoài thang máy. Nguy cơ bị kẹp giữa thang máy và sàn nhà là rất cao và bạn cũng tuyệt đối không được leo ra ngoài bằng cửa thoát hiểm trên nóc cabin (vì trên nóc cabin có nhiều thiết bị điện cùng với nhiều dầu mỡ trơn trượt) và dù có leo ra đó được thì bạn cũng đứng trên đó chứ cũng không làm gì khác được, vậy thì đứng trong cabin an toàn hơn nhiều.</p>
-<p lang="vi">Khi cứu hộ đến thì 99,99% bạn đã được cứu, nhưng vẫn còn 0,01% nguy hiểm xảy ra nếu bạn vội vàng lao ra ngoài khi mà cứu hộ chưa hoàn toàn làm xong công việc của họ (đặc biệt là khi thang dừng giữa tầng, ngay phía ngoài cửa cabin cũng là cửa giếng thang).</p>
-<p lang="vi">Trong trường hợp thang máy rơi tự do, không nên đứng hoặc nhảy lên vì có thể chạm trần cabin gây tổn thương vùng đầu và khi tiếp xúc với sàn có thể bị gãy chân hoặc chấn thương vùng xương chậu. Bạn hãy ngay lập tức nằm song song với sàn nhà, càng gần chính giữa thang càng tốt. Điều này sẽ giúp phân bố đều lực rơi lên toàn bộ cơ thể, giảm thiểu tối đa thương tích. Gối đầu lên một tay để tránh bị thương đầu, một tay che mặt để không bị các vật khác rơi lên mặt. Bất kỳ thang máy nào cũng có một bộ phận giảm sóc đặt dưới đế. Khi nằm yên trên sàn, bạn với thang máy là một khối, bạn sẽ được giảm sóc hỗ trợ.</p>
-<p lang="vi">Cuối cùng chúng ta hãy luôn nhớ thang máy dù vô cùng hiện đại nhưng nó cũng chỉ là một thiết bị điện tử nên không có gì đảm bảo là nó sẽ hoạt động liên tục, không bao giờ hỏng hóc đột ngột. Với điện lưới như hiện nay, điện có thể bị cắt bất cứ lúc nào. Luôn luôn giữ bình tĩnh và trang bị những kỹ năng xử lý tình huống khi thang máy gặp trục trặc là vô cùng cần thiết và quan trọng giúp chúng ta tự bảo vệ bản thân và những người xung quanh. 
-Vậy khi bị kẹt trong thang máy: Hãy bình tĩnh, cố gắng liên lạc với bên ngoài và chờ đợi sự giúp đỡ.</p>
-      </section>
-    </article>
-  </main>
-  <script src="./scripts.js"></script>
-
-
-
-</body>
-
+					<p><i>Thủ thuật Heimlich đứng</i></p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic43.PNG"
+							alt="pic43"
+							width="300px"
+							height="250px"
+						/>
+					</div>
+					<p>
+						+ Làm thủ thuật Heimlich nếu nghi ngờ có dị vật đường hô hấp đối với
+						người lớn và trẻ lớn
+						<b><i>(ấn 5 cái dứt khoát - lặp lại 6-10 lần)</i></b
+						>.
+					</p>
+					<p><i>Thủ thuật Heimlich nằm</i></p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic44.PNG"
+							alt="pic44"
+							width="350px"
+							height="250px"
+						/>
+					</div>
+					<p>
+						Trường hợp đặc biệt: với trẻ nhỏ thì kết hợp vỗ lưng và ấn ngực.
+					</p>
+					<div class="video-container">
+						<video controls>
+							<source
+								src="../video/video10.mp4"
+								type="video/mp4"
+							/>
+							Your browser does not support the video tag.
+						</video>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Video 10. Hướng dẫn thực hiện thủ thuật Heimlich</i>
+					</p>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>(Nguồn: VTC Now)</i>
+					</p>
+					<p style="text-indent: 0cm">
+						<b><i>4.1.3.3. Hỗ trợ hô hấp</i></b>
+					</p>
+					<p>- Thổi ngạt kiểu miệng - miệng;</p>
+					<p>- Thổi ngạt kiểu miệng - mũi;</p>
+					<p>- Hô hấp nhân tạo bằng bóng Ambu;</p>
+					<p>- Hô hấp kiểu nằm ngửa.</p>
+					<p>
+						Tần suất 10 - 12 lần/phút với người lớn; 20 lần/phút đối với trẻ em
+						từ 1 - 8 tuổi; thổi nhanh và nhẹ hơn với tần suất 30 lần/phút với
+						trẻ bé và sơ sinh.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic45.PNG"
+							alt="pic45"
+							width="580px"
+							height="250px"
+						/>
+					</div>
+					<p style="text-indent: 0cm"><b>4.1.4. Sơ cứu ngừng tim</b></p>
+					<p>- Xác định ngừng tim:</p>
+					<p>
+						+ Nạn nhân ngất, da xanh tím, bắt mạch bẹn, mạch cảnh không có, nạn
+						nhân ngừng thở, đồng tử giãn.
+					</p>
+					<p>
+						+ Để đầu nạn nhân ngửa ra sau, người sơ cứu ngồi cạnh một bên nạn
+						nhân, dùng 3 đầu ngón tay kiểm tra động mạch cảnh hoặc động mạch bẹn
+						không thấy đập hoặc áp tai trực tiếp lên vùng tim không thấy tim
+						đập.
+					</p>
+					<p>
+						+ Bắt mạch trong 5 giây trước khi kết luận là mạch còn đập hay
+						không.
+					</p>
+					<p>- Tiến hành ép tim:</p>
+					<p>
+						+ Khi kiểm tra thấy tim ngừng đập phải đấm vào ngực nạn nhân 5-6 cái
+						rồi ép tim ngoài lồng ngực ngay.
+					</p>
+					<p>
+						+ Nới lỏng quần áo, đặt nạn nhân nằm ngửa, trên nền phẳng, cứng.
+						Người cứu quỳ ngang ngực nạn nhân đặt một bàn tay lên khoảng 1/3
+						xương ức tính từ dưới lên. Đặt lòng bàn tay thứ hai lồng lên tay thứ
+						nhất và kéo lật ngược các ngón của bàn thứ nhất sao cho chỉ có gốc
+						bàn tay tác động vào ngực nạn nhân.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic46.png"
+							alt="pic46"
+							width="700px"
+							height="250px"
+						/>
+					</div>
+					<p>
+						+ Giữ hai khuỷu và cánh tay thẳng, dồn sức nặng phần trên cơ thể ép
+						mạnh xuống ngực nạn nhân với tần số khoảng 80-100 lần/phút (trẻ em 1
+						tuổi: 100 lần/phút; trẻ sơ sinh: 120 lần/phút).
+					</p>
+					<p>
+						- Thổi ngạt kết hợp với ép tim ngoài lồng ngực: Cứ 2 lần hô hấp
+						miệng - miệng, xoa bóp ép tim 20-30 lần.
+					</p>
+					<div class="video-container">
+						<video controls>
+							<source
+								src="../video/video11.mp4"
+								type="video/mp4"
+							/>
+							Your browser does not support the video tag.
+						</video>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Video 11. Hướng dẫn sơ cứu ngừng tim ở người lớn</i>
+					</p>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>(Nguồn: VTC Now)</i>
+					</p>
+					<p>Trường hợp: có một người cấp cứu:</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic47.JPG"
+							alt="pic47"
+							width="530px"
+							height="250px"
+						/>
+					</div>
+					<p>Trường hợp: có 2 người cùng cấp cứu:</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic48.jpg"
+							alt="pic48"
+							width="520px"
+							height="250px"
+						/>
+					</div>
+					<p>
+						- Những dấu hiệu sau đây chứng tỏ ép tim - thổi ngạt có hiệu quả:
+					</p>
+					<p>+ Lồng ngực nở ra mỗi khi thổi hơi vào phổi.</p>
+					<p>+ Sờ thấy mạch bẹn hoặc mạch cảnh mỗi khi ép tim.</p>
+					<p>+ Màu da bớt tím tái.</p>
+					<p>+ Có dấu hiệu tự thở.</p>
+					<p>+ Tim của nạn nhân đập lại.</p>
+					<p>- Ngừng ép tim - thổi ngạt khi:</p>
+					<p>+ Thời gian cấp cứu trên 60 phút mà không có kết quả.</p>
+					<p>+ Tim không đập lại.</p>
+					<p>
+						+ Đồng tử giãn và không còn phản xạ ánh sáng đã được 15-20 phút.
+					</p>
+					<p>+ Khi nạn nhân hồi phục.</p>
+					<p><i>Chú ý:</i></p>
+					<p>- Đối với trẻ em làm nhẹ và nhanh hơn.</p>
+					<p>
+						- Quá trình ép cần quan sát mạch cổ (nếu ép đúng mạch cổ sẽ phồng
+						lên). Khi tim bắt đầu đập trở lại thì quan sát mạch cổ hoặc mạch bẹn
+						và ép theo mạch cổ hoặc mạch bẹn đó.
+					</p>
+					<p>- Ép đúng kỹ thuật, đủ độ sâu:</p>
+					<p>+ Người lớn: ép 2 tay, sâu 4-5cm.</p>
+					<p>+ Trẻ em học cấp 1, cấp 2: ép sâu từ 3-4cm.</p>
+					<p>+ Trẻ em học mẫu giáo: ép sâu từ 2-3cm, ép 1 tay.</p>
+					<p>
+						+ Em bé còn bế: ép sâu từ 1-2cm, ép 2 ngón. Cứ khoảng 2 phút thì
+						ngừng lại vài giây để kiểm tra hô hấp, tuần hoàn.
+					</p>
+					<p style="text-indent: 0cm"><b>4.1.5. Cầm máu khẩn cấp</b></p>
+					<p><i>Mục tiêu:</i> Cầm máu ngay tại chỗ, gọi người đến cứu trợ.</p>
+					<p><i>Cách nhận biết đứt động mạch chân, tay </i></p>
+					<p>
+						- Tay, chân bị cụt, dập nát hoặc thấy máu phụt ra thành tia tại vị
+						trí tổn thương.
+					</p>
+					<p>
+						<i>Xử lý:</i> Cởi hoặc vén quần, áo ra khỏi vết thương từ 4-8cm.
+					</p>
+					<p>
+						Nguyên tắc cầm máu: Dùng ngón tay cái hoặc điện thoại di động, miếng
+						gỗ... ép chặt lên phía trên đường đi động mạch, cách vị trí đứt
+						3-4cm để cầm máu, rồi xử lý theo các kỹ năng sau:
+					</p>
+					<p>- Kỹ năng thứ 1:</p>
+					<p>
+						+ Ở tay thì ép cẳng tay vào cánh tay, rồi ép cánh tay vào sườn, để
+						giảm áp lực máu chảy.
+					</p>
+					<p>
+						+ Ở chân, nằm ngửa ra, ép cẳng chân vào đùi, ép đùi vào bụng hay giơ
+						lên cao để giảm áp lực máu chảy.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic49.jpg"
+							alt="pic49"
+							width="300px"
+							height="350px"
+						/>
+					</div>
+					<p>
+						- Kỹ năng thứ 2: Dùng băng cuộn bản rộng 8cm, băng chặt tối đa tại
+						vị trí tổn thương, băng nhiều vòng chồng lên nhau, băng rộng lên
+						trên. Dùng băng thun tốt nhất.
+					</p>
+					<p>
+						- Kỹ năng thứ 3: Dùng băng cuộn bản rộng 8cm băng chặt tối đa trên
+						vị trí tổn thương 3-5cm, băng nhiều vòng chồng lên nhau, rồi băng ép
+						vết thương. Dùng băng thun tốt nhất (garo).
+					</p>
+					<p>
+						- Kỹ năng thứ 4: Dùng dây bản rộng 4 cm hoặc gấp đôi chiều rộng cuốn
+						băng thun lại, cuốn 2-3 vòng trên vị trí tổn thương 3-5cm, buộc chặt
+						lại, luồn ngón tay trỏ xuống dưới dây, xoắn chặt cho máu cầm lại.
+						Ghi họ tên, thời gian garo cầm máu vào mảnh giấy rồi buộc vào vị trí
+						cầm máu. Vào y tế hoặc gọi 115 đến cứu trợ.
+					</p>
+					<p>
+						- Kỹ năng nới băng cầm máu (garo): Cứ 25 phút nới garo một lần, nới
+						khoảng 2 phút, trước khi nới phải băng ép ở trên vị trí tổn thương
+						để giảm áp lực chảy máu, nới từ từ. Không có đồng hồ theo dõi ta
+						thấy da ở dưới vị trí buộc thâm tím thì phải nới garo, rồi để chi
+						thấp xuống cho máu lưu thông, nới đến khi thấy màu da ở dưới hồng
+						lên là được. Nới hết mà không thấy máu phụt ra thì không cần garo
+						nữa, nhưng vẫn giữ băng ép ở trên, băng vết thương lại. Nếu máu vẫn
+						phụt ra phải garo lại.
+					</p>
+					<p>
+						Trường hợp chi bị đứt rời ra, sát trùng ngay đoạn chi này cho vào
+						túi nhựa hoặc quấn vải sạch bỏ vào hộp nước đá (hộp xốp), đưa ngay
+						vào bệnh viện để nối lại.
+					</p>
+					<p style="text-indent: 0cm"><b>4.1.6. Băng vết thương</b></p>
+					<p><i>Mục tiêu:</i> Cầm máu, chống sốc, chống nhiễm trùng.</p>
+					<p><i>Phương tiện và các bước băng </i></p>
+					<p>
+						- Dùng cồn 70°, cồn iốt 10% (không xót), ôxy già 30%... sát trùng
+						vết thương. Không có thì dùng nước sạch rửa vết thương, không có nữa
+						thì vẫn phải băng cầm máu, vào y tế ngay.
+					</p>
+					<p>
+						- Ngày nay, có hai loại băng được sử dụng rộng rãi trong nước, ngoài
+						nước. Băng urgo rất thuận tiện, có đủ loại to, vừa, nhỏ, có sẵn
+						thuốc sát trùng, dán kín vết thương là xong. Băng thun dễ sử dụng,
+						cầm máu tốt, dùng làm dây garo cầm máu, băng cố định một số xương
+						gãy thay nẹp, dùng xong giặt sạch lại dùng được nhiều lần. Cả hai
+						loại băng trên có bán ở hiệu thuốc.
+					</p>
+					<p>- Bông, gạc.</p>
+					<p>- Không có băng thì dùng khẩu trang hoặc xé áo để băng.</p>
+					<p>
+						- Băng vừa chặt, băng chặt quá máu không lưu thông (thấy da tím
+						tái), băng lỏng không cầm được máu.
+					</p>
+					<p>- Không để nút buộc, đầu băng trên vết thương.</p>
+					<p>- Chườm lạnh để giảm đau, giảm sưng, giảm chảy máu.</p>
+					<p><i>Các bước tiến hành cuốn băng: </i></p>
+					<p>
+						<b><i> - Bước 1:</i></b> Cởi hoặc vén quần áo ra khỏi vết thương rồi
+						để vị trí tổn thương lên cao, sát trùng vết thương xoắn ốc từ trong
+						ra khỏi vết thương 2cm để đẩy chất bẩn ra ngoài, rồi đặt gạc chườm
+						lên vết thương 2cm.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic50.jpg"
+							alt="pic50"
+							width="620px"
+							height="250px"
+						/>
+					</div>
+					<p>
+						<b><i> - Bước 2: </i></b>Cố định đầu băng: Đặt đầu cuộn băng ở đoạn
+						nhỏ nhất, cách vết thương 2-3cm, cuốn 2-3 vòng tròn chồng lên nhau
+						để cố định hoặc buộc chắc đầu băng vào cũng được.
+					</p>
+					<p>
+						<b><i> - Bước 3: </i></b>Băng vết thương: Cuốn băng vòng xoắn ốc
+						hoặc theo hình số 8 (dấu x), từ đoạn nhỏ đến đoạn to mới chắc, cứ
+						vòng sau đè lên vòng trước một nửa (1/2) cuộn băng, phải băng qua
+						vết thương từ 2-3cm.
+					</p>
+					<p>
+						<b><i> - Bước 4:</i></b> Kết thúc: Cuộn thêm 2-3 vòng tròn trùng
+						khít lên nhau, dùng móc, ghim, băng dính cố định đầu băng lại hoặc
+						tạo ra hai dải buộc vào cơ thể.
+					</p>
+					<p>
+						<b><i> - Bước 5:</i></b> Kiểm tra máu lưu thông rồi đưa đến y tế.
+					</p>
+					<p>
+						<i>Lưu ý:</i> Không cho nạn nhân uống nước nhiều một lúc, cho uống
+						ít một.
+					</p>
+					<div class="video-container">
+						<video controls>
+							<source
+								src="../video/video12.mp4"
+								type="video/mp4"
+							/>
+							Your browser does not support the video tag.
+						</video>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Video 12. Hướng dẫn băng bó cơ bản</i>
+					</p>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>(Nguồn: VTC Now)</i>
+					</p>
+					<p style="text-indent: 0cm">
+						<b><i>4.1.6.1. Băng vết thương đầu, hàm, mặt </i></b>
+					</p>
+					<p>
+						- Băng vết thương rách da đầu, da mặt: Dùng băng urgo thuận tiện
+						nhất, băng đầu phải cắt tóc quanh vết thương mới băng được.
+					</p>
+					<p>
+						- Băng vết thương lột da đầu: Nạn nhân bị lột da đầu, ta lấy da đó
+						úp lên như cũ hoặc cho vào hộp nước đá đưa đến bệnh viện, băng như
+						sau: Tở đầu cuộn băng ra khoảng ngón tay. Một tay cầm chắc đoạn băng
+						này đặt trên mang tai, một tay cầm cuộn băng băng lên đỉnh đầu xuống
+						tới hàm rồi vòng lên đầu, đè lên nửa dải băng trước. Cứ băng như vậy
+						sang hai bên cho kín hết vết thương rồi bắt chéo hai đầu cuộn băng
+						lại, băng một vòng quanh đầu qua hai mang tai rồi buộc hai đầu băng
+						vào nền sọ.
+					</p>
+					<p style="text-indent: 0cm">
+						<b><i>4.1.6.2. Băng vết thương mắt</i></b>
+					</p>
+					<p>
+						- Vết thương lòi mắt: Cấm đụng chạm vào mắt, dùng chén vô trùng úp
+						lên rồi băng ép trôn chén lại.
+					</p>
+					<p>- Băng một mắt.</p>
+					<p>+ Dùng băng urgo, băng dính... băng ép lại.</p>
+					<p>
+						+ Nếu dùng băng cuộn thì buộc đầu băng vào hộp sọ, băng chếch lên
+						ngang đầu phía bên mắt lành, băng chéo xuống mắt bị tổn thương cho
+						tới dái tai, sau đó vòng về sau gáy chếch lên đầu, băng kín vết
+						thương thì cố định đầu băng lại hoặc băng ngược lại cũng được.
+					</p>
+					<p>
+						- Băng hai mắt: Dùng băng cuộn băng vòng tròn qua hai mắt, băng kín
+						vết thương thì buộc hai đầu băng lại, dùng băng dính, urgo rất thuận
+						tiện và đơn giản.
+					</p>
+					<p style="text-indent: 0cm">
+						<b><i>4.1.6.3. Băng vết thương ở ngực, lưng, bụng </i></b>
+					</p>
+					<p>- Vết thương vừa, nhỏ.</p>
+					<p>
+						- Vết thương lớn máu chảy nhiều: Dùng băng thun, băng xoắn ốc từ nhỏ
+						đến to, băng kín hết vết thương, cố định đầu băng lại. Vết thương
+						lồng ngực hở có tiếng phì phò, đặt gạc dày lên vết thương, hoặc băng
+						chặt nhiều vòng chồng lên vết thương, băng đến khi hết tiếng phì phò
+						mới được.
+					</p>
+					<p>
+						- Vết thương lòi ruột: Cấm đụng chạm hoặc nhét ruột vào bụng, để nạn
+						nhân nằm ngửa. Dùng bát vô khuẩn phù hợp úp lên, băng ép trôn bát
+						vào thành bụng. Không có bát dùng vòng xuyến đặt lên rồi băng lại.
+						Cấm cho nạn nhân ăn, uống.
+					</p>
+					<p>- Vết thương có dị vật cắm sâu vào ngực, bụng, lưng:</p>
+					<p>+ Không rút dị vật ra khỏi vết thương.</p>
+					<p>+ Dùng ngón tay ép chặt xung quanh dị vật.</p>
+					<p>
+						+ Chèn bông, băng, gạc dày lên, băng chặt quanh dị vật, cấm băng phủ
+						lên dị vật. Dùng băng urgo rất tốt.
+					</p>
+					<p style="text-indent: 0cm">
+						<b><i>4.1.6.4. Băng vết thương các chi </i></b>
+					</p>
+					<p>
+						- Băng vết thương vừa, nhỏ: Dùng băng urgo, băng dính, băng 4 dải,
+						băng bướm rất hiệu quả, thuận tiện.
+					</p>
+					<p>
+						- Băng vết thương to máu chảy nhiều: Phải dùng băng cuộn băng xoắn
+						ốc hoặc băng số 8, dùng băng thun tốt nhất.
+					</p>
+					<p>
+						- Băng bàn tay, bàn chân, gót chân: Cố định đầu cuộn băng trên các
+						ngón tay, ngón chân (để hở đầu ngón ra ngoài để kiểm soát máu lưu
+						thông). Dùng băng thun băng xoắn ốc hoặc số 8 hay băng 4 dải cũng
+						được, dùng băng urgo thuận tiện nhất.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic51.jpg"
+							alt="pic51"
+							width="640px"
+							height="250px"
+						/>
+					</div>
+					<p style="text-indent: 0cm">
+						<b>4.1.7. Sơ cứu chấn thương cột sống, cổ </b>
+					</p>
+					<p>
+						<b><i>Bước 1:</i></b> <i>Dấu hiệu nghi chấn thương cột sống:</i>
+					</p>
+					<p>- Đau vùng cổ, gáy.</p>
+					<p>- Chấn thương nhiều xung quanh vùng hàm mặt, vai, gáy, đầu.</p>
+					<p>- Yếu hoặc giảm vận động tứ chi hoặc 2 chi trên.</p>
+					<p>- Bệnh nhân chấn thương sọ não hôn mê sâu.</p>
+					<p>
+						<b><i>Bước 2:</i></b> <i>Tiến hành sơ cứu</i>
+					</p>
+					<p>- Khuyên nạn nhân không được cố vận động.</p>
+					<p>
+						- Giữ đầu và cổ nạn nhân nguyên tư thế ban đầu cho đến khi đội cấp
+						cứu đến.
+					</p>
+					<p>
+						- Nếu không thể chuyển ngay nạn nhân đến bệnh viện thì phải: nới
+						rộng cổ áo và lót một vòng đệm cổ.
+					</p>
+					<p>- Đắp chăn cho nạn nhân trong khi chờ đợi xe cấp cứu.</p>
+					<p>- Nếu buộc phải di chuyển nạn nhân thì phải xử trí như sau:</p>
+					<p>
+						+ Lót vòng đệm cổ. Cắt bìa cứng: chiều rộng khoảng 8-10cm, dài bằng
+						chu vi vòng cổ. Sau đó dùng khăn mềm gói lại.
+					</p>
+					<p>
+						+ Quấn vòng này quanh cổ nạn nhân và buộc nút ở phía trước của cổ.
+					</p>
+					<p>
+						+ Đảm bảo chắc chắn rằng vòng đệm cổ không gây tắc nghẽn đường thở.
+					</p>
+					<p>
+						+ Phải có người khiêng giữ đầu - vai - cổ thành một khối và phối hợp
+						nhiều người cùng khuân chuyển (4 người).
+					</p>
+					<p>
+						+ Khi đã chuyển lên cáng hoặc phản cứng thì lót chèn vào hai bên cổ
+						của bệnh nhân để hạn chế di lệch.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic52.JPG"
+							alt="pic52"
+							width="280px"
+							height="250px"
+						/>
+					</div>
+				</section>
+				<section id="section2">
+					<h3>
+						<p style="text-indent: 0cm">
+							4.2. HƯỚNG DẪN XỬ LÝ MỘT SỐ TÌNH HUỐNG THƯỜNG GẶP
+						</p>
+					</h3>
+					<p style="text-indent: 0cm">
+						<b>4.2.1. Xử lý tình huống nạn nhân bị điện giật</b>
+					</p>
+					<p>
+						Khi có người bị tai nạn điện, việc tiến hành sơ cứu nhanh chóng, kịp
+						thời và đúng phương pháp là các yếu tố quyết định để cứu sống nạn
+						nhân. Các thí nghiệm và thực tế cho thấy rằng từ lúc bị điện giật
+						đến một phút sau được cứu chữa thì 90% trường hợp cứu sống, để 6
+						phút sau mới cứu chỉ có thể cứu sống 10%, nếu để từ 10 phút mới cấp
+						cứu thì rất ít trường hợp cứu sống được. Việc sơ cứu phải thực hiện
+						đúng phương pháp mới có hiệu quả và tác dụng cao.
+					</p>
+					<p>Khi sơ cứu người bị tai nạn cần thực hiện các bước cơ bản sau:</p>
+					<p>- Tách nạn nhân ra khỏi nguồn điện.</p>
+					<p>
+						+ Nếu nạn nhân chạm vào điện hạ áp cần: Nhanh chóng cắt nguồn điện
+						(cầu dao, aptomat, cầu chì...); nếu không thể cắt nhanh nguồn điện
+						thì phải dùng các vật cách điện khô như sào, gậy tre, gỗ khô để gạt
+						dây điện ra khỏi nạn nhân, nếu nạn nhân nắm chặt vào dây điện cần
+						phải đứng trên các vật cách điện khô (bệ gỗ) để kéo nạn nhân ra hoặc
+						đi ủng hay dùng găng tay cách điện để gỡ nạn nhân ra; cũng có thể
+						dùng dao rìu với cán gỗ khô, kìm cách điện để chặt hoặc cắt đứt dây
+						điện.
+					</p>
+					<p>
+						+ Nếu nạn nhân bị chạm hoặc bị phóng điện từ thiết bị có điện áp
+						cao: Không thể đến cứu ngay trực tiếp mà cần phải đi ủng, dùng gậy,
+						sào cách điện để tách nạn nhân ra khỏi phạm vi có điện. Đồng thời
+						báo cho người quản lý đến cắt điện trên đường dây. Nếu người bị nạn
+						đang làm việc ở đường dây trên cao, dùng dây nối đất làm ngắn mạch
+						đường dây. Khi làm ngắn mạch và nối đất cần phải tiến hành nối đất
+						trước, sau đó ném dây lên làm ngắn mạch đường dây. Dùng các biện
+						pháp để đỡ chống rơi, ngã nếu người bị nạn ở trên cao.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic53.JPG"
+							alt="pic53"
+							width="300px"
+							height="250px"
+						/>
+					</div>
+					<p>- Đặt nạn nhân nằm ở nơi thoáng mát.</p>
+					<p>
+						- Kiểm tra xem nạn nhân còn thở hay không bằng cách áp má vào mũi
+						nạn nhân và xem lồng ngực có di động hay không hoặc dùng tay đặt vào
+						động mạch hai bên cổ nạn nhân.
+					</p>
+					<p>
+						+ Với nạn nhân bất tỉnh, không có dấu hiệu thở: Tiến hành hô hấp
+						nhân tạo và ép tim lồng ngực tại chỗ, cho đến khi tự thở được hoặc
+						xác định nạn nhân chắc chắn đã chết thì mới dừng lại.
+					</p>
+					<p>
+						Nếu phải kết hợp cả ép tim với thổi ngạt, cứ 1 phút thổi ngạt 20
+						lần, 1 lần thổi 2 hơi.
+					</p>
+					<p>
+						+ Với nạn nhân còn tỉnh: Kiểm tra mức độ tổn thương ở các vị trí
+						nặng hay nhẹ. Đặc biệt, kiểm tra tổn thương nguy hiểm trước như ở
+						đốt sống cổ bởi những tổn thương này có thể gây liệt nếu không sơ
+						cấp cứu kịp thời, sau đó tiến hành kiểm tra các bộ phận còn lại.
+						Động viên, an ủi để nạn nhân yên tâm.
+					</p>
+					<p>- Nhanh chóng đưa nạn nhân tới cơ sở y tế gần nhất.</p>
+					<div class="video-container">
+						<video controls>
+							<source
+								src="../video/video13.mp4"
+								type="video/mp4"
+							/>
+							Your browser does not support the video tag.
+						</video>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Video 13. Hướng dẫn sơ cấp cứu nạn nhân bị điện giật</i>
+					</p>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>(Nguồn: Kênh H1)</i>
+					</p>
+					<p>
+						<b><i>Những lưu ý khi sơ cứu người bị điện giật</i></b>
+					</p>
+					<p>
+						- Tuyệt đối không để nạn nhân bị ngã và gây ra tổn thương nghiêm
+						trọng hơn.
+					</p>
+					<p>
+						- Không được chạm vào nạn nhân khi chưa ngắt nguồn điện, không được
+						dùng tay không để kéo nạn nhân ra khỏi nguồn điện vì có thể bạn sẽ
+						bị điện giật.
+					</p>
+					<p>
+						- Phải giữ cho mình một tâm thái thật bình tĩnh, tránh hoảng loạn để
+						đảm bảo sơ cứu an toàn cho nạn nhân.
+					</p>
+					<p style="text-indent: 0cm">
+						<b>4.2.2. Xử lý tình huống nạn nhân bị bỏng</b>
+					</p>
+					<p>
+						<b><i>Tác nhân gây bỏng</i></b>
+					</p>
+					<p>- Bỏng do sức nhiệt:</p>
+					<p>+ Sức nhiệt khô;</p>
+					<p>+ Sức nhiệt ướt.</p>
+					<p>- Bỏng do hóa chất:</p>
+					<p>+ Bỏng do bazơ;</p>
+					<p>+ Bỏng do axit.</p>
+					<p>- Bỏng do điện.</p>
+					<p>- Bỏng do các tia vật lý.</p>
+					<p>
+						<b><i>Dấu hiệu nhận biết</i></b>
+					</p>
+					<p>
+						- Nạn nhân thấy dấu hiệu đau rát vùng tổn thương sau khi tiếp xúc
+						với tác nhân gây bỏng.
+					</p>
+					<p>- Vùng da bị bỏng thay đổi màu sắc: đỏ, sẫm màu hoặc cháy đen.</p>
+					<p>
+						- Có thể xuất hiện nốt phỏng nước hoặc sưng phồng vùng da bị bỏng.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic54.JPG"
+							alt="pic54"
+							width="380px"
+							height="250px"
+						/>
+					</div>
+					<p>
+						<b><i>Các bước sơ cứu nạn nhân ngay sau khi bị bỏng</i></b>
+					</p>
+					<p>
+						<b><i>Bước 1:</i></b>
+						<i>Loại bỏ nguyên nhân gây bỏng ra khỏi cơ thể</i>
+					</p>
+					<p>- Dập tắt lửa đang cháy trên người.</p>
+					<p>- Tháo bỏ quần áo dính nước sôi hoặc chất gây bỏng.</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic55.jpg"
+							alt="pic55"
+							width="420px"
+							height="250px"
+						/>
+					</div>
+					<p>
+						<b><i>Bước 2:</i></b> <i>Làm mát vết bỏng</i>
+					</p>
+					<p>
+						- Nhanh chóng làm mát vùng bị tổn thương (thường dùng nước mát: từ
+						15-45 phút (thường cho tới khi hết đau rát) tránh làm vỡ, trợt vòm
+						nốt bỏng).
+					</p>
+					<p>
+						- Cho nước từ vòi nước máy chảy trực tiếp lên vùng bỏng hoặc ngâm
+						phần chi bị bỏng trong nước mát cho đến khi nào nạn nhân thấy đỡ đau
+						rát.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic56.JPG"
+							alt="pic56"
+							width="420px"
+							height="250px"
+						/>
+					</div>
+					<p>- Hoặc bọc vùng da bị bỏng chắc chắn rồi đổ nước mát lên.</p>
+					<p>
+						- Nếu có thuốc xịt bỏng thì xịt vào vùng bỏng (không bôi các loại
+						dầu mỡ, thuốc, kem đánh răng…).
+					</p>
+					<p>
+						<b><i>Bước 3:</i></b> <i>Băng che phủ vết bỏng</i>
+					</p>
+					<p>
+						- Tháo bỏ những vật cứng trên vùng bỏng như giày, ủng, vòng nhẫn
+						trước khi vết bỏng sưng nề.
+					</p>
+					<p>
+						- Che phủ vùng bỏng bằng gạc, vải vô khuẩn nếu có hoặc vải sạch.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic57.JPG"
+							alt="pic57"
+							width="350px"
+							height="250px"
+						/>
+					</div>
+					<p>
+						<b><i>Bước 4:</i></b> <i>Đề phòng biến chứng</i>
+					</p>
+					<p>- Đặt nạn nhân ở tư thế nằm.</p>
+					<p>- Trấn an nạn nhân.</p>
+					<p>- Chuyển nạn nhân đến cơ sở y tế gần nhất càng sớm càng tốt.</p>
+					<p><i>Chú ý:</i> Tuyệt đối không:</p>
+					<p>
+						- Dùng nước đá để làm mát vết bỏng hoặc ngâm toàn bộ cơ thể vào
+						trong nước.
+					</p>
+					<p>- Sờ vào vết bỏng.</p>
+					<div class="video-container">
+						<video controls>
+							<source
+								src="../video/video14.mp4"
+								type="video/mp4"
+							/>
+							Your browser does not support the video tag.
+						</video>
+					</div>
+					<p style="text-indent: 0cm; text-align: center">
+						<i>Video 14. Hướng dẫn sơ cấp cứu nạn nhân bị bỏng</i>
+					</p>
+					<p style="text-indent: 0cm">
+						<b>4.2.3. Xử lý tình huống nạn nhân bị gãy xương</b>
+					</p>
+					<p>
+						<b><i>Bước 1:</i></b
+						><i>Xác định xem có gãy xương không</i>
+					</p>
+					<p>- Đau vùng chi bị gãy.</p>
+					<p>- Sưng nề.</p>
+					<p>- Biến dạng.</p>
+					<p>
+						- Vết thương chảy máu vùng sưng nề, có thể có chồi xương ra ngoài.
+					</p>
+					<p>- Giảm hoặc không thể co duỗi, gập chi bị thương.</p>
+					<p>- Ấn vào vùng gãy sẽ thấy đau nhói hoặc thấy lạo sạo.</p>
+					<p>
+						<b><i>Bước 2:</i></b> <i>Chuẩn bị phương tiện bất động chi gãy</i>
+					</p>
+					<p>- Chuẩn bị 3 thanh nẹp.</p>
+					<p>- Vật liệu: có thể là thanh tre, gỗ, bìa rất cứng.</p>
+					<p>
+						- Kích cỡ: chiều dài (từ trên gối đến quá gót chân); chiều rộng
+						khoảng 6-8 cm.
+					</p>
+					<p>- Dây buộc: có thể bằng vải cắt, dây nilon...</p>
+					<p>
+						<b><i>Bước 3:</i></b> <i>Tiến hành nẹp chi</i>
+					</p>
+					<p>
+						- Người thứ nhất: Tay nắm cổ chân, tay đỡ gót chân giữ cố định liên
+						tục.
+					</p>
+					<p>- Người thứ hai: Đỡ và nâng cẳng chân cùng người thứ nhất.</p>
+					<p>
+						- Người thứ ba: Đặt 1 nẹp phía dưới, 2 nẹp hai bên chân và lót gót
+						chân, mắt cá chân, 2 bên đầu gối. + Cuốn và buộc cổ chân, trên và
+						dưới chỗ gãy, trên gối.
+					</p>
+					<p>+ Buộc 2 chân vào với nhau.</p>
+					<p>+ Chuyển nạn nhân lên cáng hoặc tấm phản bằng 4 người.</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic58.jpg"
+							alt="pic58"
+							width="420px"
+							height="250px"
+						/>
+					</div>
+					<p style="text-indent: 0cm">
+						<b>4.2.4. Xử lý khi bị bắt lửa vào quần áo</b>
+					</p>
+					<p>Quần áo bị bắt lửa sẽ gây hoảng sợ, bạn nên thực hiện như sau:</p>
+					<p>- Bình tĩnh, không hoảng sợ, dừng chạy ngay lập tức.</p>
+					<p>
+						- Nằm nhanh xuống sàn nhà hoặc áp mình vào tường phía trước hoặc
+						sau.
+					</p>
+					<p>
+						- Không lấy tay dập lửa; không được nhảy ngay vào hồ bơi, bể chứa
+						hay thùng nước nếu không chắc chắn đó là nơi an toàn vì nước có thể
+						bị nấu sôi do lửa tác động.
+					</p>
+					<p>
+						- Một tay che miệng, một tay che mắt, mũi và tiếp tục cuộn tròn cho
+						tới khi tắt lửa.
+					</p>
+					<div
+						style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						"
+					>
+						<img
+							src="./../img/pic59.JPG"
+							alt="pic59"
+							width="420px"
+							height="200px"
+						/>
+					</div>
+					<p style="text-indent: 0cm">
+						<b>4.2.5. Xử lý khi bị kẹt trong thang máy</b>
+					</p>
+					<p>
+						Trong cuộc sống hiện đại, thang máy được dùng làm phương tiện di
+						chuyển chính và không thể thiếu trong các tòa nhà cao tầng, chung
+						cư, trung tâm thương mại và cả trong các hộ gia đình…
+					</p>
+					<p>
+						Thang máy thật sự là một cỗ máy an toàn, rất an toàn... Tuy nhiên nó
+						vẫn là một loại máy móc, để nó có thể hoạt động tốt thì việc sản
+						xuất lắp đặt và vận hành đúng cách, bảo trì thường xuyên là điều cực
+						kỳ cần thiết kèm theo đó chính là kỹ năng sử dụng thang máy của
+						chính các hành khách.
+					</p>
+					<p>
+						<b
+							><i
+								>Những sự cố chúng ta có thể gặp khi di chuyển bằng thang máy</i
+							></b
+						>
+					</p>
+					<p>
+						- Thang máy đến vị trí tầng yêu cầu nhưng cửa buồng thang bị kẹt
+						không mở ra được.
+					</p>
+					<p>
+						- Sự cố ngừng hoạt động: Thang đang di chuyển dừng đột ngột do mất
+						điện hay lỗi hệ thống điều khiển.
+					</p>
+					<p>
+						- Sự cố hệ thống điều khiển: Thang máy chạy với tốc độ nhanh hơn
+						bình thường, di chuyển ngược hướng điều khiển hoặc không dừng đúng
+						điểm có lệnh gọi.
+					</p>
+					<p>
+						- Sự cố rơi tự do: Do sự cố hệ thống máy kéo và cáp kéo (rất hiếm
+						khi xảy ra).
+					</p>
+					<p>
+						<b><i>Xử lý khi bị kẹt trong thang máy </i></b>
+					</p>
+					<p><i>Thứ nhất: Giữ bình tĩnh</i></p>
+					<p>
+						- Điều đầu tiên và quan trọng nhất cần làm trong lúc này là phải
+						thật bình tĩnh. Chúng ta nên nhớ rằng có rất ít trường hợp có người
+						chết khi bị nhốt trong thang máy và gần như chúng ta có thể thoát
+						khỏi một cái thang máy đóng kín mà không hề bị trầy xước.
+					</p>
+					<p>
+						- Nếu như cảm thấy quá sợ hãi, hãy cố gắng loại khỏi đầu những sự
+						suy diễn và lo lắng không đáng có của bạn. Thư giãn để giảm bớt nỗi
+						sợ hãi. Giữ bình tĩnh để có thể sống sót. Trường hợp thường gặp nhất
+						là chúng ta phải đợi cho tới khi thang máy bắt đầu hoạt động trở
+						lại.
+					</p>
+					<p><i>Thứ hai: Thử nút mở cửa</i></p>
+					<p>
+						Khi thang máy đột ngột dừng lại, chúng ta không nhất thiết phải bấm
+						loạn xạ các nút đến các tầng khác để xem nó có di chuyển tiếp hay
+						không. Thay vào đó, hãy thử bấm nút mở cửa. Nếu thang máy vẫn không
+						có phản ứng thì hãy ấn chuông gọi cứu hộ hoặc kêu cứu.
+					</p>
+					<p><i>Thứ ba: Chờ thiết bị cứu hộ trong thang máy</i></p>
+					<p>
+						Thang máy tải khách hiện nay đều có bộ cứu hộ tự động (Automatic
+						Rescue Device - ARD) có tác dụng trong trường hợp thang máy mất điện
+						sẽ đưa thang về tầng gần nhất để cho người bị kẹt trong thang có thể
+						thoát ra ngoài thông qua hệ thống tích điện. Tuy nhiên trong một số
+						trường hợp thì hệ thống ARD bị hỏng hóc hoặc không hoạt động thì
+						người bị kẹt phải nhờ sự trợ giúp bên ngoài.
+					</p>
+					<p><i>Thứ tư: Liên lạc với những người ở ngoài</i></p>
+					<p>
+						Khi thang máy bị lỗi, người phía trong cần bình tĩnh để liên lạc ra
+						bên ngoài bằng điện thoại di động hoặc điện thoại trong thang máy,
+						nếu không có hoặc điện thoại không sử dụng được, có thể tìm cách gọi
+						to, đập vào cửa thang... để kịp thời báo hiệu ra bên ngoài.
+					</p>
+					<p>
+						Hãy tìm số điện thoại hotline (người cầm số hotline là chuyên viên
+						có kỹ thuật nên bạn hoàn toàn có thể tin tưởng và nghe theo hướng
+						dẫn của họ) trên bảng hướng dẫn sử dụng trong thang máy và gọi điện
+						để báo tình hình và chờ đợi người giúp đỡ.
+					</p>
+					<p><i>Thứ năm: Không tự ý trèo ra ngoài qua cửa thoát hiểm</i></p>
+					<p>
+						Trong thời gian chờ đợi, hãy cố giữ bình tĩnh và không nên tìm cách
+						cậy cửa. Tuyệt đối không leo ra ngoài thang máy. Nguy cơ bị kẹp giữa
+						thang máy và sàn nhà là rất cao và bạn cũng tuyệt đối không được leo
+						ra ngoài bằng cửa thoát hiểm trên nóc cabin (vì trên nóc cabin có
+						nhiều thiết bị điện cùng với nhiều dầu mỡ trơn trượt) và dù có leo
+						ra đó được thì bạn cũng đứng trên đó chứ cũng không làm gì khác
+						được, vậy thì đứng trong cabin an toàn hơn nhiều.
+					</p>
+					<p>
+						Khi cứu hộ đến thì 99,99% bạn đã được cứu, nhưng vẫn còn 0,01% nguy
+						hiểm xảy ra nếu bạn vội vàng lao ra ngoài khi mà cứu hộ chưa hoàn
+						toàn làm xong công việc của họ (đặc biệt là khi thang dừng giữa
+						tầng, ngay phía ngoài cửa cabin cũng là cửa giếng thang).
+					</p>
+					<p>
+						Trong trường hợp thang máy rơi tự do, không nên đứng hoặc nhảy lên
+						vì có thể chạm trần cabin gây tổn thương vùng đầu và khi tiếp xúc
+						với sàn có thể bị gãy chân hoặc chấn thương vùng xương chậu. Bạn hãy
+						ngay lập tức nằm song song với sàn nhà, càng gần chính giữa thang
+						càng tốt. Điều này sẽ giúp phân bố đều lực rơi lên toàn bộ cơ thể,
+						giảm thiểu tối đa thương tích. Gối đầu lên một tay để tránh bị
+						thương đầu, một tay che mặt để không bị các vật khác rơi lên mặt.
+						Bất kỳ thang máy nào cũng có một bộ phận giảm sóc đặt dưới đế. Khi
+						nằm yên trên sàn, bạn với thang máy là một khối, bạn sẽ được giảm
+						sóc hỗ trợ.
+					</p>
+					<p>
+						Cuối cùng chúng ta hãy luôn nhớ thang máy dù vô cùng hiện đại nhưng
+						nó cũng chỉ là một thiết bị điện tử nên không có gì đảm bảo là nó sẽ
+						hoạt động liên tục, không bao giờ hỏng hóc đột ngột. Với điện lưới
+						như hiện nay, điện có thể bị cắt bất cứ lúc nào. Luôn luôn giữ bình
+						tĩnh và trang bị những kỹ năng xử lý tình huống khi thang máy gặp
+						trục trặc là vô cùng cần thiết và quan trọng giúp chúng ta tự bảo vệ
+						bản thân và những người xung quanh. Vậy khi bị kẹt trong thang máy:
+						Hãy bình tĩnh, cố gắng liên lạc với bên ngoài và chờ đợi sự giúp đỡ.
+					</p>
+				</section>
+			</article>
+		</main>
+		<script src="./scripts.js"></script>
+	</body>
 </html>
