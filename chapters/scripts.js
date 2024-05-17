@@ -142,3 +142,4 @@ function applyHighlight() {
     selection.addRange(range);
     window.getSelection().removeAllRanges(); // Unselect text
 }
+
