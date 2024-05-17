@@ -110,3 +110,9 @@ function applyHighlight() {
 	selection.addRange(range);
 	window.getSelection().removeAllRanges(); // Unselect text
 }
+
+
+function changeFont() {
+	var selectedFont = document.getElementById('fontSelector').value;
+	document.body.style.fontFamily = selectedFont;
+}
